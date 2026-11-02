@@ -74,7 +74,7 @@ export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
  const exposure = analysis.factor_exposure;
  const { tickers, matrix } = analysis.correlation;
  return <>
-  <div className={styles.sectionTitle}><h2>{p("hiddenTitle")}</h2></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>STEP 3</span><h2>{p("hiddenTitle")}</h2></div>
   <div className="selected-metrics">
    <div><span>{p("volatility")}</span><strong>{pct(analysis.volatility, 1)}</strong></div>
    <div><span>{p("maxAsset")} · {analysis.concentration.max_asset.ticker}</span><strong>{pct(analysis.concentration.max_asset.weight, 1)}</strong></div>
@@ -126,7 +126,7 @@ export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenar
  const f = useFormat();
  if (!analysis.stress) return null;
  return <>
-  <div className={styles.sectionTitle}><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>STEP 4</span><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
   <div className={styles.stressGrid}>{analysis.stress.map(s => {
    const ref = scenarios?.scenarios.find(item => item.id === s.scenario)?.reference;
    const scale = Math.max(...s.by_asset.map(a => Math.abs(a.loss_usd)), 1);
