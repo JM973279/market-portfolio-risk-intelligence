@@ -10,6 +10,9 @@ from src.portfolio.snapshot import SNAPSHOT_FACTORS_PATH, SNAPSHOT_PRICES_PATH
 # volatility = VIX 변화(pt). 베타는 그 단위 1당 자산 수익률(소수)입니다.
 FACTORS = ("market", "rate", "volatility")
 
+# |t|가 이 값보다 작은 베타는 0과 구분할 수 없는 값으로 표시합니다.
+SIGNIFICANCE_T = 2
+
 
 def build_factor_moves(prices, factors, window_days=WINDOW_DAYS):
     """
@@ -59,26 +62,62 @@ def estimate_betas(asset_returns, factor_moves):
 
 
 @lru_cache(maxsize=1)
-def load_asset_betas(window_days=WINDOW_DAYS):
-    """스냅샷으로 지원 자산 전체의 베타를 한 번 추정해 재사용합니다."""
+def load_factor_data(window_days=WINDOW_DAYS):
+    """스냅샷으로 추정 기간의 자산 수익률과 팩터 변화를 한 번 만들어 재사용합니다."""
     prices = pd.read_csv(SNAPSHOT_PRICES_PATH, index_col="Date", parse_dates=True)
     factors = pd.read_csv(SNAPSHOT_FACTORS_PATH, index_col="Date", parse_dates=True)
-    return estimate_betas(*build_factor_moves(prices, factors, window_days))
+    return build_factor_moves(prices, factors, window_days)
 
 
-def portfolio_exposure(weights, betas):
+@lru_cache(maxsize=1)
+def load_asset_betas(window_days=WINDOW_DAYS):
+    """스냅샷으로 지원 자산 전체의 베타를 한 번 추정해 재사용합니다."""
+    return estimate_betas(*load_factor_data(window_days))
+
+
+def _significance(row):
+    """
+    베타별 t값과 |t| >= SIGNIFICANCE_T 여부를 돌려줍니다.
+
+    완전 적합(SPY의 Market 베타처럼 표준오차 0)이면 t값은 None, 유의함은 True입니다.
+    """
+    t = {f: float(row[f"{f}_t"]) for f in FACTORS}
+    return (
+        {f: round(v, 2) if np.isfinite(v) else None for f, v in t.items()},
+        {f: bool(abs(v) >= SIGNIFICANCE_T) for f, v in t.items()},
+    )
+
+
+def portfolio_exposure(weights, betas, factor_data=None):
     """
     자산 베타를 비중(소수)으로 가중합한 포트폴리오 베타와 자산별 베타를 돌려줍니다.
 
     자산별 목록은 analytics의 allocation과 같은 순서(비중 큰 순, 티커 순)입니다.
+    factor_data(자산 수익률, 팩터 변화)를 주면 포트폴리오 일간 수익률을 직접
+    회귀해 포트폴리오 베타의 t값과 유의함도 붙입니다. 같은 표본을 쓰므로
+    회귀 베타는 가중합 베타와 같습니다.
     """
     tickers = sorted(weights, key=lambda t: (-weights[t], t))
     exposure = {
         factor: float(sum(weights[t] * betas.at[t, factor] for t in tickers))
         for factor in FACTORS
     }
-    exposure["by_asset"] = [
-        {"ticker": t, **{f: float(betas.at[t, f]) for f in FACTORS}}
-        for t in tickers
-    ]
+
+    by_asset = []
+    for t in tickers:
+        t_stat, significant = _significance(betas.loc[t])
+        by_asset.append({
+            "ticker": t,
+            **{f: float(betas.at[t, f]) for f in FACTORS},
+            "t_stat": t_stat,
+            "significant": significant,
+        })
+    exposure["by_asset"] = by_asset
+
+    if factor_data is not None:
+        asset_returns, factor_moves = factor_data
+        series = asset_returns[tickers] @ np.array([weights[t] for t in tickers])
+        row = estimate_betas(series.to_frame("portfolio"), factor_moves).loc["portfolio"]
+        exposure["t_stat"], exposure["significant"] = _significance(row)
+
     return exposure

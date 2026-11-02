@@ -7,7 +7,11 @@ from src.portfolio.analytics import (
     load_snapshot_meta,
     load_window_returns,
 )
-from src.portfolio.factors import load_asset_betas, portfolio_exposure
+from src.portfolio.factors import (
+    load_asset_betas,
+    load_factor_data,
+    portfolio_exposure,
+)
 from src.portfolio.scenarios import SCENARIOS_PATH, describe_methodology
 from src.portfolio.schemas import (
     AnalyzeRequest,
@@ -45,12 +49,16 @@ def analyze(request: AnalyzeRequest):
     weights = {h.ticker: h.weight / 100 for h in request.holdings}
     result = analyze_portfolio(weights, load_window_returns(), load_universe())
 
-    exposure = portfolio_exposure(weights, load_asset_betas())
+    exposure = portfolio_exposure(weights, load_asset_betas(), load_factor_data())
     result["factor_exposure"] = exposure
     result["stress"] = compute_stress(
         weights, request.value_usd, exposure["by_asset"],
         get_scenarios()["scenarios"],
     )
+    # 시나리오 손익은 그 팩터의 포트폴리오 베타가 0과 구분될 때만 방향을 말할 수 있습니다.
+    significant = exposure.get("significant") or {}
+    for s in result["stress"]:
+        s["significant"] = significant.get(s["factor"])
 
     meta = load_snapshot_meta()
     return {

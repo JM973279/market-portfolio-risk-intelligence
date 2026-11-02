@@ -6,6 +6,7 @@
   "methodology": {
     "regression": "separate_univariate",
     "beta_frequency": "daily",
+    "significance_t": 2,
     "shock_horizon_days": 10,
     "approximation": "linear_beta_times_shock",
     "scenarios_additive": false,

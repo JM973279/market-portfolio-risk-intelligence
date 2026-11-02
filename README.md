@@ -71,6 +71,12 @@ and a required `by_asset` list:
 | `factor_exposure.by_asset[].market` | Asset return per unit of SPY return |
 | `factor_exposure.by_asset[].rate` | Asset return per 1 bp change in DGS10 |
 | `factor_exposure.by_asset[].volatility` | Asset return per 1 point change in VIX |
+| `factor_exposure.by_asset[].t_stat` / `.significant` | t value per factor and whether `|t| >= methodology.significance_t` (2) |
+| `factor_exposure.t_stat` / `.significant` | Same for the portfolio, from regressing daily portfolio returns on each factor |
+
+A `t_stat` of `null` means a perfect fit (SPY on the market factor), which counts
+as significant. A beta that is not significant is not distinguishable from zero,
+so its sign should not be presented as a finding.
 
 Beta return units are decimal, not percentages. The asset betas describe each
 asset before portfolio weighting; portfolio betas are their weight-adjusted sums.
@@ -86,6 +92,7 @@ shock, using the beta and shock units above.
 | `stress[].loss_pct` | `-100 * sum(weight * asset_return)`; percent, rounded to 4 decimals |
 | `stress[].by_asset[].loss_usd` | `-value_usd * weight * asset_return`; USD, rounded to cents |
 | `stress[].loss_usd` | Sum of the rounded asset loss amounts, including gains |
+| `stress[].significant` | Whether the portfolio beta for this scenario's factor is significant; `false` means the loss or gain cannot be told apart from zero |
 
 Weights in these formulas are decimal fractions. Currency rounding uses half up;
 the total is calculated from the asset amounts so the displayed amounts reconcile.
@@ -99,7 +106,7 @@ For example, a beta of 1 under a -20% market shock produces `loss_pct: 20` and
 produces `loss_pct: -20` and `loss_usd: -20000` (a gain).
 
 Both `/api/portfolio/analyze` and `/api/portfolio/scenarios` return `methodology`
-with `regression: "separate_univariate"`, `beta_frequency: "daily"`,
+with `regression: "separate_univariate"`, `beta_frequency: "daily"`, `significance_t: 2`,
 `shock_horizon_days: 10`, `approximation: "linear_beta_times_shock"`,
 `scenarios_additive: false`, `is_forecast: false`, and explanatory `limitations`.
 These fields describe how `factor_exposure` and `stress` are calculated.

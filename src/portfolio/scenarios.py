@@ -4,6 +4,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from src.portfolio.factors import SIGNIFICANCE_T
 from src.portfolio.snapshot import (
     SNAPSHOT_FACTORS_PATH,
     SNAPSHOT_META_PATH,
@@ -30,6 +31,7 @@ def describe_methodology(horizon_days=HORIZON_DAYS):
     return {
         "regression": "separate_univariate",
         "beta_frequency": "daily",
+        "significance_t": SIGNIFICANCE_T,
         "shock_horizon_days": horizon_days,
         "approximation": "linear_beta_times_shock",
         "scenarios_additive": False,

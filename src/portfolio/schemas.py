@@ -116,8 +116,26 @@ class FactorBeta(BaseModel):
     volatility: float = Field(description="VIX 1pt당 수익률(소수)")
 
 
+class FactorStat(BaseModel):
+    """팩터별 t값. 완전 적합(예: SPY의 Market 베타)이면 null."""
+
+    market: float | None
+    rate: float | None
+    volatility: float | None
+
+
+class FactorFlag(BaseModel):
+    """팩터별로 베타가 0과 구분되는지(|t| >= methodology.significance_t)."""
+
+    market: bool
+    rate: bool
+    volatility: bool
+
+
 class AssetFactorExposure(FactorBeta):
     ticker: str
+    t_stat: FactorStat | None = None
+    significant: FactorFlag | None = None
 
 
 class FactorExposure(FactorBeta):
@@ -126,6 +144,10 @@ class FactorExposure(FactorBeta):
         max_length=MAX_HOLDINGS,
         description="보유 자산별 베타. allocation과 같은 순서로 티커마다 한 번씩 반환",
     )
+    t_stat: FactorStat | None = Field(
+        default=None, description="포트폴리오 일간 수익률을 팩터에 직접 회귀한 t값"
+    )
+    significant: FactorFlag | None = None
 
 
 class AssetLoss(BaseModel):
@@ -150,11 +172,16 @@ class StressResult(BaseModel):
     by_asset: list[AssetLoss] = Field(
         description="이익이 난 자산도 포함하며 allocation과 같은 순서로 반환"
     )
+    significant: bool | None = Field(
+        default=None,
+        description="이 시나리오 팩터의 포트폴리오 베타가 0과 구분되는지. false면 손익의 방향을 말할 수 없음",
+    )
 
 
 class AnalysisMethodology(BaseModel):
     regression: Literal["separate_univariate"]
     beta_frequency: Literal["daily"]
+    significance_t: float = Field(gt=0, description="베타를 0과 구분하는 |t| 기준")
     shock_horizon_days: int = Field(gt=0, description="충격 산출 기간(거래일)")
     approximation: Literal["linear_beta_times_shock"]
     scenarios_additive: Literal[False] = Field(

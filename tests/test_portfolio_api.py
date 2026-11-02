@@ -95,7 +95,7 @@ def test_analyze_preserves_asset_factor_exposure(monkeypatch):
         ],
     }
     monkeypatch.setattr(
-        portfolio_api, "portfolio_exposure", lambda weights, betas: exposure
+        portfolio_api, "portfolio_exposure", lambda *args: exposure
     )
 
     response = _analyze([
@@ -104,8 +104,14 @@ def test_analyze_preserves_asset_factor_exposure(monkeypatch):
     ])
 
     assert response.status_code == 200
-    assert response.json()["factor_exposure"] == exposure
+    returned = response.json()["factor_exposure"]
+    betas = ("market", "rate", "volatility")
+    assert {k: returned[k] for k in betas} == {k: exposure[k] for k in betas}
+    assert [{k: a[k] for k in ("ticker", *betas)} for a in returned["by_asset"]] == exposure["by_asset"]
+    # 유의성 정보가 없는 베타에서는 유의성을 지어내지 않음
+    assert returned["significant"] is None
     stress = {s["scenario"]: s for s in response.json()["stress"]}
+    assert all(s["significant"] is None for s in stress.values())
     assert stress["equity_selloff"]["loss_pct"] == 14.4398
     assert stress["equity_selloff"]["loss_usd"] == 14_439.8
     assert stress["equity_selloff"]["by_asset"] == [
@@ -129,6 +135,21 @@ def test_spy_only_stress_equals_the_market_shock():
     assert body["factor_exposure"]["market"] == pytest.approx(1.0)
     assert equity["loss_pct"] == pytest.approx(-shock * 100, abs=1e-4)
     assert equity["loss_usd"] == pytest.approx(-shock * 100_000, abs=0.01)
+    assert body["factor_exposure"]["significant"]["market"] is True
+    assert equity["significant"] is True
+
+
+@pytest.mark.parametrize("name", ["before", "after"])
+def test_stress_significance_follows_the_portfolio_beta(name):
+    request = json.loads((DEMO_DIR / f"{name}.json").read_text())
+    body = client.post("/api/portfolio/analyze", json=request).json()
+    exposure = body["factor_exposure"]
+
+    for s in body["stress"]:
+        assert s["significant"] == exposure["significant"][s["factor"]]
+        t = exposure["t_stat"][s["factor"]]
+        assert s["significant"] == (abs(t) >= body["methodology"]["significance_t"])
+    assert all(a["significant"] is not None for a in exposure["by_asset"])
 
 
 def test_tlt_only_portfolio_loses_when_rates_rise():
@@ -150,6 +171,7 @@ def test_methodology_is_consistent_across_endpoints():
     assert method == scenarios["methodology"]
     assert method["regression"] == "separate_univariate"
     assert method["beta_frequency"] == "daily"
+    assert method["significance_t"] == 2
     assert method["shock_horizon_days"] == scenarios["horizon_days"] == 10
     assert method["approximation"] == "linear_beta_times_shock"
     assert method["scenarios_additive"] is False

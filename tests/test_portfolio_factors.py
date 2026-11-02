@@ -63,7 +63,10 @@ def test_missing_rate_day_drops_only_from_rate_regression(market_data):
 
 def test_portfolio_exposure_is_weighted_sum_in_allocation_order():
     betas = pd.DataFrame(
-        {"market": [1.2, -0.1], "rate": [-0.0002, -0.0014], "volatility": [-0.004, 0.0002]},
+        {
+            "market": [1.2, -0.1], "rate": [-0.0002, -0.0014], "volatility": [-0.004, 0.0002],
+            "market_t": [20.0, 1.5], "rate_t": [-1.3, -64.0], "volatility_t": [-17.0, 0.3],
+        },
         index=pd.Index(["AAPL", "TLT"], name="ticker"),
     )
 
@@ -73,3 +76,34 @@ def test_portfolio_exposure_is_weighted_sum_in_allocation_order():
     assert exposure["rate"] == pytest.approx(0.6 * -0.0002 + 0.4 * -0.0014)
     assert [a["ticker"] for a in exposure["by_asset"]] == ["AAPL", "TLT"]
     assert exposure["by_asset"][1]["market"] == -0.1
+    assert exposure["by_asset"][1]["significant"] == {
+        "market": False, "rate": True, "volatility": False
+    }
+    assert exposure["by_asset"][0]["t_stat"]["market"] == 20.0
+    # 수익률 데이터 없이는 포트폴리오 t값을 만들지 않음
+    assert "t_stat" not in exposure
+
+
+def test_portfolio_t_stat_comes_from_regressing_portfolio_returns(market_data):
+    prices, factors = market_data
+    factor_data = build_factor_moves(prices, factors, window_days=300)
+    betas = estimate_betas(*factor_data)
+
+    exposure = portfolio_exposure({"LEV": 0.5, "BOND": 0.5}, betas, factor_data)
+
+    portfolio = (factor_data[0][["LEV", "BOND"]] @ [0.5, 0.5]).to_frame("p")
+    direct = estimate_betas(portfolio, factor_data[1]).loc["p"]
+    assert exposure["market"] == pytest.approx(direct["market"])
+    assert exposure["rate"] == pytest.approx(direct["rate"])
+    assert exposure["t_stat"]["market"] == pytest.approx(round(direct["market_t"], 2))
+    assert exposure["significant"]["market"] and exposure["significant"]["rate"]
+
+
+def test_perfect_fit_has_no_t_value_but_counts_as_significant(market_data):
+    prices, factors = market_data
+    betas = estimate_betas(*build_factor_moves(prices, factors, window_days=300))
+
+    spy = portfolio_exposure({"SPY": 1.0}, betas)["by_asset"][0]
+
+    assert spy["t_stat"]["market"] is None
+    assert spy["significant"]["market"] is True
