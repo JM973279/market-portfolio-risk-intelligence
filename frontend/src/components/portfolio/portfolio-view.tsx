@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useDashboard } from "@/components/dashboard-shell";
+import { CountryCards } from "@/components/research-panels";
 import { PORTFOLIO_API, PortfolioApiError, analyzePortfolio, comparePortfolios, exampleAfter, exampleBefore, getScenarios, getUniverse, inputProblem, type Analysis, type Comparison, type Holding, type Scenarios, type Universe } from "@/lib/portfolio-api";
 import { HiddenRiskMap, HoldingsEditor, StressTest, WhatIfTable, usePortfolioCopy } from "./portfolio-panels";
 import styles from "./portfolio.module.css";
@@ -17,6 +19,7 @@ function ApiProblem({ error }: { error: PortfolioApiError }) {
 
 export default function PortfolioView() {
  const p = usePortfolioCopy();
+ const { global } = useDashboard();
  const [universe, setUniverse] = useState<Universe | null>(null);
  const [scenarios, setScenarios] = useState<Scenarios | null>(null);
  const [holdings, setHoldings] = useState<Holding[]>(exampleBefore);
@@ -52,15 +55,19 @@ export default function PortfolioView() {
 
  const assets = universe?.assets ?? [];
  const network = error?.error.kind === "network" ? error.error : null;
+ const marketAsOf = global?.asOf ?? null;
+ const portfolioAsOf = analysis?.as_of ?? scenarios?.as_of ?? null;
  return <main className="dashboard-content view-portfolio">
   <div className="page-hero compact-hero"><div className="hero-copy"><p className="eyebrow">{p("eyebrow")}</p><h1>{p("title")}</h1><p className="hero-subtitle">{p("subtitle")}</p></div>
    <div className="hero-status"><span>{p("dataAsOf")} <b>{analysis?.as_of ?? scenarios?.as_of ?? "N/A"}</b></span><span>{p("window")} <b>{analysis ? `${analysis.window.start} ~ ${analysis.window.end}` : "N/A"}</b></span></div>
   </div>
-  <div className="research-banner"><p>{p("riskScoreNote")}</p><Link href="/">{p("checkMarket")} →</Link></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>STEP 1</span><h2>{p("marketTitle")}</h2><p>{p("marketNote")}</p></div>
+  <CountryCards only="us"/>
+  <div className="research-banner"><p>{p("riskScoreNote")}{marketAsOf && portfolioAsOf && marketAsOf !== portfolioAsOf && <> {p("dateGap").replace("{market}", marketAsOf).replace("{portfolio}", portfolioAsOf)}</>}</p><Link href="/">{p("checkMarket")} →</Link></div>
   {network && <ApiProblem error={network}/>}
 
   <section className={`panel ${styles.section}`}>
-   <div className="panel-header"><h2>{p("inputTitle")}</h2><span className="tag">{p("inputNote")}</span></div>
+   <div className="panel-header"><div className={styles.panelTitle}><span className={styles.step}>STEP 2</span><h2>{p("inputTitle")}</h2></div><span className="tag">{p("inputNote")}</span></div>
    <HoldingsEditor holdings={holdings} onChange={setHoldings} assets={assets} value={value}/>
    <div className={styles.editorFooter}>
     <label className={styles.valueField}>{p("valueLabel")}<input type="number" inputMode="decimal" min="0" step="1000" value={Number.isFinite(value) ? value : ""} onChange={e => setValue(e.target.value === "" ? NaN : Number(e.target.value))}/></label>
@@ -75,7 +82,7 @@ export default function PortfolioView() {
 
   {analysis && <><HiddenRiskMap analysis={analysis}/><StressTest analysis={analysis} scenarios={scenarios}/></>}
 
-  <div className={styles.sectionTitle}><h2>{p("whatifTitle")}</h2><p>{p("whatifIntro")}</p></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>STEP 5–6</span><h2>{p("whatifTitle")}</h2><p>{p("whatifIntro")}</p></div>
   <div className={styles.whatifGrid}>
    <section className="panel">
     <div className={styles.actions}><button type="button" onClick={() => setProposed(holdings)}>{p("fromCurrent")}</button><button type="button" onClick={() => setProposed(exampleAfter)}>{p("exampleShift")}</button></div>
