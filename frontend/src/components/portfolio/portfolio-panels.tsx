@@ -1,6 +1,6 @@
 "use client";
 import { useDashboard } from "@/components/dashboard-shell";
-import { MAX_HOLDINGS, inputProblem, weightTotal, type Analysis, type Asset, type Comparison, type Holding, type Scenarios } from "@/lib/portfolio-api";
+import { MAX_HOLDINGS, inputProblem, weightTotal, type Analysis, type Asset, type Comparison, type Factor, type FactorBeta, type FactorSignificance, type Holding, type Scenarios } from "@/lib/portfolio-api";
 import { portfolioCopy, type PortfolioCopyKey } from "@/lib/portfolio-copy";
 import styles from "./portfolio.module.css";
 
@@ -32,6 +32,18 @@ function mix(from: number[], to: number[], t: number) {
 const NEUTRAL = [243, 246, 250], RED = [232, 99, 113], BLUE = [37, 99, 166];
 const corrColor = (c: number) => mix(NEUTRAL, c >= 0 ? RED : BLUE, Math.min(1, Math.abs(c)));
 
+const FACTORS: Factor[] = ["market", "rate", "volatility"];
+
+// Betas that are not distinguishable from zero (|t| below the API threshold) are faded; hover shows t.
+function FactorCells({ row, bold }: { row: FactorBeta & FactorSignificance; bold?: boolean }) {
+ const { beta, signedPct } = useFormat();
+ const text: Record<Factor, string> = { market: beta(row.market), rate: signedPct(row.rate * 1e4, 2), volatility: signedPct(row.volatility * 1e3, 2) };
+ return <>{FACTORS.map(f => {
+  const t = row.t_stat?.[f];
+  return <td key={f} className={row.significant?.[f] === false ? styles.faded : ""} title={t == null ? undefined : `t = ${t.toFixed(2)}`}>{bold ? <b>{text[f]}</b> : text[f]}</td>;
+ })}</>;
+}
+
 export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings: Holding[]; onChange: (next: Holding[]) => void; assets: Asset[]; value: number }) {
  const p = usePortfolioCopy();
  const { pct } = useFormat();
@@ -56,7 +68,7 @@ export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings
 
 export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
  const p = usePortfolioCopy();
- const { pct, pp, beta, signedPct } = useFormat();
+ const { pct, pp, beta } = useFormat();
  const risk = new Map(analysis.risk_contribution.map(r => [r.ticker, r.share]));
  const scale = Math.max(...analysis.allocation.map(a => Math.max(a.weight, risk.get(a.ticker) ?? 0)), 1);
  const exposure = analysis.factor_exposure;
@@ -94,10 +106,10 @@ export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
    </section>
    <section className="panel"><div className="panel-header"><h2>{p("factorTitle")}</h2></div>
     {exposure ? <div className="table-scroll"><table><thead><tr><th>{p("asset")}</th><th>{p("factorMarket")}</th><th>{p("factorRate")}</th><th>{p("factorVol")}</th></tr></thead><tbody>
-     {exposure.by_asset.map(a => <tr key={a.ticker}><th scope="row">{a.ticker}</th><td>{beta(a.market)}</td><td>{signedPct(a.rate * 1e4, 2)}</td><td>{signedPct(a.volatility * 1e3, 2)}</td></tr>)}
-     <tr><th scope="row"><b>{p("portfolioRow")}</b></th><td><b>{beta(exposure.market)}</b></td><td><b>{signedPct(exposure.rate * 1e4, 2)}</b></td><td><b>{signedPct(exposure.volatility * 1e3, 2)}</b></td></tr>
+     {exposure.by_asset.map(a => <tr key={a.ticker}><th scope="row">{a.ticker}</th><FactorCells row={a}/></tr>)}
+     <tr><th scope="row"><b>{p("portfolioRow")}</b></th><FactorCells row={exposure} bold/></tr>
     </tbody></table></div> : <p>N/A</p>}
-    <p className="panel-note">{p("factorNote")}</p>
+    <p className="panel-note">{p("factorNote")} {p("fadedNote")}</p>
    </section>
   </div>
  </>;
@@ -119,11 +131,14 @@ export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenar
    const ref = scenarios?.scenarios.find(item => item.id === s.scenario)?.reference;
    const scale = Math.max(...s.by_asset.map(a => Math.abs(a.loss_usd)), 1);
    const isLoss = s.loss_pct >= 0;
+   // When the portfolio beta for this factor is not significant, the sign of the result is not a finding.
+   const uncertain = s.significant === false;
+   const assetSignificant = new Map(analysis.factor_exposure?.by_asset.map(a => [a.ticker, a.significant?.[s.factor]]) ?? []);
    return <section key={s.scenario} className={`panel ${styles.stressCard}`}>
     <div><h3>{p(s.scenario as PortfolioCopyKey)}</h3><span className={styles.shock}>{shockText(s.scenario, s.shock, f)} · {p("tenDays")}</span>{ref && <div className={styles.reference}>{p("reference")} {ref.start} ~ {ref.end}</div>}</div>
-    <div className={styles.headline}><span>{isLoss ? p("loss") : p("gain")}</span><strong className={isLoss ? styles.lossText : styles.gainText}>{f.pct(Math.abs(s.loss_pct), 1)}</strong><small>{f.usd(Math.abs(s.loss_usd))}</small></div>
+    <div className={styles.headline}><span>{isLoss ? p("loss") : p("gain")}</span><strong className={uncertain ? styles.neutralText : isLoss ? styles.lossText : styles.gainText}>{f.pct(Math.abs(s.loss_pct), 1)}</strong><small>{f.usd(Math.abs(s.loss_usd))}</small>{uncertain && <em className={styles.uncertain}>{p("notSignificant")}</em>}</div>
     <div><h3 className="sr-only">{p("byAsset")}</h3><div className={styles.legend}>{p("byAsset")}</div>
-     <div className={styles.barRows}>{s.by_asset.map(a => <div key={a.ticker} className={styles.assetRow}><span>{a.ticker}</span><div className={styles.track}><span className={a.loss_usd >= 0 ? styles.lossFill : styles.gainFill} style={{ width: `${(Math.abs(a.loss_usd) / scale) * 100}%` }}/></div><b>{f.signedUsd(a.loss_usd)}</b></div>)}</div>
+     <div className={styles.barRows}>{s.by_asset.map(a => <div key={a.ticker} className={styles.assetRow}><span>{a.ticker}</span><div className={styles.track}><span className={`${a.loss_usd >= 0 ? styles.lossFill : styles.gainFill} ${assetSignificant.get(a.ticker) === false ? styles.faded : ""}`} style={{ width: `${(Math.abs(a.loss_usd) / scale) * 100}%` }}/></div><b className={assetSignificant.get(a.ticker) === false ? styles.faded : ""}>{f.signedUsd(a.loss_usd)}</b></div>)}</div>
     </div>
    </section>;
   })}</div>
@@ -143,15 +158,24 @@ export function WhatIfTable({ comparison }: { comparison: Comparison }) {
  const f = useFormat();
  const show = (unit: string, v: number) => (unit === "usd" ? f.usd(v) : unit === "beta" ? f.beta(v) : f.pct(v, 2));
  const showChange = (unit: string, v: number) => (unit === "usd" ? f.signedUsd(v) : unit === "beta" ? f.signedBeta(v) : f.pp(v, 2));
+ // Stress rows whose portfolio beta is not significant on a side are marked and their change is not colored.
+ const uncertain = (side: Analysis, metric: string) => {
+  const scenario = metric.match(/^(.*)_loss_(pct|usd)$/)?.[1];
+  return scenario !== undefined && side.stress?.find(s => s.scenario === scenario)?.significant === false;
+ };
+ const detail = (text: string | null, flagged: boolean) => <>{text && <span className={styles.detail}>{text}</span>}{flagged && <span className={styles.detail}>{p("uncertain")}</span>}</>;
  return <>
   <div className="table-scroll"><table><thead><tr><th>{p("metric")}</th><th>{p("current")}</th><th>{p("proposed")}</th><th>{p("change")}</th></tr></thead><tbody>
-   {comparison.comparison.map(r => <tr key={r.metric}>
-    <th scope="row">{rowLabel(r.metric, p)}</th>
-    <td>{show(r.unit, r.current)}{r.current_detail && <span className={styles.detail}>{r.current_detail}</span>}</td>
-    <td>{show(r.unit, r.proposed)}{r.proposed_detail && <span className={styles.detail}>{r.proposed_detail}</span>}</td>
-    <td className={r.change > 0 ? styles.worse : r.change < 0 ? styles.better : ""}>{showChange(r.unit, r.change)}</td>
-   </tr>)}
+   {comparison.comparison.map(r => {
+    const before = uncertain(comparison.current, r.metric), after = uncertain(comparison.proposed, r.metric);
+    return <tr key={r.metric}>
+     <th scope="row">{rowLabel(r.metric, p)}</th>
+     <td className={before ? styles.faded : ""}>{show(r.unit, r.current)}{detail(r.current_detail, before)}</td>
+     <td className={after ? styles.faded : ""}>{show(r.unit, r.proposed)}{detail(r.proposed_detail, after)}</td>
+     <td className={before || after ? styles.faded : r.change > 0 ? styles.worse : r.change < 0 ? styles.better : ""}>{showChange(r.unit, r.change)}</td>
+    </tr>;
+   })}
   </tbody></table></div>
-  <p className="panel-note">{p("compareNote")}</p>
+  <p className="panel-note">{p("compareNote")} {p("fadedShort")}</p>
  </>;
 }

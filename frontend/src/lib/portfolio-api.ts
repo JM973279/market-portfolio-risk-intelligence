@@ -6,12 +6,14 @@ export type Factor = "market" | "rate" | "volatility";
 export type Holding = { ticker: string; weight: number };
 export type Asset = { ticker: string; name: string; type: string; sector: string; asset_class: string };
 export type SectorMethodology = { classification: string; etf_lookthrough: boolean; label: string; limitations: string[] };
-export type Methodology = { regression: string; beta_frequency: string; shock_horizon_days: number; approximation: string; scenarios_additive: boolean; is_forecast: boolean; limitations: string[] };
+export type Methodology = { regression: string; beta_frequency: string; significance_t?: number; shock_horizon_days: number; approximation: string; scenarios_additive: boolean; is_forecast: boolean; limitations: string[] };
 export type Universe = { assets: Asset[]; sector_methodology: SectorMethodology };
 export type Scenario = { id: string; name: string; definition: string; factor: Factor; unit: "return" | "bp" | "pt"; rule: string; pnl_method: string; shock: number; reference: { start: string; end: string } };
 export type Scenarios = { as_of: string; lookback_start: string; horizon_days: number; note: string; methodology: Methodology; scenarios: Scenario[] };
 export type FactorBeta = { market: number; rate: number; volatility: number };
-export type StressResult = { scenario: string; name: string; factor: Factor; shock: number; unit: string; loss_pct: number; loss_usd: number; by_asset: { ticker: string; loss_usd: number }[] };
+// t value per factor (null = perfect fit) and whether |t| >= methodology.significance_t.
+export type FactorSignificance = { t_stat?: Record<Factor, number | null> | null; significant?: Record<Factor, boolean> | null };
+export type StressResult = { scenario: string; name: string; factor: Factor; shock: number; unit: string; loss_pct: number; loss_usd: number; by_asset: { ticker: string; loss_usd: number }[]; significant?: boolean | null };
 export type Analysis = {
  as_of: string; window: { start: string; end: string; days: number }; value_usd: number;
  allocation: { ticker: string; name: string; sector: string; weight: number }[];
@@ -19,7 +21,7 @@ export type Analysis = {
  concentration: { max_asset: { ticker: string; weight: number }; max_sector: { sector: string; weight: number } };
  correlation: { tickers: string[]; matrix: number[][] }; volatility: number;
  risk_contribution: { ticker: string; share: number }[]; methodology: Methodology;
- factor_exposure: (FactorBeta & { by_asset: (FactorBeta & { ticker: string })[] }) | null;
+ factor_exposure: (FactorBeta & FactorSignificance & { by_asset: (FactorBeta & FactorSignificance & { ticker: string })[] }) | null;
  stress: StressResult[] | null;
 };
 export type ComparisonRow = { metric: string; label: string; unit: "%" | "usd" | "beta"; current: number; proposed: number; change: number; current_detail: string | null; proposed_detail: string | null };
