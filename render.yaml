@@ -1,0 +1,35 @@
+# Preparation only. Creating a Blueprint starts billed resources and requires approval.
+services:
+  - type: pserv
+    name: mpri-portfolio-api
+    runtime: python
+    region: singapore
+    plan: 0.5c-512mb
+    branch: feature/mvp-release-readiness
+    autoDeployTrigger: "off"
+    buildCommand: pip install -r requirements.portfolio.txt
+    startCommand: python -c 'from src.portfolio.readiness import require_snapshot; require_snapshot()' && uvicorn src.portfolio.server:app --host 0.0.0.0 --port 10000 --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.14.4
+      - key: PORTFOLIO_API_CORS_ORIGINS
+        value: ""
+  - type: web
+    name: mpri-mvp-web
+    runtime: node
+    region: singapore
+    plan: 0.5c-512mb
+    rootDir: frontend
+    branch: feature/mvp-release-readiness
+    autoDeployTrigger: "off"
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start -- --hostname 0.0.0.0 --port $PORT
+    healthCheckPath: /api/portfolio/universe
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.1
+      - key: PORTFOLIO_API_INTERNAL_HOSTPORT
+        fromService:
+          type: pserv
+          name: mpri-portfolio-api
+          property: hostport

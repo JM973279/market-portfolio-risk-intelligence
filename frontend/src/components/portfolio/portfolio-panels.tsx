@@ -124,7 +124,7 @@ function shockText(id: string, shock: number, f: ReturnType<typeof useFormat>) {
 export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenarios: Scenarios | null }) {
  const p = usePortfolioCopy();
  const f = useFormat();
- if (!analysis.stress) return null;
+ if (!analysis.stress?.length) return <section className="panel" role="status"><h2>{p("stressTitle")}</h2><p>{p("stressUnavailable")}</p></section>;
  return <>
   <div className={styles.sectionTitle}><span className={styles.step}>STEP 4</span><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
   <div className={styles.stressGrid}>{analysis.stress.map(s => {

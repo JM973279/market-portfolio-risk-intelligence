@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.portfolio.analytics import load_snapshot_meta
 from src.portfolio.api import router
+from src.portfolio.readiness import require_snapshot
 
 # 포트폴리오 API를 단독으로 띄우는 앱입니다.
 #   uvicorn src.portfolio.server:app --port 8000
@@ -28,4 +29,5 @@ app.include_router(router)
 
 @app.get("/health")
 def health():
+    require_snapshot()
     return {"status": "ok", "as_of": load_snapshot_meta()["as_of"]}
