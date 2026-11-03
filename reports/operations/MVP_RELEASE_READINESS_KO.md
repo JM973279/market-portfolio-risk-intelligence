@@ -96,3 +96,9 @@ workspace·초과트래픽·빌드·세금·도메인 별도. 최종 결제 화�
 변경 후보의 secret assignment 패턴과 실제 로컬 `.env*` 인증값의 포함 여부도 발견0건이다(값은 출력하지 않음).
 Git 추적 `.env` 없음, 신규/변경1MiB 초과 파일 없음. 가상환경·수집 원천·운영 cache·빌드·인증정보는 추가하지 않았다.
 검증 요약은 `MVP_RELEASE_VERIFICATION.json`에 저장했다.
+
+### Render 구성 후속 변경
+
+이 보고서 본문의 private API/유료 제안은 이후 요청에 따라 Web Service2개/Free 기본 구성으로 대체되었다.
+현재 설정과 실제 URL 입력·CORS·휴면/메모리 제약은 [DEPLOYMENT_KO.md](../../docs/DEPLOYMENT_KO.md),
+검증 결과는 [RENDER_PREPARATION_KO.md](RENDER_PREPARATION_KO.md)를 우선한다.

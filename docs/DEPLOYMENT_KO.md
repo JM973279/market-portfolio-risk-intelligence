@@ -1,97 +1,134 @@
-# MVP 배포 준비 및 승인 절차
+# Render Web Service 2개 배포 준비
 
-작성: 2026-11-03. **아직 실제 배포하지 않았으며 배포 URL도 없다.**
-저장소/로컬 설정에서 기존 호스팅 프로젝트·도메인·배포 인증을 확인할 수 없었다.
-아래는 검토 가능한 Render 제안 구성이다. 계정의 실제 서비스/과금 상태를 조회한 결과는 아니다.
+기준: 2026-11-03, `feature/mvp-release-readiness`. **준비만 완료: GitHub push·main 병합·Render 생성/배포 미실행.**
+기존 private API 제안은 이 문서와 현재 `render.yaml`의 **공개 Web Service 2개** 구성으로 대체한다.
+실제 계정/도메인은 아직 생성·확인하지 않았다. 아래 `<API_HOST>`, `<WEB_HOST>`는 입력 설명용이며 실제 설정값이 아니다.
 
-## 대상과 실행 구조
+## 서비스별 설정
 
-`render.yaml`: Singapore 같은 리전의 두 서비스. `feature/mvp-release-readiness`를 지정했고 자동 배포는 off다.
-Blueprint를 처음 생성하면 즉시 서비스 생성·과금·최초 배포가 시작될 수 있으므로 **승인 전 실행 금지**.
+저장소 `tina77302/market-portfolio-risk-intelligence`, Region `Singapore`, 자동배포 `off`.
+아래 Build/Start는 `render.yaml`과 동일하다. Root Directory를 잘못 지정하면 Python 모듈과 snapshot을 찾을 수 없다.
 
-| 서비스 | 실행 | 외부 접근 |
+| 항목 | Portfolio API | Next.js frontend |
 |---|---|---|
-| `mpri-mvp-web` | Node 22.22.1, Next production, `0.0.0.0:$PORT` | Render HTTPS URL, 실제 이름/URL은 생성 시 확정 |
-| `mpri-portfolio-api` | Python 3.14.4, FastAPI/uvicorn 1 worker, `0.0.0.0:10000` | private service, 공개 API URL 없음 |
+| Service Type | Web Service / Python | Web Service / Node |
+| 제안 이름 | mpri-portfolio-api | mpri-mvp-web |
+| Root Directory | **빈칸(저장소 루트)** | **frontend** |
+| Plan | Free / 512MB | Free / 512MB |
+| Build Command | `pip install -r requirements.portfolio.txt && python -c 'from src.portfolio.readiness import require_snapshot; require_snapshot()'` | `npm ci && npm run build` |
+| Start Command | `python -m uvicorn src.portfolio.server:app --host 0.0.0.0 --port $PORT --workers 1` | `npm run start -- --hostname 0.0.0.0 --port $PORT` |
+| Health Check | `/health` | `/` |
 
-브라우저 → 같은 HTTPS 출처 `/api/portfolio/*` → Next rewrite → private HTTP API.
-모바일의 localhost, 공개 HTTP API 혼합 콘텐츠, 브라우저 CORS 문제가 생기지 않는 경로다.
-API는 `data/portfolio/` 고정 스냅샷(2026-10-23)만 읽으며 시장 운영 추론을 실행하지 않는다.
-한국/미국 페이지는 승인된 `frontend/public/data/operational-markets.json`을 읽는다.
-새 원천 수집·미국 보류 정책 변경·자동 추론·데이터 갱신 스케줄러는 포함하지 않는다.
+웹 health는 API 휴면에 영향을 받지 않도록 분리했다. API의 준비 상태는 별도로 검사한다.
+Blueprint 생성은 autoDeploy off여도 최초 실제 배포를 시작하므로 지금 실행하지 않는다.
 
-## 환경변수와 네트워크
+## 필수 환경변수
 
-- API `PYTHON_VERSION=3.14.4`, `PORTFOLIO_API_CORS_ORIGINS=""`(서버 프록시만 사용).
-- 웹 `NODE_VERSION=22.22.1`, `PORTFOLIO_API_INTERNAL_HOSTPORT`: Blueprint가 API의 hostport를 연결한다.
-- `PORTFOLIO_API_INTERNAL_URL`을 따로 지정하면 hostport보다 우선한다. 로컬 기본값은 `http://127.0.0.1:8000`.
-- 내부 주소는 **next build 시 rewrite manifest에 반영**된다. 주소/환경 변경 후 반드시 rebuild한다.
-- `NEXT_PUBLIC_PORTFOLIO_API_URL`은 미설정으로 유지한다. 직접 브라우저 연결을 선택할 경우에만 HTTPS 주소와 정확한 CORS origin을 별도로 검증한다.
-- 금융 데이터 API 키, `.env`, 모델, 원본 연구 checkout, ML 훈련 패키지/GPU는 이 시연 서버 실행에 필요 없다.
-- API `requirements.portfolio.txt`는 현재 검증 환경의 실행 의존성을 버전 고정했다. 기존 연구 requirements는 그대로다.
-- API 시작 전 snapshot hash 검증 실패 시 시작하지 않는다. 요청 시에도 동일 검증, `/health` 및 분석은 503.
-- 웹 health check `/api/portfolio/universe`는 실제 API와 snapshot 검증까지 통과해야 200이다.
-- private network의 다른 서비스는 API에 접근할 수 있다. 승인 시 같은 workspace/region과 기존 서비스의 신뢰 범위를 확인한다.
+API:
 
-## 비용 예상
+- `PYTHON_VERSION=3.14.4`
+- `PORTFOLIO_API_CORS_ORIGINS=https://<WEB_HOST>`: **실제 웹 origin**으로 교체. 쉼표로 명시적 도메인 추가 가능.
+  scheme+host(+필요시 port)만, 경로·끝 slash·와일드카드·localhost 금지. custom domain을 쓰면 실제 도메인도 추가.
+- `PORTFOLIO_API_DOCS_ENABLED=false`: `/docs`, `/redoc`, `/openapi.json` 비활성. 분석 endpoint·health는 유지.
+- `OMP_NUM_THREADS=1`, `OPENBLAS_NUM_THREADS=1`: 제한된 메모리/CPU에서 BLAS 과도한 병렬화 방지.
+- `PORT`와 `RENDER=true`는 Render가 제공한다. 임의로 `PORT=8000`으로 고정하지 않는다.
 
-[Render 공식 가격표](https://render.com/pricing) 및 [Blueprint 사양](https://render.com/docs/blueprint-spec) 확인 기준(2026-11-03):
-각 0.5 CPU/512MB 서비스 약 USD 7/월 × 2 = **기본 약 USD 14/월**.
-계정 workspace 요금, 빌드/트래픽 초과, 세금, 환율, 도메인은 별도다. 실제 결제 화면에서 확정해야 한다.
-512MB는 초기 시연 제안이며 실제 동시접속·메모리 상한은 아직 부하 검증하지 않았다.
-메모리 부족이면 임의 증설하지 말고 비용 증가를 보고한다. 무료 sleep 서비스는 시연용 기본안에서 제외했다.
+웹:
 
-## 로컬 재현 및 승인 후 순서
+- `NODE_VERSION=22.22.1`
+- `PORTFOLIO_API_INTERNAL_URL=https://<API_HOST>`: **배포 완료된 API의 실제 HTTPS origin**.
+  변수 이름은 기존 호환을 유지했지만 이 구성의 값은 public HTTPS다. 끝 slash는 정규화한다.
+- `NEXT_PUBLIC_PORTFOLIO_API_URL`과 `PORTFOLIO_API_INTERNAL_HOSTPORT`는 **설정하지 않는다**.
+
+`sync:false` 두 항목은 Dashboard에서 실제 주소를 입력해야 한다. API/웹 URL은 서비스 이름만으로 확정하지 않는다.
+주소를 잘못 비워 두거나 localhost로 배포하면 Next 설정 검증이 실패한다. API CORS 미설정은 Render에서 허용 출처 없음으로 동작한다.
+금융 데이터 API 키·`.env`·Frozen V1 모델·기존 연구 checkout은 시연 서버 실행에 필요 없다.
+
+## 연결 및 공개 범위
+
+브라우저 → 같은 출처 `/api/portfolio/*` → Next rewrite → 공개 **HTTPS API**.
+무료 API는 private network 수신을 지원하지 않으므로 private hostport를 사용하지 않는다.
+rewrite는 build 시 결정되므로 API 주소가 바뀌면 웹을 **다시 build/deploy**해야 한다.
+
+CORS는 실제 웹 origin만 허용한다. 서버 프록시는 브라우저 CORS 적용 대상이 아니므로 proxy 동작과 CORS 검증은 별개다.
+CORS는 인증/방화벽이 아니다. curl 등 비브라우저 클라이언트는 공개 API를 호출할 수 있다.
+문서 endpoint를 닫았어도 분석 API 자체는 공개이며 이 변경에서 인증·rate limit을 추가하지 않았다.
+공개 호출 자체를 금지해야 한다면 별도 서버 인증 또는 유료 private API 설계에 대한 추가 승인이 필요하다.
+
+## Python 의존성과 필수 파일
+
+`requirements.portfolio.txt`는 현재 검증된 Python 실행 의존성의 버전 고정 파일이다.
+ML 학습 스택/XGBoost/scikit-learn/GPU는 제외했다. 기존 `requirements.txt`는 변경하지 않는다.
+현재 엔진이 `src.portfolio.data`에서 상수를 import하며 requests/yfinance를 함께 import하므로 해당 패키지는 필요하다.
+서버 구동 중 Yahoo/FRED에서 데이터를 수집하지 않는다.
+
+저장소 루트에 다음이 반드시 포함되어야 한다:
+
+- `src/portfolio/`, `config/portfolio-snapshot.sha256.json`
+- `data/portfolio/prices.csv`, `factors.csv`, `universe.csv`, `snapshot_meta.json`, `scenarios.json`
+
+5개 데이터 파일 합계 약580KiB, 기준일 **2026-10-23**. `Path(__file__).resolve()`로 저장소 기준 경로를 사용한다.
+시작 전 build 검증 및 요청/health의 SHA 검증 실패 시 성공 점수를 반환하지 않는다.
+DGS10의 기존 결측 처리·Portfolio 계산식은 그대로 유지한다.
+웹에는 `frontend/public/data/`의 기존 연구 export와 운영 요약이 필요하다. 한국 2026-11-02 운영과 미국 최신 N/A 정책을 그대로 표시한다.
+새 수집/추론 스케줄러가 없으므로 배포일을 데이터 관측일로 소개하지 않는다.
+
+## 무료 512MB 및 휴면 위험
+
+[공식 무료 정책](https://render.com/docs/free), [private network 정책](https://render.com/docs/private-network) 확인:
+
+- 각 서비스는 15분 유휴 후 휴면, 복귀에 약1분 소요. 두 서비스가 각각 휴면할 수 있다.
+- 현재 브라우저 API timeout은30초다. API cold start는 첫 분석 요청 실패/오류 안내/재시도를 일으킬 수 있다.
+  코드의 timeout/금융 계산을 임의로 바꾸지 않았다. 시연 전 실제 API `/health`가200인지 기다린 후 웹을 연다.
+  자산 목록 로딩 실패 시 API 기동을 확인하고 페이지를 새로고침한다. 인위적인 상시 keep-alive는 추가하지 않는다.
+- 무료 instance hours는 workspace 합계 월750시간. 두 서비스 동시 실행 시 약375시간을 함께 소비하며,
+  월내내 둘 다 상시 실행할 수 있는 예산이 아니다. 다른 무료 서비스 사용량도 합산된다.
+- 재시작/휴면 시 로컬 변경은 소실된다. Git에 고정된 snapshot은 다시 포함되지만 런타임 데이터 갱신을 저장하는 방식은 사용하지 않는다.
+- 로컬 Linux 측정: API 1 worker, compare20회/클라이언트 동시4개 후 최대 RSS **약140MiB**;
+  Next production 주요 페이지/프록시 요청 후 최대 RSS **약278MiB**.
+  512MB cgroup/Render free CPU/플랫폼 overhead를 적용한 테스트가 아니므로 배포 성공·부하 상한을 보장하지 않는다.
+  Next build 작업의 메모리와 runtime RSS도 별개다.
+- 512MB 초과/OOM 또는 긴 지연이 확인되면 로그/메모리 지표를 기록하고 유료 인스턴스로 전환할지 승인받는다.
+
+비용: Free2개 compute는 무료 한도 내 **USD0/월**. 유료 512MB 각 약USD7 → 두 서비스 **기본 약USD14/월** 예상.
+[공식 가격표](https://render.com/pricing)에서 배포 직전 확정. workspace·빌드/트래픽 초과·세금·도메인 별도.
+실제 시연 안정성을 우선하면 sleep 없는 유료2개가 권장되지만 자동 유료 전환은 하지 않는다.
+
+## 승인 후 배포 순서
+
+1. 검증된 통합 diff/commit·서비스 공개 범위·Free 또는 유료 예산을 검토한다. 현재 로컬 브랜치는 원격에 없다.
+2. 별도 승인 후에만 feature push/PR·필요한 병합을 수행한다. main 병합 없이 승인된 feature commit 배포도 가능하다.
+3. API Web Service 먼저 생성: 루트 빈칸, 명령/환경변수 지정, 실제 API URL을 확인한다.
+   웹 URL이 아직 없으면 CORS 빈 문자열로 모든 브라우저 origin을 닫아 둘 수 있다.
+4. API `/health`와 주요 endpoint를 확인한다. 웹 Web Service를 만들고 실제 API HTTPS URL을 **빌드 전** 입력한다.
+5. 실제 웹 URL을 확인하면 API CORS에 그 origin을 입력하고 재배포한다. 임시 localhost/* 값을 넣지 않는다.
+   Blueprint 동시 최초 생성보다 Dashboard 순차 생성이 URL 확인에 명확하다.
+6. 공개 HTTPS 웹의 `/api/portfolio/universe`, `/scenarios`, 분석/비교와 아래 검증을 실행한다.
+   실제 휴대폰·KR/EN·시장별 상태·휴면 후 복귀도 확인한 뒤 URL을 공유한다.
+
+## 검증 및 롤백
+
+로컬 재현은 API8000, 웹3001로 수행했다. Render는 반드시 자동 제공 `$PORT`를 사용한다.
 
 ```bash
-# root / terminal A
-.venv/bin/uvicorn src.portfolio.server:app --host 127.0.0.1 --port 8000
-# terminal B
-cd frontend
-npm ci
-npm run build
-npm run start -- --hostname 127.0.0.1 --port 3001
-# root / terminal C
+# repository root
+.venv/bin/python -m pytest -q
 .venv/bin/python scripts/check_demo_api.py --api-url http://127.0.0.1:8000
+# frontend
+npx tsc --noEmit
+npm run lint
+npm run test:charts
+npm run test:integration
+npm run test:render
+npm run build
 ```
 
-브라우저 QA: 별도 테스트 디렉터리에 Playwright/Chromium을 설치하고 `PLAYWRIGHT_MODULE`에 모듈 경로를 지정할 수 있다.
-기본은 `require('playwright')`와 Playwright 관리 Chromium이다. 특수 Linux 라이브러리 경로/실행 파일은
-`LD_LIBRARY_PATH`, `CHROMIUM_EXECUTABLE`로 지정한다. 운영 의존성에는 Playwright를 설치하지 않는다.
+실제 API 기준 health200/as_of2026-10-23, universe28개, scenarios3개, before23.38%, after16.94%, 비교10행.
+빈/잘못된 입력422, 신뢰하지 않는 Origin에 CORS 허용 header 없음, docs404도 확인한다.
+배포 후 한국 운영40.2%/2026-11-02, 미국 최신N/A 및 과거10.0%/2026-10-02를 구분한다.
 
-```bash
-MPRI_WEB_URL=http://127.0.0.1:3001 node scripts/check_release_browser.cjs
-MPRI_WEB_URL=http://127.0.0.1:3001 node scripts/check_portfolio_revision.cjs
-MPRI_WEB_URL=http://127.0.0.1:3001 node scripts/check_portfolio_browser.cjs
-```
+문제 시 자동배포 off 유지 → 웹/API **같은 직전 검증 release 쌍**으로 rollback → health/분석/시장 페이지 재검증.
+기존 deploy ID·commit·환경변수 이름/주소와 snapshot manifest SHA를 배포 전에 기록한다(비밀값은 Git 금지).
+Free rollback은 직전2개 배포로 제한된다. 이전 release가 없는 최초 배포는 서비스 중지 후 수정/재검증한다.
 
-1. 승인 대상: 변경 diff/테스트, Git push 및 main 병합 범위, Render workspace/서비스 이름/region/월 예산/공개 범위.
-2. 승인 후에만 feature 공유·PR 검토·main 병합을 수행한다. 기존 PR #4/#5의 기록을 수정하지 않는다.
-3. 배포할 commit을 고정한다. 실제 Blueprint 화면에서 Python/Node 지원 버전과 예상 요금을 재확인한다.
-4. API 먼저 실행·준비 확인 → 웹 build/시작. 같은 region private hostport 연결과 HTTPS를 검증한다.
-5. 아래 검증을 통과한 후 시연 URL을 공유한다. 자동 배포는 계속 끈다.
-
-## 배포 후 검증
-
-- 공개 URL에서 9개 경로 200, 메뉴 선택 상태, KR/EN, 실제 휴대폰 HTTPS 접속 확인.
-- `/api/portfolio/universe`와 `/scenarios` 200, 28개 자산·3개 시나리오.
-- 예제 분석: 전 23.38%, 후 TLT30% 16.94%, NVDA 위험기여도 30.43 → 28.37%, What-if 10행.
-- 입력/평가금액 변경 즉시 기존 결과 제거, 진행 중 요청 후 수정한 경우 이전 응답 무시.
-- 빈/중복/미지원 ticker/잘못된 합계·금액 422 또는 전송 전 차단, API 장애는 안내 문구.
-- 한국 2026-11-02 Risk40.2%, MSI0.753405, 임계1.115125. 연구 OOS와 운영 표시 분리.
-- 미국 최신 N/A·revision 보류 및 과거 2026-10-02 Risk10.0% 날짜 구분.
-- API/웹 로그 오류·메모리·지연 확인. 제공처 이용조건/공개 snapshot 재배포 권한도 배포 책임자가 확인한다.
-
-## 롤백
-
-배포 전 두 서비스의 이전 commit/deploy ID, 환경변수 이름·설정, snapshot manifest hash를 기록한다(비밀값은 Git에 남기지 않는다).
-문제 시 자동 배포 off 확인 → 웹과 API를 **동일한 직전 검증 release 쌍**으로 rollback → health/핵심 경로/샘플 재검증.
-내부 주소가 달라지면 웹 rebuild. 데이터 복구·재학습·미국 정책 완화를 롤백으로 대신하지 않는다.
-최초 배포라 이전 release가 없으면 서비스 중지/공개 접근 차단하고 수정 후 재검증한다.
-
-## 미완료 외부 검증
-
-현재 실제 Render 계정·청구·DNS·TLS·private service discovery·클라우드 pip/npm clean build는 실행하지 않았다.
-Docker daemon도 사용할 수 없지만 제안 구성은 Docker를 사용하지 않는 native runtime이다.
-로컬 production 통합과 공식 Blueprint JSON schema 검증은 통과했다.
-클라우드 실행 성공은 승인 후 실제 배포 검증에서만 확정할 수 있다.
+실제 Render 계정·DNS/TLS·휴면 복귀·512MB 메모리 제한 아래의 검증은 아직 수행하지 않았다.
