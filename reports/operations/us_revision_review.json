@@ -1,0 +1,29 @@
+{
+  "SPY": {
+    "changed_rows": 5489,
+    "max_abs_difference": 0.00018310546875,
+    "latest_changed_date": "2026-06-09"
+  },
+  "VIX": {
+    "changed_rows": 0,
+    "max_abs_difference": 0.0,
+    "latest_changed_date": null
+  },
+  "BAA_Treasury_Spread": {
+    "changed_rows": 0,
+    "max_abs_difference": 0.0,
+    "latest_changed_date": null
+  },
+  "SPY_1D_Return": {
+    "max_abs_difference": 1.6384433988003017e-06,
+    "violating_tolerance": 5654
+  },
+  "SPY_Drawdown": {
+    "max_abs_difference": 1.3130808618998235e-06,
+    "violating_tolerance": 5307
+  },
+  "Credit_Level": {
+    "max_abs_difference": 0.009999999999999787,
+    "violating_tolerance": 1
+  }
+}

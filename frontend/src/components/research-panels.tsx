@@ -10,18 +10,19 @@ const pct=(value:unknown)=>typeof value==="number"?`${(value*100).toFixed(1)}%`:
 const num=(value:unknown,digits=3)=>typeof value==="number"?value.toFixed(digits):"N/A";
 
 export function CountryCards({only}:{only?:"us"|"korea"}) {
- const {t,global,monitor,language}=useDashboard();
+ const {t,global,monitor,language,operational}=useDashboard();
  const asOf=global?.asOf ?? monitor?.latest?.Date;
  return <div className={`country-grid ${only ? "single" : ""}`}>{(["us","korea"] as const).filter(c=>!only||c===only).map(country=>{
   const points=country==="us"?global?.us:global?.korea;
   const latestSource=points?.filter(p=>p.price!==null||p.msi!==null||p.risk!==null).at(-1);
   const current=points?.find(p=>p.date===asOf);
   const oos=points?.filter(p=>p.risk!==null).at(-1);
-  const monitoringState=country==="korea"?monitor?.latest?.state:undefined;
+  const operation=operational?.markets[country];
+  const monitoringState=!operation&&country==="korea"?monitor?.latest?.state:undefined;
   const complete=country==="korea"?monitor?.last_complete?.Date:oos?.date;
-  const risk=country==="korea"?monitor?.latest?.Prob_XGBoost:current?.risk;
-  const msi=country==="korea"?monitor?.latest?.Korea_MSI:current?.msi;
-  return <section className="panel country-card" key={country}><div className="panel-header"><Link href={`/${country}`} className="country-title"><CountryFlag country={country}/><h2>{t(country)}</h2><span aria-hidden="true">›</span></Link><span className="source-date">{t("sourceAsOf")}<b>{(country==="korea"?monitor?.latest?.Date:latestSource?.date) ?? "N/A"}</b></span></div><div className="country-metrics"><div className="country-metric"><h3>{t("risk10")}</h3><strong>{pct(risk)}</strong><p>{t("futureRisk")}</p></div><div className="country-metric"><h3>MSI</h3><strong>{num(msi)}</strong><p>{t("currentStress")}</p></div><div className="country-status"><span className="status-label"><i/>{monitoringState?stateCopy[monitoringState]?.[language==="en"?0:1]??monitoringState:t("unknownState")}</span><p>{monitoringState&&!monitoringState.includes("UNKNOWN")?(language==="ko"?reasonCopy[monitor?.latest?.reason??""]??monitor?.latest?.reason:monitor?.latest?.reason):t("currentNote")}</p><Link href={`/${country}`}>{t("openMarket")} →</Link></div></div><div className="country-meta"><span>{t("oosAsOf")} <b>{oos?.date ?? "N/A"}</b></span><span>{t("complete")} <b>{complete ?? "N/A"}</b></span></div><span className="country-scope">{t(country==="us"?"originalV1":"experimentalKorea")}</span>{language==="ko" && <span className="sr-only">{t("notLive")}</span>}</section>;
+  const risk=operation?operation.current?.risk:country==="korea"?monitor?.latest?.Prob_XGBoost:current?.risk;
+  const msi=operation?operation.current?.msi:country==="korea"?monitor?.latest?.Korea_MSI:current?.msi;
+  return <section className="panel country-card" key={country}><div className="panel-header"><Link href={`/${country}`} className="country-title"><CountryFlag country={country}/><h2>{t(country)}</h2><span aria-hidden="true">›</span></Link><span className="source-date">{t("sourceAsOf")}<b>{(operation?operation.expectedDate:country==="korea"?monitor?.latest?.Date:latestSource?.date) ?? "N/A"}</b></span></div><div className="country-metrics"><div className="country-metric"><h3>{t("risk10")}</h3><strong>{pct(risk)}</strong><p>{t("futureRisk")}</p></div><div className="country-metric"><h3>MSI</h3><strong>{num(msi)}</strong><p>{t("currentStress")}</p></div><div className="country-status"><span className="status-label"><i/>{operation?(operation.status==="CURRENT"?(language==="ko"?"필수 관측 확인":"Inputs verified"):(language==="ko"?"최신 점수 미확인":"Current score unavailable")):monitoringState?stateCopy[monitoringState]?.[language==="en"?0:1]??monitoringState:t("unknownState")}</span><p>{operation?(operation.reason??(language==="ko"?"Frozen V1 운영 추론 · breadth 종합 상태는 별도 연구 기준일을 참조합니다.":"Frozen V1 inference · breadth monitoring uses its separate research date.")):monitoringState&&!monitoringState.includes("UNKNOWN")?(language==="ko"?reasonCopy[monitor?.latest?.reason??""]??monitor?.latest?.reason:monitor?.latest?.reason):t("currentNote")}</p><Link href={`/${country}`}>{t("openMarket")} →</Link></div></div><div className="country-meta"><span>{t("oosAsOf")} <b>{oos?.date ?? "N/A"}</b></span><span>{t("complete")} <b>{complete ?? "N/A"}</b></span></div><span className="country-scope">{t(country==="us"?"originalV1":"experimentalKorea")}</span>{language==="ko" && <span className="sr-only">{t("notLive")}</span>}</section>;
  })}</div>;
 }
 

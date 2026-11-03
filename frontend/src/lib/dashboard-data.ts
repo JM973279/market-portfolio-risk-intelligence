@@ -1,7 +1,7 @@
 import "server-only";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import type { DashboardData, GlobalData, MonitorData } from "./dashboard-types";
+import type { DashboardData, GlobalData, MonitorData, OperationalData } from "./dashboard-types";
 export async function getDashboardData(): Promise<DashboardData> {
  "use cache";
  let monitor: MonitorData | null = null;
@@ -14,5 +14,10 @@ export async function getDashboardData(): Promise<DashboardData> {
   const parsed = JSON.parse(await readFile(path.join(process.cwd(), "public/data/global-markets.json"), "utf8"));
   if (parsed.schema_version === 1 && Array.isArray(parsed.us) && Array.isArray(parsed.korea) && parsed.sources) global = parsed;
  } catch { /* Optional original-V1 evidence never blocks Korea research. */ }
- return { monitor, global };
+ let operational: OperationalData | null = null;
+ try {
+  const parsed = JSON.parse(await readFile(path.join(process.cwd(), "public/data/operational-markets.json"), "utf8"));
+  if (parsed.schema_version === 1 && parsed.markets?.us && parsed.markets?.korea && typeof parsed.generatedAt === "string") operational = parsed;
+ } catch { /* Operational availability does not block historical research or Portfolio. */ }
+ return { monitor, global, operational };
 }

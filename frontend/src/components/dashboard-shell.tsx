@@ -17,6 +17,7 @@ const navigation: { href: string; key: CopyKey; icon: string }[] = [
  { href:"/",key:"dashboard",icon:"M3 10 12 3l9 7M5 9v12h5v-7h4v7h5V9" },
  { href:"/us",key:"us",icon:"M4 4h16v16H4zM7 15l4-5 3 2 3-5" },
  { href:"/korea",key:"korea",icon:"M3 21h18M5 21V11h5v10M10 21V4h5v17M15 21v-8h4v8" },
+ { href:"/portfolio",key:"portfolioAnalysis",icon:"M9 7V4h6v3M3 7h18v14H3zM3 12l9 3 9-3M12 12v5" },
  { href:"/breadth",key:"breadth",icon:"M4 20V10m5 10V4m6 16v-7m5 7V7M2 20h20" },
  { href:"/validation",key:"evidence",icon:"M4 5h16v15H4zM8 5V3m8 2V3M7 14l3 3 7-7" },
  { href:"/cases",key:"cases",icon:"M4 21V4h10l6 6v11zM14 4v6h6M8 14h8m-8 3h5" },
