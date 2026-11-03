@@ -69,4 +69,4 @@ export const weightTotal = (holdings: Holding[]) => holdings.reduce((sum, h) => 
 
 // Demo portfolios (same as examples/portfolio on the portfolio branch).
 export const exampleBefore: Holding[] = [{ ticker: "AAPL", weight: 30 }, { ticker: "MSFT", weight: 30 }, { ticker: "NVDA", weight: 20 }, { ticker: "AMZN", weight: 20 }];
-export const exampleAfter: Holding[] = [{ ticker: "AAPL", weight: 21 }, { ticker: "MSFT", weight: 21 }, { ticker: "NVDA", weight: 14 }, { ticker: "AMZN", weight: 14 }, { ticker: "TLT", weight: 10 }, { ticker: "GLD", weight: 10 }, { ticker: "XLV", weight: 10 }];
+export const exampleAfter: Holding[] = [{ ticker: "AAPL", weight: 21 }, { ticker: "MSFT", weight: 21 }, { ticker: "NVDA", weight: 14 }, { ticker: "AMZN", weight: 14 }, { ticker: "TLT", weight: 30 }];

@@ -161,17 +161,22 @@ The exact `/api/portfolio/analyze` requests are saved in
 [`examples/portfolio/before.json`](examples/portfolio/before.json) and
 [`examples/portfolio/after.json`](examples/portfolio/after.json). The starting
 USD 100,000 portfolio holds AAPL/MSFT at 30% each and NVDA/AMZN at 20% each.
-The comparison keeps 70% of every original holding and allocates 10% each to
-TLT, GLD, and XLV. Both portfolios remain fully invested at the same value.
+The comparison keeps 70% of every original holding and moves the freed 30% into
+long Treasuries (TLT). Both portfolios remain fully invested at the same value.
 
 Using the frozen 2026-10-23 snapshot and 756 daily returns (2023-10-19 through
 2026-10-23), the recorded results are:
 
 | Metric | Before | After |
 | --- | --- | --- |
-| Annualized volatility | 23.38% | 17.22% |
+| Annualized volatility | 23.38% | 16.94% |
 | NVDA investment weight | 20.00% | 14.00% |
-| NVDA risk contribution share | 30.43% | 28.22% |
+| NVDA risk contribution share | 30.43% | 28.37% |
+| Equity sell-off loss | 30.16% | 21.95% |
+| Interest rate shock loss | −0.84% (not significant, t 1.21) | 2.33% (significant, t −4.66) |
+
+The shift lowers the equity and volatility shock losses and adds a rate-shock
+loss that was not distinguishable from zero before.
 
 Run the real analysis code against the fixed requests without downloading data:
 

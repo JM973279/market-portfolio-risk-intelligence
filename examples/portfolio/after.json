@@ -4,9 +4,7 @@
     {"ticker": "MSFT", "weight": 21},
     {"ticker": "NVDA", "weight": 14},
     {"ticker": "AMZN", "weight": 14},
-    {"ticker": "TLT", "weight": 10},
-    {"ticker": "GLD", "weight": 10},
-    {"ticker": "XLV", "weight": 10}
+    {"ticker": "TLT", "weight": 30}
   ],
   "value_usd": 100000
 }
