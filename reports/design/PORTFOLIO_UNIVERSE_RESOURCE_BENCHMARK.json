@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-03",
+  "scope": "Local Linux. Existing real 28 series repeated solely for size/load; no new assets or market results added. Not Render/cgroup or market coverage validation.",
+  "peak_includes": "imports, CSV workload generation and runtime caches; not an API-server RSS measurement",
+  "samples_per_size": 1,
+  "results": [
+    {
+      "columns": 28,
+      "rows": 757,
+      "source_rows": 2215,
+      "csv_bytes": 537577,
+      "returns_frame_bytes": 175392,
+      "factor_asset_returns_bytes": 175392,
+      "cold_cache_seconds": 0.0838,
+      "warm_analysis_plus_exposure_seconds": 0.0046,
+      "process_peak_rss_kib": 121016,
+      "real_legacy_before_volatility": 23.38
+    },
+    {
+      "columns": 100,
+      "rows": 757,
+      "source_rows": 2215,
+      "csv_bytes": 1861538,
+      "returns_frame_bytes": 610848,
+      "factor_asset_returns_bytes": 610848,
+      "cold_cache_seconds": 0.2681,
+      "warm_analysis_plus_exposure_seconds": 0.0048,
+      "process_peak_rss_kib": 137928,
+      "real_legacy_before_volatility": 23.38
+    },
+    {
+      "columns": 550,
+      "rows": 757,
+      "source_rows": 2215,
+      "csv_bytes": 10117001,
+      "returns_frame_bytes": 3332448,
+      "factor_asset_returns_bytes": 3332448,
+      "cold_cache_seconds": 1.4845,
+      "warm_analysis_plus_exposure_seconds": 0.0046,
+      "process_peak_rss_kib": 157312,
+      "real_legacy_before_volatility": 23.38
+    },
+    {
+      "columns": 800,
+      "rows": 757,
+      "source_rows": 2215,
+      "csv_bytes": 14702788,
+      "returns_frame_bytes": 4844448,
+      "factor_asset_returns_bytes": 4844448,
+      "cold_cache_seconds": 2.2535,
+      "warm_analysis_plus_exposure_seconds": 0.0048,
+      "process_peak_rss_kib": 177372,
+      "real_legacy_before_volatility": 23.38
+    }
+  ]
+}
