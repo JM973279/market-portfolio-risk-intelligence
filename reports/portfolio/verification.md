@@ -1,6 +1,6 @@
 # Portfolio 계산·통합 검증
 
-기획안 8장의 Portfolio·Integrated 완료 기준은 모두 아래 테스트와 점검으로 확인했습니다. 남은 항목은 A5 과거 손실 검증(진행 중)과 발표자료입니다.
+기획안 8장의 Portfolio·Integrated 완료 기준은 모두 아래 테스트와 점검으로 확인했습니다. 남은 항목은 Stress 검증(추정 대비 실제 손실, 진행 중)과 발표자료입니다.
 
 - 기준: 2026-10-23 스냅샷, 756거래일(2023-10-19 ~ 2026-10-23), 2026-11-03 점검
 - 자동 테스트: 포트폴리오 테스트(`tests/test_portfolio_*.py`) 75개 통과. 아무것도 설치되지 않은 `python:3.12-slim`에 `requirements.txt`만 설치해 확인했습니다.
@@ -27,7 +27,7 @@ cd frontend && npm run build
 | 비중 변경 시 동일한 기준으로 위험이 재계산된다 | `test_compare_rows_match_each_side_of_the_analysis`, `test_compare_requires_the_same_portfolio_value`, `test_compare_validates_each_portfolio` |
 | 현재 Portfolio와 변경 Portfolio를 비교할 수 있다 | `test_compare_returns_both_analyses_and_plan_rows`(기획안 2.15 행), `test_moving_into_treasuries_trades_equity_loss_for_rate_loss`, `test_rate_trade_off_is_significant_only_after_moving_into_treasuries` |
 | Market → Portfolio → Stress → What-if 흐름이 연결된다 | `/portfolio` 화면 STEP 1~6을 실제 브라우저로 끝까지 실행(분석과 비교 요청 성공, 콘솔 오류 없음). 사이드바 "포트폴리오 분석" 메뉴(PR #4) |
-| 데이터 기준일·계산 가정·검증 방법·분석 한계를 확인할 수 있다 | `test_methodology_is_consistent_across_endpoints`, `test_stress_significance_follows_the_portfolio_beta`. 화면에 데이터 기준일, 추정 기간, 시장·포트폴리오 기준일 차이, 해석 한계 목록 표시(한/영). 과거 손실 검증은 A5(진행 중) |
+| 데이터 기준일·계산 가정·검증 방법·분석 한계를 확인할 수 있다 | `test_methodology_is_consistent_across_endpoints`, `test_stress_significance_follows_the_portfolio_beta`. 화면에 데이터 기준일, 추정 기간, 시장·포트폴리오 기준일 차이, 해석 한계 목록 표시(한/영). 추정 대비 실제 손실은 Stress 검증(진행 중) |
 | 전체 사용자 흐름을 시연할 수 있다 | 새 Python 환경에서 API 실행 확인. 실행 순서와 시연 대본은 [docs/PORTFOLIO_DEMO.md](../../docs/PORTFOLIO_DEMO.md) |
 
 ## 2. 다른 방법으로 다시 계산해 맞춰 본 것
@@ -58,7 +58,7 @@ Playwright로 실제 페이지를 열어 확인했습니다. 스크립트는 리
 
 ## 4. 알려진 한계
 
-- **A5 과거 손실 검증:** 진행 중이며, 끝나면 이 문서에 연결합니다.
+- **Stress 검증 (추정 대비 실제 손실):** 진행 중이며, 끝나면 이 문서에 연결합니다.
 - **화면 자동 테스트 없음:** 화면 점검은 수동 스크립트로 했고 CI에서 자동으로 돌지 않습니다.
 - **A 영역 테스트 3개 실패:** 리포에 없는 연구 데이터(`data/processed/...`)가 필요해서 실패합니다. 포트폴리오와는 관계없습니다.
 - **추정 방식의 한계:** 모든 Stress 손익은 일간 베타에 과거 10거래일 충격을 곱한 선형 추정입니다. 시나리오는 합산하지 않고, 미래 손실 예측이 아닙니다.
