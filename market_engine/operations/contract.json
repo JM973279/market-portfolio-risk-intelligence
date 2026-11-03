@@ -1,0 +1,73 @@
+{
+  "original_sources": {
+    "src/config.py": "a3fface225566f468a570a47b99d59f17e910193de6cdad26f58d428e2437c6c",
+    "src/data/cleaner.py": "5b82c4b27243adf7378713b7a13731a6bfc9453e2c959e079ffea428619b6aff",
+    "src/features/engineering.py": "1e3d70f4b4570dd749e1ded5deb79e3b4664dfdff3c40953b9c45b88b0dbb3cd",
+    "src/features/stress_index.py": "e366922e4151734df0b40c9f53561319f7af802b3683bf83c4195b4f28a99566",
+    "src/features/targets.py": "7535794008d1d5aaf8ca3fbaf0599307bf4572da929416a4b18a1f0f98b8416e",
+    "src/korea/build_korea_stress_index.py": "10245fea42d4e01e0225697f1ab56a5672ee60d5d3675a83d0bac68adddf1eaf",
+    "src/operations/providers.py": "1bf88507dfb053c0c01404e73d40c69ae8988e7f9b537119811c3c988beac7ab",
+    "src/operations/calendar.py": "102541cdfaf7d3b911571052d1d086223c73b2ddf7e3aa552d4e93f05259768b",
+    "src/operations/validation.py": "f9fb183026b56373cbaad4392d3f9d1e9f9e6afdac5495152db53ec040c537d4",
+    "src/operations/refresh.py": "2559749a47048fd85ca5701834e9b3181e832a8448ec87c5d1d073f29e14414f"
+  },
+  "local_sources": {
+    "market_engine/early_warning_v2/build_korea_features_v2.py": "d2ed0600d1683342c8bb4f63086f3d6fe8d9bde494df22306b7cad69e471ee48"
+  },
+  "markets": {
+    "korea": {
+      "model": "models/early_warning_v2/v1_reproduction/xgboost_10d_latest.joblib",
+      "model_sha256": "b8524d9dab692434e051011987bc6a86ffbd18c20a0c30ff00b4b30856318247",
+      "features": [
+        "KOSPI200_1D_Return",
+        "KOSPI200_5D_Return",
+        "KOSPI200_20D_Return",
+        "KOSPI200_20D_Vol",
+        "KOSPI200_60D_Vol",
+        "KOSPI200_Drawdown",
+        "KOSPI200_20D_Momentum",
+        "VKOSPI_Level",
+        "VKOSPI_1D_Change",
+        "VKOSPI_5D_Change",
+        "VKOSPI_20D_Momentum",
+        "VKOSPI_252D_ZScore",
+        "Credit_Level",
+        "Credit_1D_Change",
+        "Credit_5D_Change",
+        "Credit_20D_Momentum",
+        "Credit_252D_ZScore"
+      ],
+      "reference": "data/processed/early_warning_v2/korea_feature_matrix_v1_reproduction.csv",
+      "reference_sha256": "9fad15f4d0c2d78f890aa479a2b77d0f83cff637c014061de72e4c1c21b61588",
+      "training_cutoff": "2026-09-16",
+      "training_evidence": "scaler 통계와 labeled 3714행 일치; 실행 시각 미기록"
+    },
+    "us": {
+      "model": "models/saved/xgboost_latest.joblib",
+      "model_sha256": "90c51c245ebe62b58f804098a7a7045b60fb64ef83da72d4c9a049cf8d5eeb0d",
+      "features": [
+        "SPY_1D_Return",
+        "SPY_5D_Return",
+        "SPY_20D_Return",
+        "SPY_20D_Vol",
+        "SPY_60D_Vol",
+        "SPY_Drawdown",
+        "SPY_20D_Momentum",
+        "VIX_Level",
+        "VIX_1D_Change",
+        "VIX_5D_Change",
+        "VIX_20D_Momentum",
+        "VIX_252D_ZScore",
+        "Credit_Level",
+        "Credit_1D_Change",
+        "Credit_5D_Change",
+        "Credit_20D_Momentum",
+        "Credit_252D_ZScore"
+      ],
+      "reference": "data/features/feature_matrix.csv",
+      "reference_sha256": "d97ba9c56f691fe0fdecbda5491e6c4a9947ff7c9381ef00aaeb637d42585797",
+      "training_cutoff": "2026-09-16",
+      "training_evidence": "6317행 prefix scaler 근사 일치; cutoff 추정, 정확한 학습 receipt 미보존"
+    }
+  }
+}

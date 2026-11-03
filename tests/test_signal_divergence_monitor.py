@@ -1,4 +1,5 @@
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -102,7 +103,13 @@ class MonitorTests(unittest.TestCase):
 
     def test_export_real_holdout_and_preserved_evidence(self):
         with tempfile.TemporaryDirectory() as directory:
-            out = export(output=Path(directory) / 'monitor.json')
+            # export also writes a CSV under root; isolate every output, not only JSON.
+            root = Path(directory)
+            for relative in [*SOURCES.values(), 'market_engine/early_warning_v2/EXPERIMENTS.md']:
+                target = root / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / relative, target)
+            out = export(root=root, output=root / 'monitor.json')
             json.loads((Path(directory) / 'monitor.json').read_text())
         rows = {r['Date']: r for r in out['holdout']}
         self.assertEqual(rows['2026-10-12']['persistent'], 0)

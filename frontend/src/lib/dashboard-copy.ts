@@ -1,6 +1,7 @@
 import { copy } from "./monitor-copy";
 export const dashboardCopy = {
  ...copy,
+ portfolioAnalysis: ["Portfolio Analysis", "포트폴리오 분석"],
  dashboard: ["Dashboard", "대시보드"], us: ["US Market", "미국 시장"], korea: ["Korea Market", "한국 시장"], cases: ["Case Studies", "사례 분석"], sources: ["Data Sources", "데이터 정보"], methodology: ["Methodology", "연구 방법론"],
  globalTitle: ["Korea & US Market Stress Monitor", "Korea & US Market Stress Monitor"], globalSub: ["Trace market risk through different signals.", "서로 다른 신호가 만드는 글로벌 시장의 위험을 추적합니다."], globalDescription: ["Predictive risk, observed stress and market breadth — in one research workspace.", "예측 위험, 관측 스트레스, 시장 확산도 지표를 하나의 리서치 대시보드에서 확인하세요."], globalEyebrow: ["GLOBAL MARKETS / RESEARCH INTELLIGENCE", "한국 · 미국 시장 스트레스 모니터링"],
  snapshot: ["Research snapshot", "연구 스냅샷"], notLive: ["No live feed", "실시간 데이터 미반영"], sourceAsOf: ["Latest individual source", "최신 개별 원천 관측일"], oosAsOf: ["10D OOS through", "10일 OOS 종료일"], notConnected: ["Current observations unavailable", "현재 관측값 없음"], currentNote: ["No same-date V1 and MSI observation. Historical scores are not carried forward.", "동일 날짜의 V1·MSI 관측값이 없습니다. 과거 점수를 이월하지 않습니다."], openMarket: ["Explore market", "시장 자세히 보기"], risk10: ["Risk Score (10D)", "Risk Score (10D)"], currentStress: ["Observed market stress", "현재 시장 스트레스 수준"], futureRisk: ["Predictive stress risk · next 10 sessions", "향후 10거래일 스트레스 예측 위험"], unknownState: ["UNKNOWN", "미확인 · UNKNOWN"],

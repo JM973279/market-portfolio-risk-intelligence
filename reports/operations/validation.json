@@ -1,0 +1,22 @@
+{
+  "protected_files": 1525,
+  "changed_protected_files": [],
+  "offline_replay_history_identical": {
+    "korea": true,
+    "us": true
+  },
+  "pytest": {
+    "passed": 95,
+    "warnings": 1,
+    "note": "Existing Starlette httpx deprecation warning"
+  },
+  "typescript": "passed",
+  "lint": "passed",
+  "chart_checks": "passed",
+  "production_build": "passed",
+  "browser_qa": "not performed",
+  "branch": "feature/frozen-v1-operational-data",
+  "base_commit": "d2197c4",
+  "push_or_merge": false,
+  "monitor_test_isolation": "Existing export test now copies inputs to a temporary root; original CSV restored byte-for-byte before final tests."
+}

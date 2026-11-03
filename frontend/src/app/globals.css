@@ -139,3 +139,10 @@ svg.country-flag {width:44px;height:30px;flex-shrink:0;border:1px solid #e6edf6;
 .view-dashboard .chart-slider-label>span {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 .view-dashboard .market-chart .panel-note {margin-top:3px;font-size:9px}
 @media(max-width:760px) {.home-hero {min-height:190px}.view-dashboard .market-chart svg {max-height:none}.market-chart svg text {font-size:16px}.home-hero .hero-copy {padding-top:28px}}
+
+.operational-market { margin-block: 1.25rem; }
+.operational-market details { margin-top: 1rem; }
+.operational-market summary { cursor: pointer; font-weight: 600; padding-block: .65rem; }
+.operational-market caption { text-align: left; padding-block: 1rem; color: var(--muted, #667085); }
+.operational-provider { display: block; font-weight: 400; }
+.operational-hash { overflow-wrap: anywhere; }
