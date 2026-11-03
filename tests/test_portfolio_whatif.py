@@ -32,7 +32,7 @@ def test_compare_returns_both_analyses_and_plan_rows():
         "volatility_shock_loss_pct", "volatility_shock_loss_usd",
     ]
     assert body["current"]["allocation"][0]["ticker"] == "AAPL"
-    assert body["proposed"]["allocation"][-1]["ticker"] in {"TLT", "GLD", "XLV"}
+    assert "TLT" in [a["ticker"] for a in body["proposed"]["allocation"]]
 
 
 def test_compare_rows_match_each_side_of_the_analysis():
@@ -58,6 +58,15 @@ def test_moving_into_bonds_and_gold_trades_equity_loss_for_rate_loss():
     assert rows["equity_selloff_loss_pct"]["change"] < 0
     assert rows["volatility_shock_loss_pct"]["change"] < 0
     assert rows["rate_shock_loss_pct"]["change"] > 0
+
+
+def test_rate_trade_off_is_significant_only_after_moving_into_treasuries():
+    body = _compare(_demo("before"), _demo("after")).json()
+    rate = {side: next(s for s in body[side]["stress"] if s["scenario"] == "rate_shock")
+            for side in ("current", "proposed")}
+
+    assert rate["current"]["significant"] is False
+    assert rate["proposed"]["significant"] is True
 
 
 def test_compare_requires_the_same_portfolio_value():

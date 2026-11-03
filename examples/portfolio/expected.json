@@ -8,11 +8,17 @@
   "before": {
     "volatility": 23.38,
     "nvda_weight": 20.0,
-    "nvda_risk_share": 30.43
+    "nvda_risk_share": 30.43,
+    "equity_selloff_loss_pct": 30.1627,
+    "rate_shock_loss_pct": -0.844,
+    "rate_shock_significant": false
   },
   "after": {
-    "volatility": 17.22,
+    "volatility": 16.94,
     "nvda_weight": 14.0,
-    "nvda_risk_share": 28.22
+    "nvda_risk_share": 28.37,
+    "equity_selloff_loss_pct": 21.9528,
+    "rate_shock_loss_pct": 2.3312,
+    "rate_shock_significant": true
   }
 }

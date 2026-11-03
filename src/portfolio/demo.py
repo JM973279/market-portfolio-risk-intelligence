@@ -24,10 +24,15 @@ def run_demo():
             raise ValueError("변경 전후 분석의 스냅샷과 추정 기간이 다릅니다.")
         nvda = next(a for a in response.allocation if a.ticker == "NVDA")
         nvda_risk = next(a for a in response.risk_contribution if a.ticker == "NVDA")
+        stress = {s.scenario: s for s in response.stress}
         summary[name] = {
             "volatility": response.volatility,
             "nvda_weight": nvda.weight,
             "nvda_risk_share": nvda_risk.share,
+            # 시연 메시지(주식 위험 감소 ↔ 금리 위험 발생)가 유의성까지 그대로인지 함께 고정
+            "equity_selloff_loss_pct": stress["equity_selloff"].loss_pct,
+            "rate_shock_loss_pct": stress["rate_shock"].loss_pct,
+            "rate_shock_significant": stress["rate_shock"].significant,
         }
     return summary
 

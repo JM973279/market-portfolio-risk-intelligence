@@ -48,7 +48,7 @@ export const portfolioCopy = {
  limitations: ["How to read these estimates", "해석 시 한계"],
  whatifTitle: ["What-if", "What-if 비중 변경"],
  whatifIntro: ["Change the weights and compare before and after with the same risk engine.", "비중을 바꾸고 같은 위험 엔진으로 변경 전후를 비교합니다."],
- fromCurrent: ["Start from current", "현재 포트폴리오에서 시작"], exampleShift: ["Example: move 30% to TLT · GLD · XLV", "예시: 30%를 TLT·GLD·XLV로"],
+ fromCurrent: ["Start from current", "현재 포트폴리오에서 시작"], exampleShift: ["Example: move 30% to long Treasuries (TLT)", "예시: 30%를 장기국채(TLT)로"],
  compare: ["Compare", "비교"], comparing: ["Comparing…", "비교 중…"],
  metric: ["Metric", "지표"], current: ["Current", "현재"], proposed: ["Changed", "변경"], change: ["Change", "변화"],
  max_asset_weight: ["Largest asset weight", "최대 자산 비중"], max_sector_weight: ["Largest sector / class weight", "최대 섹터·자산군 비중"], volatility_row: ["Annualized volatility", "추정 변동성(연율)"], market_beta: ["Market beta", "Market 베타"],

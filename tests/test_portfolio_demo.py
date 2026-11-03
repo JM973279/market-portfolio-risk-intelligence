@@ -48,8 +48,17 @@ def test_demo_moves_thirty_percent_without_changing_portfolio_value():
     for ticker, weight in weights["before"].items():
         assert weights["after"][ticker] == pytest.approx(weight * 0.7)
     assert {t: w for t, w in weights["after"].items() if t not in weights["before"]} == {
-        "TLT": 10, "GLD": 10, "XLV": 10,
+        "TLT": 30,
     }
+
+
+def test_demo_rate_shock_becomes_a_significant_loss_after_the_shift():
+    summary = demo.run_demo()
+
+    assert summary["before"]["rate_shock_significant"] is False
+    assert summary["after"]["rate_shock_significant"] is True
+    assert summary["after"]["rate_shock_loss_pct"] > 0
+    assert summary["after"]["equity_selloff_loss_pct"] < summary["before"]["equity_selloff_loss_pct"]
 
 
 def test_demo_check_fails_if_recorded_results_drift(tmp_path, monkeypatch):
