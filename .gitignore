@@ -11,3 +11,6 @@ data/processed/
 *.log
 
 data/operations/
+
+# Candidate source material is never a deployable public artifact.
+data/portfolio_expansion/raw/

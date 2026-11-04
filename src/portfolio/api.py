@@ -87,3 +87,10 @@ def compare(request: CompareRequest):
         "proposed": proposed,
         "comparison": compare_analyses(current, proposed),
     }
+
+
+@router.get('/v2/catalog')
+def catalog():
+    """Versioned discovery/capability metadata; V1 analysis remains unchanged."""
+    from src.portfolio.catalog import get_catalog
+    return get_catalog()

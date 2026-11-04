@@ -1,0 +1,6076 @@
+{
+  "requests": {
+    "AAPL": {
+      "holdings": [
+        {
+          "ticker": "AAPL",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "MSFT": {
+      "holdings": [
+        {
+          "ticker": "MSFT",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "NVDA": {
+      "holdings": [
+        {
+          "ticker": "NVDA",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "GOOGL": {
+      "holdings": [
+        {
+          "ticker": "GOOGL",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "META": {
+      "holdings": [
+        {
+          "ticker": "META",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "AMZN": {
+      "holdings": [
+        {
+          "ticker": "AMZN",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "JPM": {
+      "holdings": [
+        {
+          "ticker": "JPM",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "BAC": {
+      "holdings": [
+        {
+          "ticker": "BAC",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "XOM": {
+      "holdings": [
+        {
+          "ticker": "XOM",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "CVX": {
+      "holdings": [
+        {
+          "ticker": "CVX",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "JNJ": {
+      "holdings": [
+        {
+          "ticker": "JNJ",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "UNH": {
+      "holdings": [
+        {
+          "ticker": "UNH",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "PG": {
+      "holdings": [
+        {
+          "ticker": "PG",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "KO": {
+      "holdings": [
+        {
+          "ticker": "KO",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "WMT": {
+      "holdings": [
+        {
+          "ticker": "WMT",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "CAT": {
+      "holdings": [
+        {
+          "ticker": "CAT",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "NEE": {
+      "holdings": [
+        {
+          "ticker": "NEE",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "SPY": {
+      "holdings": [
+        {
+          "ticker": "SPY",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "QQQ": {
+      "holdings": [
+        {
+          "ticker": "QQQ",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "IWM": {
+      "holdings": [
+        {
+          "ticker": "IWM",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "XLK": {
+      "holdings": [
+        {
+          "ticker": "XLK",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "XLF": {
+      "holdings": [
+        {
+          "ticker": "XLF",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "XLE": {
+      "holdings": [
+        {
+          "ticker": "XLE",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "XLV": {
+      "holdings": [
+        {
+          "ticker": "XLV",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "TLT": {
+      "holdings": [
+        {
+          "ticker": "TLT",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "IEF": {
+      "holdings": [
+        {
+          "ticker": "IEF",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "HYG": {
+      "holdings": [
+        {
+          "ticker": "HYG",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "GLD": {
+      "holdings": [
+        {
+          "ticker": "GLD",
+          "weight": 100
+        }
+      ],
+      "value_usd": 100000
+    },
+    "before": {
+      "holdings": [
+        {
+          "ticker": "AAPL",
+          "weight": 30
+        },
+        {
+          "ticker": "MSFT",
+          "weight": 30
+        },
+        {
+          "ticker": "NVDA",
+          "weight": 20
+        },
+        {
+          "ticker": "AMZN",
+          "weight": 20
+        }
+      ],
+      "value_usd": 100000
+    },
+    "after": {
+      "holdings": [
+        {
+          "ticker": "AAPL",
+          "weight": 21
+        },
+        {
+          "ticker": "MSFT",
+          "weight": 21
+        },
+        {
+          "ticker": "NVDA",
+          "weight": 14
+        },
+        {
+          "ticker": "AMZN",
+          "weight": 14
+        },
+        {
+          "ticker": "TLT",
+          "weight": 30
+        }
+      ],
+      "value_usd": 100000
+    }
+  },
+  "responses": {
+    "AAPL": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "AAPL",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "AAPL"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 26.77,
+      "risk_contribution": [
+        {
+          "ticker": "AAPL",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.0487109300202326,
+        "rate": -0.0001511984636965282,
+        "volatility": -0.004740558776299759,
+        "by_asset": [
+          {
+            "ticker": "AAPL",
+            "market": 1.0487109300202326,
+            "rate": -0.0001511984636965282,
+            "volatility": -0.004740558776299759,
+            "t_stat": {
+              "market": 20.44,
+              "rate": -1.3,
+              "volatility": -16.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 20.44,
+          "rate": -1.3,
+          "volatility": -16.96
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 24.4245,
+          "loss_usd": 24424.48,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 24424.48
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 1.0433,
+          "loss_usd": 1043.27,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 1043.27
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 23.3567,
+          "loss_usd": 23356.73,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 23356.73
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "MSFT": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "MSFT",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "MSFT"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 26.23,
+      "risk_contribution": [
+        {
+          "ticker": "MSFT",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.9728286468646686,
+        "rate": 0.00019818943571287223,
+        "volatility": -0.003959698738265758,
+        "by_asset": [
+          {
+            "ticker": "MSFT",
+            "market": 0.9728286468646686,
+            "rate": 0.00019818943571287223,
+            "volatility": -0.003959698738265758,
+            "t_stat": {
+              "market": 18.82,
+              "rate": 1.74,
+              "volatility": -13.76
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 18.82,
+          "rate": 1.74,
+          "volatility": -13.76
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 22.6572,
+          "loss_usd": 22657.18,
+          "by_asset": [
+            {
+              "ticker": "MSFT",
+              "loss_usd": 22657.18
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -1.3675,
+          "loss_usd": -1367.51,
+          "by_asset": [
+            {
+              "ticker": "MSFT",
+              "loss_usd": -1367.51
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 19.5094,
+          "loss_usd": 19509.44,
+          "by_asset": [
+            {
+              "ticker": "MSFT",
+              "loss_usd": 19509.44
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "NVDA": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "NVDA",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "NVDA"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 46.67,
+      "risk_contribution": [
+        {
+          "ticker": "NVDA",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 2.048984074844526,
+        "rate": 0.00030775994370955473,
+        "volatility": -0.008216995268807953,
+        "by_asset": [
+          {
+            "ticker": "NVDA",
+            "market": 2.048984074844526,
+            "rate": 0.00030775994370955473,
+            "volatility": -0.008216995268807953,
+            "t_stat": {
+              "market": 24.72,
+              "rate": 1.53,
+              "volatility": -16.82
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 24.72,
+          "rate": 1.53,
+          "volatility": -16.82
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 47.7208,
+          "loss_usd": 47720.84,
+          "by_asset": [
+            {
+              "ticker": "NVDA",
+              "loss_usd": 47720.84
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -2.1235,
+          "loss_usd": -2123.54,
+          "by_asset": [
+            {
+              "ticker": "NVDA",
+              "loss_usd": -2123.54
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 40.4851,
+          "loss_usd": 40485.14,
+          "by_asset": [
+            {
+              "ticker": "NVDA",
+              "loss_usd": 40485.14
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "GOOGL": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet Inc. Class A",
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "GOOGL",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "GOOGL"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 30.64,
+      "risk_contribution": [
+        {
+          "ticker": "GOOGL",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.1539480715000694,
+        "rate": -6.259110433335394e-05,
+        "volatility": -0.004534918231303891,
+        "by_asset": [
+          {
+            "ticker": "GOOGL",
+            "market": 1.1539480715000694,
+            "rate": -6.259110433335394e-05,
+            "volatility": -0.004534918231303891,
+            "t_stat": {
+              "market": 19.25,
+              "rate": -0.47,
+              "volatility": -13.42
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 19.25,
+          "rate": -0.47,
+          "volatility": -13.42
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 26.8755,
+          "loss_usd": 26875.45,
+          "by_asset": [
+            {
+              "ticker": "GOOGL",
+              "loss_usd": 26875.45
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.4319,
+          "loss_usd": 431.88,
+          "by_asset": [
+            {
+              "ticker": "GOOGL",
+              "loss_usd": 431.88
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 22.3435,
+          "loss_usd": 22343.54,
+          "by_asset": [
+            {
+              "ticker": "GOOGL",
+              "loss_usd": 22343.54
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "META": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "META",
+          "name": "Meta Platforms Inc.",
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "META",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Communication Services",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "META"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 38.6,
+      "risk_contribution": [
+        {
+          "ticker": "META",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.444014095846349,
+        "rate": 8.436990064699488e-05,
+        "volatility": -0.00558439692654828,
+        "by_asset": [
+          {
+            "ticker": "META",
+            "market": 1.444014095846349,
+            "rate": 8.436990064699488e-05,
+            "volatility": -0.00558439692654828,
+            "t_stat": {
+              "market": 19.05,
+              "rate": 0.5,
+              "volatility": -13.05
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 19.05,
+          "rate": 0.5,
+          "volatility": -13.05
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 33.6311,
+          "loss_usd": 33631.09,
+          "by_asset": [
+            {
+              "ticker": "META",
+              "loss_usd": 33631.09
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -0.5822,
+          "loss_usd": -582.15,
+          "by_asset": [
+            {
+              "ticker": "META",
+              "loss_usd": -582.15
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 27.5143,
+          "loss_usd": 27514.32,
+          "by_asset": [
+            {
+              "ticker": "META",
+              "loss_usd": 27514.32
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "AMZN": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Consumer Discretionary",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Consumer Discretionary",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "AMZN",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Consumer Discretionary",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "AMZN"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 32.23,
+      "risk_contribution": [
+        {
+          "ticker": "AMZN",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.394169737715151,
+        "rate": 0.0002333241707054622,
+        "volatility": -0.005886516965473506,
+        "by_asset": [
+          {
+            "ticker": "AMZN",
+            "market": 1.394169737715151,
+            "rate": 0.0002333241707054622,
+            "volatility": -0.005886516965473506,
+            "t_stat": {
+              "market": 24.07,
+              "rate": 1.67,
+              "volatility": -17.7
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 24.07,
+          "rate": 1.67,
+          "volatility": -17.7
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 32.4702,
+          "loss_usd": 32470.21,
+          "by_asset": [
+            {
+              "ticker": "AMZN",
+              "loss_usd": 32470.21
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -1.6099,
+          "loss_usd": -1609.94,
+          "by_asset": [
+            {
+              "ticker": "AMZN",
+              "loss_usd": -1609.94
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 29.0029,
+          "loss_usd": 29002.87,
+          "by_asset": [
+            {
+              "ticker": "AMZN",
+              "loss_usd": 29002.87
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "JPM": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "JPM",
+          "name": "JPMorgan Chase & Co.",
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "JPM",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "JPM"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.1,
+      "risk_contribution": [
+        {
+          "ticker": "JPM",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.8632761201501559,
+        "rate": 0.0002828649444261822,
+        "volatility": -0.004068851422058373,
+        "by_asset": [
+          {
+            "ticker": "JPM",
+            "market": 0.8632761201501559,
+            "rate": 0.0002828649444261822,
+            "volatility": -0.004068851422058373,
+            "t_stat": {
+              "market": 19.03,
+              "rate": 2.84,
+              "volatility": -16.84
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 19.03,
+          "rate": 2.84,
+          "volatility": -16.84
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 20.1057,
+          "loss_usd": 20105.7,
+          "by_asset": [
+            {
+              "ticker": "JPM",
+              "loss_usd": 20105.7
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -1.9518,
+          "loss_usd": -1951.77,
+          "by_asset": [
+            {
+              "ticker": "JPM",
+              "loss_usd": -1951.77
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 20.0472,
+          "loss_usd": 20047.23,
+          "by_asset": [
+            {
+              "ticker": "JPM",
+              "loss_usd": 20047.23
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "BAC": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "BAC",
+          "name": "Bank of America Corp.",
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "BAC",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "BAC"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 24.7,
+      "risk_contribution": [
+        {
+          "ticker": "BAC",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.9056087492451259,
+        "rate": -2.2533084178687047e-05,
+        "volatility": -0.0041323256348546125,
+        "by_asset": [
+          {
+            "ticker": "BAC",
+            "market": 0.9056087492451259,
+            "rate": -2.2533084178687047e-05,
+            "volatility": -0.0041323256348546125,
+            "t_stat": {
+              "market": 18.5,
+              "rate": -0.21,
+              "volatility": -15.71
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 18.5,
+          "rate": -0.21,
+          "volatility": -15.71
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 21.0916,
+          "loss_usd": 21091.63,
+          "by_asset": [
+            {
+              "ticker": "BAC",
+              "loss_usd": 21091.63
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.1555,
+          "loss_usd": 155.48,
+          "by_asset": [
+            {
+              "ticker": "BAC",
+              "loss_usd": 155.48
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 20.36,
+          "loss_usd": 20359.97,
+          "by_asset": [
+            {
+              "ticker": "BAC",
+              "loss_usd": 20359.97
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "XOM": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "XOM",
+          "name": "Exxon Mobil Corp.",
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "XOM",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "XOM"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.17,
+      "risk_contribution": [
+        {
+          "ticker": "XOM",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.18384427926329472,
+        "rate": 0.0004624196119446847,
+        "volatility": -0.001160644671285561,
+        "by_asset": [
+          {
+            "ticker": "XOM",
+            "market": 0.18384427926329472,
+            "rate": 0.0004624196119446847,
+            "volatility": -0.001160644671285561,
+            "t_stat": {
+              "market": 3.35,
+              "rate": 4.69,
+              "volatility": -4.13
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 3.35,
+          "rate": 4.69,
+          "volatility": -4.13
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 4.2817,
+          "loss_usd": 4281.73,
+          "by_asset": [
+            {
+              "ticker": "XOM",
+              "loss_usd": 4281.73
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -3.1907,
+          "loss_usd": -3190.7,
+          "by_asset": [
+            {
+              "ticker": "XOM",
+              "loss_usd": -3190.7
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 5.7185,
+          "loss_usd": 5718.5,
+          "by_asset": [
+            {
+              "ticker": "XOM",
+              "loss_usd": 5718.5
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "CVX": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "CVX",
+          "name": "Chevron Corp.",
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "CVX",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "CVX"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.13,
+      "risk_contribution": [
+        {
+          "ticker": "CVX",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.3230253887770951,
+        "rate": 0.0004613053990512695,
+        "volatility": -0.0017459869255136826,
+        "by_asset": [
+          {
+            "ticker": "CVX",
+            "market": 0.3230253887770951,
+            "rate": 0.0004613053990512695,
+            "volatility": -0.0017459869255136826,
+            "t_stat": {
+              "market": 5.98,
+              "rate": 4.68,
+              "volatility": -6.31
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 5.98,
+          "rate": 4.68,
+          "volatility": -6.31
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 7.5233,
+          "loss_usd": 7523.26,
+          "by_asset": [
+            {
+              "ticker": "CVX",
+              "loss_usd": 7523.26
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -3.183,
+          "loss_usd": -3183.01,
+          "by_asset": [
+            {
+              "ticker": "CVX",
+              "loss_usd": -3183.01
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 8.6025,
+          "loss_usd": 8602.48,
+          "by_asset": [
+            {
+              "ticker": "CVX",
+              "loss_usd": 8602.48
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "JNJ": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "JNJ",
+          "name": "Johnson & Johnson",
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "JNJ",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "JNJ"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 18.51,
+      "risk_contribution": [
+        {
+          "ticker": "JNJ",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": -0.011062625413797924,
+        "rate": -0.00037144819694901756,
+        "volatility": -0.00014171417787743265,
+        "by_asset": [
+          {
+            "ticker": "JNJ",
+            "market": -0.011062625413797924,
+            "rate": -0.00037144819694901756,
+            "volatility": -0.00014171417787743265,
+            "t_stat": {
+              "market": -0.25,
+              "rate": -4.8,
+              "volatility": -0.62
+            },
+            "significant": {
+              "market": false,
+              "rate": true,
+              "volatility": false
+            }
+          }
+        ],
+        "t_stat": {
+          "market": -0.25,
+          "rate": -4.8,
+          "volatility": -0.62
+        },
+        "significant": {
+          "market": false,
+          "rate": true,
+          "volatility": false
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": -0.2576,
+          "loss_usd": -257.65,
+          "by_asset": [
+            {
+              "ticker": "JNJ",
+              "loss_usd": -257.65
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.563,
+          "loss_usd": 2562.99,
+          "by_asset": [
+            {
+              "ticker": "JNJ",
+              "loss_usd": 2562.99
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 0.6982,
+          "loss_usd": 698.23,
+          "by_asset": [
+            {
+              "ticker": "JNJ",
+              "loss_usd": 698.23
+            }
+          ],
+          "significant": false
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "UNH": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "UNH",
+          "name": "UnitedHealth Group Inc.",
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "UNH",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "UNH"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 36.91,
+      "risk_contribution": [
+        {
+          "ticker": "UNH",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.25231585369447923,
+        "rate": -8.065054108758996e-05,
+        "volatility": -0.0010440355639750193,
+        "by_asset": [
+          {
+            "ticker": "UNH",
+            "market": 0.25231585369447923,
+            "rate": -8.065054108758996e-05,
+            "volatility": -0.0010440355639750193,
+            "t_stat": {
+              "market": 2.88,
+              "rate": -0.51,
+              "volatility": -2.31
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 2.88,
+          "rate": -0.51,
+          "volatility": -2.31
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 5.8764,
+          "loss_usd": 5876.44,
+          "by_asset": [
+            {
+              "ticker": "UNH",
+              "loss_usd": 5876.44
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.5565,
+          "loss_usd": 556.49,
+          "by_asset": [
+            {
+              "ticker": "UNH",
+              "loss_usd": 556.49
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 5.144,
+          "loss_usd": 5143.96,
+          "by_asset": [
+            {
+              "ticker": "UNH",
+              "loss_usd": 5143.96
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "PG": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "PG",
+          "name": "Procter & Gamble Co.",
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "PG",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "PG"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 18.28,
+      "risk_contribution": [
+        {
+          "ticker": "PG",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.08573323406615746,
+        "rate": -0.0004369990401925127,
+        "volatility": -0.0005497100587695833,
+        "by_asset": [
+          {
+            "ticker": "PG",
+            "market": 0.08573323406615746,
+            "rate": -0.0004369990401925127,
+            "volatility": -0.0005497100587695833,
+            "t_stat": {
+              "market": 1.97,
+              "rate": -5.65,
+              "volatility": -2.46
+            },
+            "significant": {
+              "market": false,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 1.97,
+          "rate": -5.65,
+          "volatility": -2.46
+        },
+        "significant": {
+          "market": false,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 1.9967,
+          "loss_usd": 1996.73,
+          "by_asset": [
+            {
+              "ticker": "PG",
+              "loss_usd": 1996.73
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 3.0153,
+          "loss_usd": 3015.29,
+          "by_asset": [
+            {
+              "ticker": "PG",
+              "loss_usd": 3015.29
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 2.7084,
+          "loss_usd": 2708.42,
+          "by_asset": [
+            {
+              "ticker": "PG",
+              "loss_usd": 2708.42
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "KO": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "KO",
+          "name": "Coca-Cola Co.",
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "KO",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "KO"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 16.49,
+      "risk_contribution": [
+        {
+          "ticker": "KO",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": -0.004638710324601925,
+        "rate": -0.00033655577534102304,
+        "volatility": -0.00021766763532009523,
+        "by_asset": [
+          {
+            "ticker": "KO",
+            "market": -0.004638710324601925,
+            "rate": -0.00033655577534102304,
+            "volatility": -0.00021766763532009523,
+            "t_stat": {
+              "market": -0.12,
+              "rate": -4.79,
+              "volatility": -1.08
+            },
+            "significant": {
+              "market": false,
+              "rate": true,
+              "volatility": false
+            }
+          }
+        ],
+        "t_stat": {
+          "market": -0.12,
+          "rate": -4.79,
+          "volatility": -1.08
+        },
+        "significant": {
+          "market": false,
+          "rate": true,
+          "volatility": false
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": -0.108,
+          "loss_usd": -108.04,
+          "by_asset": [
+            {
+              "ticker": "KO",
+              "loss_usd": -108.04
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.3222,
+          "loss_usd": 2322.23,
+          "by_asset": [
+            {
+              "ticker": "KO",
+              "loss_usd": 2322.23
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 1.0724,
+          "loss_usd": 1072.45,
+          "by_asset": [
+            {
+              "ticker": "KO",
+              "loss_usd": 1072.45
+            }
+          ],
+          "significant": false
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "WMT": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "WMT",
+          "name": "Walmart Inc.",
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "WMT",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Consumer Staples",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "WMT"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.32,
+      "risk_contribution": [
+        {
+          "ticker": "WMT",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.3813383854868025,
+        "rate": -9.068229724032457e-05,
+        "volatility": -0.0017330139357733052,
+        "by_asset": [
+          {
+            "ticker": "WMT",
+            "market": 0.3813383854868025,
+            "rate": -9.068229724032457e-05,
+            "volatility": -0.0017330139357733052,
+            "t_stat": {
+              "market": 7.07,
+              "rate": -0.9,
+              "volatility": -6.21
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 7.07,
+          "rate": -0.9,
+          "volatility": -6.21
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 8.8814,
+          "loss_usd": 8881.37,
+          "by_asset": [
+            {
+              "ticker": "WMT",
+              "loss_usd": 8881.37
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.6257,
+          "loss_usd": 625.71,
+          "by_asset": [
+            {
+              "ticker": "WMT",
+              "loss_usd": 625.71
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 8.5386,
+          "loss_usd": 8538.56,
+          "by_asset": [
+            {
+              "ticker": "WMT",
+              "loss_usd": 8538.56
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "CAT": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "CAT",
+          "name": "Caterpillar Inc.",
+          "sector": "Industrials",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Industrials",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "CAT",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Industrials",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "CAT"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 32.75,
+      "risk_contribution": [
+        {
+          "ticker": "CAT",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.2988180278008619,
+        "rate": -4.32360363324522e-05,
+        "volatility": -0.005280619064418569,
+        "by_asset": [
+          {
+            "ticker": "CAT",
+            "market": 1.2988180278008619,
+            "rate": -4.32360363324522e-05,
+            "volatility": -0.005280619064418569,
+            "t_stat": {
+              "market": 20.84,
+              "rate": -0.31,
+              "volatility": -14.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 20.84,
+          "rate": -0.31,
+          "volatility": -14.96
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 30.2495,
+          "loss_usd": 30249.47,
+          "by_asset": [
+            {
+              "ticker": "CAT",
+              "loss_usd": 30249.47
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.2983,
+          "loss_usd": 298.33,
+          "by_asset": [
+            {
+              "ticker": "CAT",
+              "loss_usd": 298.33
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 26.0176,
+          "loss_usd": 26017.61,
+          "by_asset": [
+            {
+              "ticker": "CAT",
+              "loss_usd": 26017.61
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "NEE": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "NEE",
+          "name": "NextEra Energy Inc.",
+          "sector": "Utilities",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Utilities",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "NEE",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Utilities",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "NEE"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 25.76,
+      "risk_contribution": [
+        {
+          "ticker": "NEE",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.30987845800656033,
+        "rate": -0.0008464995006063908,
+        "volatility": -0.0016516240399212572,
+        "by_asset": [
+          {
+            "ticker": "NEE",
+            "market": 0.30987845800656033,
+            "rate": -0.0008464995006063908,
+            "volatility": -0.0016516240399212572,
+            "t_stat": {
+              "market": 5.12,
+              "rate": -7.9,
+              "volatility": -5.32
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 5.12,
+          "rate": -7.9,
+          "volatility": -5.32
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 7.2171,
+          "loss_usd": 7217.07,
+          "by_asset": [
+            {
+              "ticker": "NEE",
+              "loss_usd": 7217.07
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 5.8408,
+          "loss_usd": 5840.85,
+          "by_asset": [
+            {
+              "ticker": "NEE",
+              "loss_usd": 5840.85
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 8.1376,
+          "loss_usd": 8137.55,
+          "by_asset": [
+            {
+              "ticker": "NEE",
+              "loss_usd": 8137.55
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "SPY": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "SPY",
+          "name": "SPDR S&P 500 ETF Trust",
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "SPY",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "SPY"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 15.24,
+      "risk_contribution": [
+        {
+          "ticker": "SPY",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.0,
+        "rate": -0.00011556126445671883,
+        "volatility": -0.004248585663585189,
+        "by_asset": [
+          {
+            "ticker": "SPY",
+            "market": 1.0,
+            "rate": -0.00011556126445671883,
+            "volatility": -0.004248585663585189,
+            "t_stat": {
+              "market": null,
+              "rate": -1.75,
+              "volatility": -40.43
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": null,
+          "rate": -1.75,
+          "volatility": -40.43
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 23.29,
+          "loss_usd": 23290.0,
+          "by_asset": [
+            {
+              "ticker": "SPY",
+              "loss_usd": 23290.0
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.7974,
+          "loss_usd": 797.37,
+          "by_asset": [
+            {
+              "ticker": "SPY",
+              "loss_usd": 797.37
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 20.9328,
+          "loss_usd": 20932.78,
+          "by_asset": [
+            {
+              "ticker": "SPY",
+              "loss_usd": 20932.78
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "QQQ": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "QQQ",
+          "name": "Invesco QQQ Trust",
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "QQQ",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "QQQ"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 20.52,
+      "risk_contribution": [
+        {
+          "ticker": "QQQ",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.2728576731542118,
+        "rate": -6.94039909336456e-05,
+        "volatility": -0.005232789405533938,
+        "by_asset": [
+          {
+            "ticker": "QQQ",
+            "market": 1.2728576731542118,
+            "rate": -6.94039909336456e-05,
+            "volatility": -0.005232789405533938,
+            "t_stat": {
+              "market": 79.75,
+              "rate": -0.78,
+              "volatility": -31.8
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 79.75,
+          "rate": -0.78,
+          "volatility": -31.8
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 29.6449,
+          "loss_usd": 29644.86,
+          "by_asset": [
+            {
+              "ticker": "QQQ",
+              "loss_usd": 29644.86
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.4789,
+          "loss_usd": 478.89,
+          "by_asset": [
+            {
+              "ticker": "QQQ",
+              "loss_usd": 478.89
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 25.782,
+          "loss_usd": 25781.95,
+          "by_asset": [
+            {
+              "ticker": "QQQ",
+              "loss_usd": 25781.95
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "IWM": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "IWM",
+          "name": "iShares Russell 2000 ETF",
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "IWM",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Broad Equity",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "IWM"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 21.02,
+      "risk_contribution": [
+        {
+          "ticker": "IWM",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.111534916077787,
+        "rate": -0.0004180887401957454,
+        "volatility": -0.004774446913706679,
+        "by_asset": [
+          {
+            "ticker": "IWM",
+            "market": 1.111534916077787,
+            "rate": -0.0004180887401957454,
+            "volatility": -0.004774446913706679,
+            "t_stat": {
+              "market": 37.37,
+              "rate": -4.67,
+              "volatility": -25.05
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 37.37,
+          "rate": -4.67,
+          "volatility": -25.05
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 25.8876,
+          "loss_usd": 25887.65,
+          "by_asset": [
+            {
+              "ticker": "IWM",
+              "loss_usd": 25887.65
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.8848,
+          "loss_usd": 2884.81,
+          "by_asset": [
+            {
+              "ticker": "IWM",
+              "loss_usd": 2884.81
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 23.5237,
+          "loss_usd": 23523.7,
+          "by_asset": [
+            {
+              "ticker": "IWM",
+              "loss_usd": 23523.7
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "XLK": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "XLK",
+          "name": "Technology Select Sector SPDR Fund",
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "XLK",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "XLK"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 25.26,
+      "risk_contribution": [
+        {
+          "ticker": "XLK",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.4734726356946128,
+        "rate": -6.448249287746086e-06,
+        "volatility": -0.006029626387758325,
+        "by_asset": [
+          {
+            "ticker": "XLK",
+            "market": 1.4734726356946128,
+            "rate": -6.448249287746086e-06,
+            "volatility": -0.006029626387758325,
+            "t_stat": {
+              "market": 53.33,
+              "rate": -0.06,
+              "volatility": -27.56
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 53.33,
+          "rate": -0.06,
+          "volatility": -27.56
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 34.3172,
+          "loss_usd": 34317.18,
+          "by_asset": [
+            {
+              "ticker": "XLK",
+              "loss_usd": 34317.18
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.0445,
+          "loss_usd": 44.49,
+          "by_asset": [
+            {
+              "ticker": "XLK",
+              "loss_usd": 44.49
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 29.708,
+          "loss_usd": 29707.97,
+          "by_asset": [
+            {
+              "ticker": "XLK",
+              "loss_usd": 29707.97
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "XLF": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "XLF",
+          "name": "Financial Select Sector SPDR Fund",
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "XLF",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Financials",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "XLF"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 16.13,
+      "risk_contribution": [
+        {
+          "ticker": "XLF",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.7585917414815782,
+        "rate": -6.546356319108293e-05,
+        "volatility": -0.0035627847039633232,
+        "by_asset": [
+          {
+            "ticker": "XLF",
+            "market": 0.7585917414815782,
+            "rate": -6.546356319108293e-05,
+            "volatility": -0.0035627847039633232,
+            "t_stat": {
+              "market": 28.24,
+              "rate": -0.94,
+              "volatility": -23.84
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 28.24,
+          "rate": -0.94,
+          "volatility": -23.84
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 17.6676,
+          "loss_usd": 17667.6,
+          "by_asset": [
+            {
+              "ticker": "XLF",
+              "loss_usd": 17667.6
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 0.4517,
+          "loss_usd": 451.7,
+          "by_asset": [
+            {
+              "ticker": "XLF",
+              "loss_usd": 451.7
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 17.5538,
+          "loss_usd": 17553.84,
+          "by_asset": [
+            {
+              "ticker": "XLF",
+              "loss_usd": 17553.84
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "XLE": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "XLE",
+          "name": "Energy Select Sector SPDR Fund",
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "XLE",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Energy",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "XLE"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 21.78,
+      "risk_contribution": [
+        {
+          "ticker": "XLE",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.4491905667483917,
+        "rate": 0.0004655080604026633,
+        "volatility": -0.002389342864026511,
+        "by_asset": [
+          {
+            "ticker": "XLE",
+            "market": 0.4491905667483917,
+            "rate": 0.0004655080604026633,
+            "volatility": -0.002389342864026511,
+            "t_stat": {
+              "market": 9.09,
+              "rate": 5.04,
+              "volatility": -9.45
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 9.09,
+          "rate": 5.04,
+          "volatility": -9.45
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 10.4616,
+          "loss_usd": 10461.65,
+          "by_asset": [
+            {
+              "ticker": "XLE",
+              "loss_usd": 10461.65
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -3.212,
+          "loss_usd": -3212.01,
+          "by_asset": [
+            {
+              "ticker": "XLE",
+              "loss_usd": -3212.01
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 11.7723,
+          "loss_usd": 11772.29,
+          "by_asset": [
+            {
+              "ticker": "XLE",
+              "loss_usd": 11772.29
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "XLV": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "XLV",
+          "name": "Health Care Select Sector SPDR Fund",
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "XLV",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Health Care",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "XLV"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 15.0,
+      "risk_contribution": [
+        {
+          "ticker": "XLV",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.4337590496318042,
+        "rate": -0.000334751495034172,
+        "volatility": -0.002081224334358326,
+        "by_asset": [
+          {
+            "ticker": "XLV",
+            "market": 0.4337590496318042,
+            "rate": -0.000334751495034172,
+            "volatility": -0.002081224334358326,
+            "t_stat": {
+              "market": 13.48,
+              "rate": -5.28,
+              "volatility": -12.41
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 13.48,
+          "rate": -5.28,
+          "volatility": -12.41
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 10.1022,
+          "loss_usd": 10102.25,
+          "by_asset": [
+            {
+              "ticker": "XLV",
+              "loss_usd": 10102.25
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.3098,
+          "loss_usd": 2309.79,
+          "by_asset": [
+            {
+              "ticker": "XLV",
+              "loss_usd": 2309.79
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 10.2542,
+          "loss_usd": 10254.19,
+          "by_asset": [
+            {
+              "ticker": "XLV",
+              "loss_usd": 10254.19
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "TLT": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "TLT",
+          "name": "iShares 20+ Year Treasury Bond ETF",
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "TLT",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "TLT"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 12.99,
+      "risk_contribution": [
+        {
+          "ticker": "TLT",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.12007116870286054,
+        "rate": -0.0014115673469820204,
+        "volatility": -0.00023878566372911766,
+        "by_asset": [
+          {
+            "ticker": "TLT",
+            "market": 0.12007116870286054,
+            "rate": -0.0014115673469820204,
+            "volatility": -0.00023878566372911766,
+            "t_stat": {
+              "market": 3.91,
+              "rate": -64.31,
+              "volatility": -1.5
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": false
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 3.91,
+          "rate": -64.31,
+          "volatility": -1.5
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": false
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 2.7965,
+          "loss_usd": 2796.46,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 2796.46
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 9.7398,
+          "loss_usd": 9739.81,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 9739.81
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 1.1765,
+          "loss_usd": 1176.5,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 1176.5
+            }
+          ],
+          "significant": false
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "IEF": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "IEF",
+          "name": "iShares 7-10 Year Treasury Bond ETF",
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "IEF",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Treasury",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "IEF"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 6.21,
+      "risk_contribution": [
+        {
+          "ticker": "IEF",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.03359746933198938,
+        "rate": -0.0007172643977262061,
+        "volatility": -3.230811809925469e-05,
+        "by_asset": [
+          {
+            "ticker": "IEF",
+            "market": 0.03359746933198938,
+            "rate": -0.0007172643977262061,
+            "volatility": -3.230811809925469e-05,
+            "t_stat": {
+              "market": 2.27,
+              "rate": -127.36,
+              "volatility": -0.42
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": false
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 2.27,
+          "rate": -127.36,
+          "volatility": -0.42
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": false
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 0.7825,
+          "loss_usd": 782.49,
+          "by_asset": [
+            {
+              "ticker": "IEF",
+              "loss_usd": 782.49
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 4.9491,
+          "loss_usd": 4949.12,
+          "by_asset": [
+            {
+              "ticker": "IEF",
+              "loss_usd": 4949.12
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 0.1592,
+          "loss_usd": 159.18,
+          "by_asset": [
+            {
+              "ticker": "IEF",
+              "loss_usd": 159.18
+            }
+          ],
+          "significant": false
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "HYG": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "HYG",
+          "name": "iShares iBoxx $ High Yield Corporate Bond ETF",
+          "sector": "Credit",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Credit",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "HYG",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Credit",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "HYG"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 4.93,
+      "risk_contribution": [
+        {
+          "ticker": "HYG",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.24352497786734936,
+        "rate": -0.0002777195582912976,
+        "volatility": -0.0010832802961262592,
+        "by_asset": [
+          {
+            "ticker": "HYG",
+            "market": 0.24352497786734936,
+            "rate": -0.0002777195582912976,
+            "volatility": -0.0010832802961262592,
+            "t_stat": {
+              "market": 31.34,
+              "rate": -14.8,
+              "volatility": -23.58
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 31.34,
+          "rate": -14.8,
+          "volatility": -23.58
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 5.6717,
+          "loss_usd": 5671.7,
+          "by_asset": [
+            {
+              "ticker": "HYG",
+              "loss_usd": 5671.7
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 1.9163,
+          "loss_usd": 1916.26,
+          "by_asset": [
+            {
+              "ticker": "HYG",
+              "loss_usd": 1916.26
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 5.3373,
+          "loss_usd": 5337.32,
+          "by_asset": [
+            {
+              "ticker": "HYG",
+              "loss_usd": 5337.32
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "GLD": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "GLD",
+          "name": "SPDR Gold Shares",
+          "sector": "Commodity",
+          "weight": 100.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Commodity",
+          "weight": 100.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "GLD",
+          "weight": 100.0
+        },
+        "max_sector": {
+          "sector": "Commodity",
+          "weight": 100.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "GLD"
+        ],
+        "matrix": [
+          [
+            1.0
+          ]
+        ]
+      },
+      "volatility": 21.54,
+      "risk_contribution": [
+        {
+          "ticker": "GLD",
+          "share": 100.0
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.26459626024898514,
+        "rate": -0.0004736836005595701,
+        "volatility": -0.0010160525804270334,
+        "by_asset": [
+          {
+            "ticker": "GLD",
+            "market": 0.26459626024898514,
+            "rate": -0.0004736836005595701,
+            "volatility": -0.0010160525804270334,
+            "t_stat": {
+              "market": 5.23,
+              "rate": -5.18,
+              "volatility": -3.88
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 5.23,
+          "rate": -5.18,
+          "volatility": -3.88
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 6.1624,
+          "loss_usd": 6162.45,
+          "by_asset": [
+            {
+              "ticker": "GLD",
+              "loss_usd": 6162.45
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 3.2684,
+          "loss_usd": 3268.42,
+          "by_asset": [
+            {
+              "ticker": "GLD",
+              "loss_usd": 3268.42
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 5.0061,
+          "loss_usd": 5006.09,
+          "by_asset": [
+            {
+              "ticker": "GLD",
+              "loss_usd": 5006.09
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "before": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Information Technology",
+          "weight": 30.0
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Information Technology",
+          "weight": 30.0
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Consumer Discretionary",
+          "weight": 20.0
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Information Technology",
+          "weight": 20.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 80.0
+        },
+        {
+          "sector": "Consumer Discretionary",
+          "weight": 20.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "AAPL",
+          "weight": 30.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 80.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "AAPL",
+          "MSFT",
+          "AMZN",
+          "NVDA"
+        ],
+        "matrix": [
+          [
+            1.0,
+            0.34,
+            0.357,
+            0.295
+          ],
+          [
+            0.34,
+            1.0,
+            0.525,
+            0.42
+          ],
+          [
+            0.357,
+            0.525,
+            1.0,
+            0.437
+          ],
+          [
+            0.295,
+            0.42,
+            0.437,
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.38,
+      "risk_contribution": [
+        {
+          "ticker": "AAPL",
+          "share": 23.15
+        },
+        {
+          "ticker": "MSFT",
+          "share": 25.76
+        },
+        {
+          "ticker": "AMZN",
+          "share": 20.66
+        },
+        {
+          "ticker": "NVDA",
+          "share": 30.43
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.2950926355774057,
+        "rate": 0.0001223141144879066,
+        "volatility": -0.005430779701225947,
+        "by_asset": [
+          {
+            "ticker": "AAPL",
+            "market": 1.0487109300202326,
+            "rate": -0.0001511984636965282,
+            "volatility": -0.004740558776299759,
+            "t_stat": {
+              "market": 20.44,
+              "rate": -1.3,
+              "volatility": -16.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "market": 0.9728286468646686,
+            "rate": 0.00019818943571287223,
+            "volatility": -0.003959698738265758,
+            "t_stat": {
+              "market": 18.82,
+              "rate": 1.74,
+              "volatility": -13.76
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "AMZN",
+            "market": 1.394169737715151,
+            "rate": 0.0002333241707054622,
+            "volatility": -0.005886516965473506,
+            "t_stat": {
+              "market": 24.07,
+              "rate": 1.67,
+              "volatility": -17.7
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "market": 2.048984074844526,
+            "rate": 0.00030775994370955473,
+            "volatility": -0.008216995268807953,
+            "t_stat": {
+              "market": 24.72,
+              "rate": 1.53,
+              "volatility": -16.82
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 43.23,
+          "rate": 1.21,
+          "volatility": -26.12
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 30.1627,
+          "loss_usd": 30162.7,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 7327.34
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 6797.15
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 6494.04
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 9544.17
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -0.844,
+          "loss_usd": -843.97,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 312.98
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": -410.25
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": -321.99
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": -424.71
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 26.7575,
+          "loss_usd": 26757.45,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 7007.02
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 5852.83
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 5800.57
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 8097.03
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "after": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "TLT",
+          "name": "iShares 20+ Year Treasury Bond ETF",
+          "sector": "Treasury",
+          "weight": 30.0
+        },
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Information Technology",
+          "weight": 21.0
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Information Technology",
+          "weight": 21.0
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Consumer Discretionary",
+          "weight": 14.0
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Information Technology",
+          "weight": 14.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 56.0
+        },
+        {
+          "sector": "Treasury",
+          "weight": 30.0
+        },
+        {
+          "sector": "Consumer Discretionary",
+          "weight": 14.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "TLT",
+          "weight": 30.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 56.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "TLT",
+          "AAPL",
+          "MSFT",
+          "AMZN",
+          "NVDA"
+        ],
+        "matrix": [
+          [
+            1.0,
+            0.116,
+            -0.015,
+            -0.008,
+            -0.006
+          ],
+          [
+            0.116,
+            1.0,
+            0.34,
+            0.357,
+            0.295
+          ],
+          [
+            -0.015,
+            0.34,
+            1.0,
+            0.525,
+            0.42
+          ],
+          [
+            -0.008,
+            0.357,
+            0.525,
+            1.0,
+            0.437
+          ],
+          [
+            -0.006,
+            0.295,
+            0.42,
+            0.437,
+            1.0
+          ]
+        ]
+      },
+      "volatility": 16.94,
+      "risk_contribution": [
+        {
+          "ticker": "TLT",
+          "share": 5.96
+        },
+        {
+          "ticker": "AAPL",
+          "share": 22.5
+        },
+        {
+          "ticker": "MSFT",
+          "share": 23.93
+        },
+        {
+          "ticker": "AMZN",
+          "share": 19.24
+        },
+        {
+          "ticker": "NVDA",
+          "share": 28.37
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.9425861955150422,
+        "rate": -0.0003378503239530715,
+        "volatility": -0.0038731814899768983,
+        "by_asset": [
+          {
+            "ticker": "TLT",
+            "market": 0.12007116870286054,
+            "rate": -0.0014115673469820204,
+            "volatility": -0.00023878566372911766,
+            "t_stat": {
+              "market": 3.91,
+              "rate": -64.31,
+              "volatility": -1.5
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": false
+            }
+          },
+          {
+            "ticker": "AAPL",
+            "market": 1.0487109300202326,
+            "rate": -0.0001511984636965282,
+            "volatility": -0.004740558776299759,
+            "t_stat": {
+              "market": 20.44,
+              "rate": -1.3,
+              "volatility": -16.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "market": 0.9728286468646686,
+            "rate": 0.00019818943571287223,
+            "volatility": -0.003959698738265758,
+            "t_stat": {
+              "market": 18.82,
+              "rate": 1.74,
+              "volatility": -13.76
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "AMZN",
+            "market": 1.394169737715151,
+            "rate": 0.0002333241707054622,
+            "volatility": -0.005886516965473506,
+            "t_stat": {
+              "market": 24.07,
+              "rate": 1.67,
+              "volatility": -17.7
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "market": 2.048984074844526,
+            "rate": 0.00030775994370955473,
+            "volatility": -0.008216995268807953,
+            "t_stat": {
+              "market": 24.72,
+              "rate": 1.53,
+              "volatility": -16.82
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 43.94,
+          "rate": -4.66,
+          "volatility": -25.36
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 21.9528,
+          "loss_usd": 21952.84,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 838.94
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 5129.14
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 4758.01
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 4545.83
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 6680.92
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.3312,
+          "loss_usd": 2331.16,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 2921.94
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 219.09
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": -287.18
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": -225.39
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": -297.3
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 19.0832,
+          "loss_usd": 19083.16,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 352.95
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 4904.91
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 4096.98
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 4060.4
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 5667.92
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "current": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Information Technology",
+          "weight": 30.0
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Information Technology",
+          "weight": 30.0
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Consumer Discretionary",
+          "weight": 20.0
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Information Technology",
+          "weight": 20.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 80.0
+        },
+        {
+          "sector": "Consumer Discretionary",
+          "weight": 20.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "AAPL",
+          "weight": 30.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 80.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "AAPL",
+          "MSFT",
+          "AMZN",
+          "NVDA"
+        ],
+        "matrix": [
+          [
+            1.0,
+            0.34,
+            0.357,
+            0.295
+          ],
+          [
+            0.34,
+            1.0,
+            0.525,
+            0.42
+          ],
+          [
+            0.357,
+            0.525,
+            1.0,
+            0.437
+          ],
+          [
+            0.295,
+            0.42,
+            0.437,
+            1.0
+          ]
+        ]
+      },
+      "volatility": 23.38,
+      "risk_contribution": [
+        {
+          "ticker": "AAPL",
+          "share": 23.15
+        },
+        {
+          "ticker": "MSFT",
+          "share": 25.76
+        },
+        {
+          "ticker": "AMZN",
+          "share": 20.66
+        },
+        {
+          "ticker": "NVDA",
+          "share": 30.43
+        }
+      ],
+      "factor_exposure": {
+        "market": 1.2950926355774057,
+        "rate": 0.0001223141144879066,
+        "volatility": -0.005430779701225947,
+        "by_asset": [
+          {
+            "ticker": "AAPL",
+            "market": 1.0487109300202326,
+            "rate": -0.0001511984636965282,
+            "volatility": -0.004740558776299759,
+            "t_stat": {
+              "market": 20.44,
+              "rate": -1.3,
+              "volatility": -16.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "market": 0.9728286468646686,
+            "rate": 0.00019818943571287223,
+            "volatility": -0.003959698738265758,
+            "t_stat": {
+              "market": 18.82,
+              "rate": 1.74,
+              "volatility": -13.76
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "AMZN",
+            "market": 1.394169737715151,
+            "rate": 0.0002333241707054622,
+            "volatility": -0.005886516965473506,
+            "t_stat": {
+              "market": 24.07,
+              "rate": 1.67,
+              "volatility": -17.7
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "market": 2.048984074844526,
+            "rate": 0.00030775994370955473,
+            "volatility": -0.008216995268807953,
+            "t_stat": {
+              "market": 24.72,
+              "rate": 1.53,
+              "volatility": -16.82
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 43.23,
+          "rate": 1.21,
+          "volatility": -26.12
+        },
+        "significant": {
+          "market": true,
+          "rate": false,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 30.1627,
+          "loss_usd": 30162.7,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 7327.34
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 6797.15
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 6494.04
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 9544.17
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": -0.844,
+          "loss_usd": -843.97,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 312.98
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": -410.25
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": -321.99
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": -424.71
+            }
+          ],
+          "significant": false
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 26.7575,
+          "loss_usd": 26757.45,
+          "by_asset": [
+            {
+              "ticker": "AAPL",
+              "loss_usd": 7007.02
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 5852.83
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 5800.57
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 8097.03
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "proposed": {
+      "as_of": "2026-10-23",
+      "window": {
+        "start": "2023-10-19",
+        "end": "2026-10-23",
+        "days": 756
+      },
+      "value_usd": 100000.0,
+      "allocation": [
+        {
+          "ticker": "TLT",
+          "name": "iShares 20+ Year Treasury Bond ETF",
+          "sector": "Treasury",
+          "weight": 30.0
+        },
+        {
+          "ticker": "AAPL",
+          "name": "Apple Inc.",
+          "sector": "Information Technology",
+          "weight": 21.0
+        },
+        {
+          "ticker": "MSFT",
+          "name": "Microsoft Corp.",
+          "sector": "Information Technology",
+          "weight": 21.0
+        },
+        {
+          "ticker": "AMZN",
+          "name": "Amazon.com Inc.",
+          "sector": "Consumer Discretionary",
+          "weight": 14.0
+        },
+        {
+          "ticker": "NVDA",
+          "name": "NVIDIA Corp.",
+          "sector": "Information Technology",
+          "weight": 14.0
+        }
+      ],
+      "sector": [
+        {
+          "sector": "Information Technology",
+          "weight": 56.0
+        },
+        {
+          "sector": "Treasury",
+          "weight": 30.0
+        },
+        {
+          "sector": "Consumer Discretionary",
+          "weight": 14.0
+        }
+      ],
+      "concentration": {
+        "max_asset": {
+          "ticker": "TLT",
+          "weight": 30.0
+        },
+        "max_sector": {
+          "sector": "Information Technology",
+          "weight": 56.0
+        }
+      },
+      "correlation": {
+        "tickers": [
+          "TLT",
+          "AAPL",
+          "MSFT",
+          "AMZN",
+          "NVDA"
+        ],
+        "matrix": [
+          [
+            1.0,
+            0.116,
+            -0.015,
+            -0.008,
+            -0.006
+          ],
+          [
+            0.116,
+            1.0,
+            0.34,
+            0.357,
+            0.295
+          ],
+          [
+            -0.015,
+            0.34,
+            1.0,
+            0.525,
+            0.42
+          ],
+          [
+            -0.008,
+            0.357,
+            0.525,
+            1.0,
+            0.437
+          ],
+          [
+            -0.006,
+            0.295,
+            0.42,
+            0.437,
+            1.0
+          ]
+        ]
+      },
+      "volatility": 16.94,
+      "risk_contribution": [
+        {
+          "ticker": "TLT",
+          "share": 5.96
+        },
+        {
+          "ticker": "AAPL",
+          "share": 22.5
+        },
+        {
+          "ticker": "MSFT",
+          "share": 23.93
+        },
+        {
+          "ticker": "AMZN",
+          "share": 19.24
+        },
+        {
+          "ticker": "NVDA",
+          "share": 28.37
+        }
+      ],
+      "factor_exposure": {
+        "market": 0.9425861955150422,
+        "rate": -0.0003378503239530715,
+        "volatility": -0.0038731814899768983,
+        "by_asset": [
+          {
+            "ticker": "TLT",
+            "market": 0.12007116870286054,
+            "rate": -0.0014115673469820204,
+            "volatility": -0.00023878566372911766,
+            "t_stat": {
+              "market": 3.91,
+              "rate": -64.31,
+              "volatility": -1.5
+            },
+            "significant": {
+              "market": true,
+              "rate": true,
+              "volatility": false
+            }
+          },
+          {
+            "ticker": "AAPL",
+            "market": 1.0487109300202326,
+            "rate": -0.0001511984636965282,
+            "volatility": -0.004740558776299759,
+            "t_stat": {
+              "market": 20.44,
+              "rate": -1.3,
+              "volatility": -16.96
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "MSFT",
+            "market": 0.9728286468646686,
+            "rate": 0.00019818943571287223,
+            "volatility": -0.003959698738265758,
+            "t_stat": {
+              "market": 18.82,
+              "rate": 1.74,
+              "volatility": -13.76
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "AMZN",
+            "market": 1.394169737715151,
+            "rate": 0.0002333241707054622,
+            "volatility": -0.005886516965473506,
+            "t_stat": {
+              "market": 24.07,
+              "rate": 1.67,
+              "volatility": -17.7
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          },
+          {
+            "ticker": "NVDA",
+            "market": 2.048984074844526,
+            "rate": 0.00030775994370955473,
+            "volatility": -0.008216995268807953,
+            "t_stat": {
+              "market": 24.72,
+              "rate": 1.53,
+              "volatility": -16.82
+            },
+            "significant": {
+              "market": true,
+              "rate": false,
+              "volatility": true
+            }
+          }
+        ],
+        "t_stat": {
+          "market": 43.94,
+          "rate": -4.66,
+          "volatility": -25.36
+        },
+        "significant": {
+          "market": true,
+          "rate": true,
+          "volatility": true
+        }
+      },
+      "stress": [
+        {
+          "scenario": "equity_selloff",
+          "name": "Equity Sell-off",
+          "factor": "market",
+          "shock": -0.2329,
+          "unit": "return",
+          "loss_pct": 21.9528,
+          "loss_usd": 21952.84,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 838.94
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 5129.14
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 4758.01
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 4545.83
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 6680.92
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "rate_shock",
+          "name": "Interest Rate Shock",
+          "factor": "rate",
+          "shock": 69.0,
+          "unit": "bp",
+          "loss_pct": 2.3312,
+          "loss_usd": 2331.16,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 2921.94
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 219.09
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": -287.18
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": -225.39
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": -297.3
+            }
+          ],
+          "significant": true
+        },
+        {
+          "scenario": "volatility_shock",
+          "name": "Volatility Shock",
+          "factor": "volatility",
+          "shock": 49.27,
+          "unit": "pt",
+          "loss_pct": 19.0832,
+          "loss_usd": 19083.16,
+          "by_asset": [
+            {
+              "ticker": "TLT",
+              "loss_usd": 352.95
+            },
+            {
+              "ticker": "AAPL",
+              "loss_usd": 4904.91
+            },
+            {
+              "ticker": "MSFT",
+              "loss_usd": 4096.98
+            },
+            {
+              "ticker": "AMZN",
+              "loss_usd": 4060.4
+            },
+            {
+              "ticker": "NVDA",
+              "loss_usd": 5667.92
+            }
+          ],
+          "significant": true
+        }
+      ],
+      "methodology": {
+        "regression": "separate_univariate",
+        "beta_frequency": "daily",
+        "significance_t": 2,
+        "shock_horizon_days": 10,
+        "approximation": "linear_beta_times_shock",
+        "scenarios_additive": false,
+        "is_forecast": false,
+        "limitations": [
+          "각 베타는 팩터를 하나씩 따로 회귀한 민감도이며, 다른 팩터의 영향을 통제한 순수 효과가 아닙니다.",
+          "팩터 간 상관으로 같은 시장 움직임이 중복 반영될 수 있으므로 시나리오별 손실은 합산하지 않습니다.",
+          "일별 베타에 10거래일 충격을 곱한 선형 근사이며, 미래 손실이나 발생 확률의 예측이 아닙니다."
+        ]
+      },
+      "sector_methodology": {
+        "classification": "asset_level",
+        "etf_lookthrough": false,
+        "label": "자산 분류 기준 비중 (ETF 내부 보유종목 미반영)",
+        "limitations": [
+          "ETF는 하나의 자산으로 집계하며, 내부 보유종목과 직접 보유종목의 중복 노출은 계산하지 않습니다.",
+          "Broad Equity·Treasury·Credit·Commodity 등은 자산 분류이며 실제 업종별 익스포저와 다릅니다."
+        ]
+      }
+    },
+    "comparison": [
+      {
+        "metric": "max_asset_weight",
+        "label": "최대 자산 비중",
+        "unit": "%",
+        "current": 30.0,
+        "proposed": 30.0,
+        "change": 0.0,
+        "current_detail": "AAPL",
+        "proposed_detail": "TLT"
+      },
+      {
+        "metric": "max_sector_weight",
+        "label": "최대 섹터 비중",
+        "unit": "%",
+        "current": 80.0,
+        "proposed": 56.0,
+        "change": -24.0,
+        "current_detail": "Information Technology",
+        "proposed_detail": "Information Technology"
+      },
+      {
+        "metric": "volatility",
+        "label": "추정 변동성(연율)",
+        "unit": "%",
+        "current": 23.38,
+        "proposed": 16.94,
+        "change": -6.44,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "market_beta",
+        "label": "Market 베타",
+        "unit": "beta",
+        "current": 1.2951,
+        "proposed": 0.9426,
+        "change": -0.3525,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "equity_selloff_loss_pct",
+        "label": "Equity Sell-off 손실률",
+        "unit": "%",
+        "current": 30.1627,
+        "proposed": 21.9528,
+        "change": -8.2099,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "equity_selloff_loss_usd",
+        "label": "Equity Sell-off 손실액",
+        "unit": "usd",
+        "current": 30162.7,
+        "proposed": 21952.84,
+        "change": -8209.86,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "rate_shock_loss_pct",
+        "label": "Interest Rate Shock 손실률",
+        "unit": "%",
+        "current": -0.844,
+        "proposed": 2.3312,
+        "change": 3.1752,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "rate_shock_loss_usd",
+        "label": "Interest Rate Shock 손실액",
+        "unit": "usd",
+        "current": -843.97,
+        "proposed": 2331.16,
+        "change": 3175.13,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "volatility_shock_loss_pct",
+        "label": "Volatility Shock 손실률",
+        "unit": "%",
+        "current": 26.7575,
+        "proposed": 19.0832,
+        "change": -7.6743,
+        "current_detail": null,
+        "proposed_detail": null
+      },
+      {
+        "metric": "volatility_shock_loss_usd",
+        "label": "Volatility Shock 손실액",
+        "unit": "usd",
+        "current": 26757.45,
+        "proposed": 19083.16,
+        "change": -7674.29,
+        "current_detail": null,
+        "proposed_detail": null
+      }
+    ]
+  }
+}

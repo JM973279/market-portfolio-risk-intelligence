@@ -2,6 +2,7 @@
 import { useDashboard } from "@/components/dashboard-shell";
 import { MAX_HOLDINGS, inputProblem, weightTotal, type Analysis, type Asset, type Comparison, type Factor, type FactorBeta, type FactorSignificance, type Holding, type Scenarios } from "@/lib/portfolio-api";
 import { portfolioCopy, type PortfolioCopyKey } from "@/lib/portfolio-copy";
+import { AssetSearch } from "./asset-search";
 import styles from "./portfolio.module.css";
 
 export function usePortfolioCopy() {
@@ -53,7 +54,7 @@ export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings
  return <>
   <div className="table-scroll"><table className={styles.editor}><thead><tr><th>{p("asset")}</th><th>{p("weight")}</th><th><span className="sr-only">{p("remove")}</span></th></tr></thead><tbody>
    {holdings.map((h, i) => <tr key={i}>
-    <th scope="row"><select aria-label={`${p("asset")} ${i + 1}`} value={h.ticker} onChange={e => update(i, { ticker: e.target.value })}><option value="">{p("choose")}</option>{assets.map(a => <option key={a.ticker} value={a.ticker}>{a.ticker} · {a.name}</option>)}</select></th>
+    <th scope="row"><AssetSearch label={`${p("asset")} ${i + 1}`} value={h.ticker} assets={assets} onChange={ticker => update(i, { ticker })}/></th>
     <td><input aria-label={`${p("weight")} ${i + 1}`} type="number" inputMode="decimal" min="0" max="100" step="0.01" value={Number.isFinite(h.weight) ? h.weight : ""} onChange={e => update(i, { weight: e.target.value === "" ? NaN : Number(e.target.value) })}/></td>
     <td><button type="button" className={styles.removeButton} disabled={holdings.length === 1} onClick={() => onChange(holdings.filter((_, j) => j !== i))}>{p("remove")}</button></td>
    </tr>)}

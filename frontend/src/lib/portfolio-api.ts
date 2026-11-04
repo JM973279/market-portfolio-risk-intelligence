@@ -4,10 +4,12 @@ export const PORTFOLIO_API = process.env.NEXT_PUBLIC_PORTFOLIO_API_URL ?? "";
 
 export type Factor = "market" | "rate" | "volatility";
 export type Holding = { ticker: string; weight: number };
-export type Asset = { ticker: string; name: string; type: string; sector: string; asset_class: string };
+export type Asset = { ticker: string; name: string; type: string; sector: string; asset_class: string; asset_id?: string; name_ko?: string; aliases?: string[]; market?: string; currency?: string; support_status?: "full" | "partial" | "unsupported"; selectable?: boolean; support_scope?: string; reason_codes?: string[] };
 export type SectorMethodology = { classification: string; etf_lookthrough: boolean; label: string; limitations: string[] };
 export type Methodology = { regression: string; beta_frequency: string; significance_t?: number; shock_horizon_days: number; approximation: string; scenarios_additive: boolean; is_forecast: boolean; limitations: string[] };
 export type Universe = { assets: Asset[]; sector_methodology: SectorMethodology };
+export type Catalog = { schema_version: number; snapshot_id: string; as_of: string; assets: Asset[]; notice: { ko: string; en: string } };
+export const selectablePortfolio = (holdings: Holding[], assets: Asset[]) => holdings.every(h => assets.some(a => a.ticker === h.ticker && a.selectable === true && a.support_scope === "frozen_v1_only"));
 export type Scenario = { id: string; name: string; definition: string; factor: Factor; unit: "return" | "bp" | "pt"; rule: string; pnl_method: string; shock: number; reference: { start: string; end: string } };
 export type Scenarios = { as_of: string; lookback_start: string; horizon_days: number; note: string; methodology: Methodology; scenarios: Scenario[] };
 export type FactorBeta = { market: number; rate: number; volatility: number };
@@ -49,7 +51,7 @@ async function request<T>(path: string, body?: unknown): Promise<T> {
  catch { throw new PortfolioApiError("unavailable", "Invalid JSON response"); }
 }
 
-export const getUniverse = () => request<Universe>("/universe");
+export const getUniverse = () => request<Catalog>("/v2/catalog");
 export const getScenarios = () => request<Scenarios>("/scenarios");
 export const analyzePortfolio = (holdings: Holding[], value_usd: number) => request<Analysis>("/analyze", { holdings, value_usd });
 export const comparePortfolios = (current: Holding[], proposed: Holding[], value_usd: number) =>

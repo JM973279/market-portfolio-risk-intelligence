@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDashboard } from "@/components/dashboard-shell";
 import { CountryCards } from "@/components/research-panels";
-import { PORTFOLIO_API, PortfolioApiError, analyzePortfolio, comparePortfolios, exampleAfter, exampleBefore, getScenarios, getUniverse, inputProblem, type Analysis, type Comparison, type Holding, type Scenarios, type Universe } from "@/lib/portfolio-api";
+import { PORTFOLIO_API, PortfolioApiError, analyzePortfolio, comparePortfolios, exampleAfter, exampleBefore, getScenarios, getUniverse, inputProblem, type Analysis, type Comparison, type Holding, type Scenarios, selectablePortfolio, type Catalog } from "@/lib/portfolio-api";
 import { HiddenRiskMap, HoldingsEditor, StressTest, WhatIfTable, usePortfolioCopy } from "./portfolio-panels";
 import styles from "./portfolio.module.css";
 
@@ -19,9 +19,9 @@ function ApiProblem({ error }: { error: PortfolioApiError }) {
 
 export default function PortfolioView() {
  const p = usePortfolioCopy();
- const { global } = useDashboard();
+ const { global, language } = useDashboard();
  const revision = useRef(0);
- const [universe, setUniverse] = useState<Universe | null>(null);
+ const [universe, setUniverse] = useState<Catalog | null>(null);
  const [scenarios, setScenarios] = useState<Scenarios | null>(null);
  const [holdings, setHoldings] = useState<Holding[]>(exampleBefore);
  const [proposed, setProposed] = useState<Holding[]>(exampleAfter);
@@ -81,12 +81,13 @@ export default function PortfolioView() {
 
   <section className={`panel ${styles.section}`}>
    <div className="panel-header"><div className={styles.panelTitle}><span className={styles.step}>STEP 2</span><h2>{p("inputTitle")}</h2></div><span className="tag">{p("inputNote")}</span></div>
+   {universe && <p>{universe.notice[language === "ko" ? "ko" : "en"]}</p>}
    <HoldingsEditor holdings={holdings} onChange={changeCurrent} assets={assets} value={value}/>
    <div className={styles.editorFooter}>
     <label className={styles.valueField}>{p("valueLabel")}<input type="number" inputMode="decimal" min="0" step="1000" value={Number.isFinite(value) ? value : ""} onChange={e => changeValue(e.target.value === "" ? NaN : Number(e.target.value))}/></label>
     <div className={styles.actions}>
      <button type="button" onClick={() => changeCurrent(exampleBefore)}>{p("example")}</button>
-     <button type="button" className={styles.primary} disabled={busy !== null || inputProblem(holdings, value) !== null || !universe} onClick={() => run("analyze")}>{busy === "analyze" ? p("analyzing") : p("analyze")}</button>
+     <button type="button" className={styles.primary} disabled={busy !== null || inputProblem(holdings, value) !== null || !universe || !selectablePortfolio(holdings, assets)} onClick={() => run("analyze")}>{busy === "analyze" ? p("analyzing") : p("analyze")}</button>
     </div>
    </div>
    {inputProblem(holdings, value) === "value" && <p className={styles.problem}>{p("value")}</p>}
@@ -101,7 +102,7 @@ export default function PortfolioView() {
    <section className="panel">
     <div className={styles.actions}><button type="button" onClick={() => changeProposed(holdings)}>{p("fromCurrent")}</button><button type="button" onClick={() => changeProposed(exampleAfter)}>{p("exampleShift")}</button></div>
     <div className={styles.section}><HoldingsEditor holdings={proposed} onChange={changeProposed} assets={assets} value={value}/></div>
-    <div className={styles.editorFooter}><span/><button type="button" className={styles.primary} disabled={busy !== null || inputProblem(holdings, value) !== null || inputProblem(proposed, value) !== null || !universe} onClick={() => run("compare")}>{busy === "compare" ? p("comparing") : p("compare")}</button></div>
+    <div className={styles.editorFooter}><span/><button type="button" className={styles.primary} disabled={busy !== null || inputProblem(holdings, value) !== null || inputProblem(proposed, value) !== null || !universe || !selectablePortfolio(holdings, assets) || !selectablePortfolio(proposed, assets)} onClick={() => run("compare")}>{busy === "compare" ? p("comparing") : p("compare")}</button></div>
     {error?.task === "compare" && error.error.kind === "rejected" && <ApiProblem error={error.error}/>}
    </section>
    <section className="panel">{comparison ? <WhatIfTable comparison={comparison}/> : <p>{p("whatifIntro")}</p>}</section>
