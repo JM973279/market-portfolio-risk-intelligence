@@ -1,0 +1,179 @@
+{
+  "scope": "loopback_AS512_fault_matrix",
+  "production_timeout_seconds": 25,
+  "fixture_timeout_seconds": 0.5,
+  "actual_cgroup_certification": false,
+  "rows": [
+    {
+      "concurrency": 1,
+      "fault": "address-pressure",
+      "statuses": {
+        "503": 1
+      },
+      "p95_ms": 2.105,
+      "max_ms": 2.105,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 339440,
+        "VmHWM": 138148,
+        "VmRSS": 138028,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 1,
+      "fault": "unknown-defect",
+      "statuses": {
+        "500": 1
+      },
+      "p95_ms": 0.91,
+      "max_ms": 0.91,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139008,
+        "VmRSS": 139008,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 1,
+      "fault": "slow",
+      "statuses": {
+        "504": 1
+      },
+      "p95_ms": 502.142,
+      "max_ms": 502.142,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139016,
+        "VmRSS": 139016,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 2,
+      "fault": "address-pressure",
+      "statuses": {
+        "503": 2
+      },
+      "p95_ms": 9.994,
+      "max_ms": 9.994,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139040,
+        "VmRSS": 139040,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 2,
+      "fault": "unknown-defect",
+      "statuses": {
+        "500": 2
+      },
+      "p95_ms": 4.085,
+      "max_ms": 4.085,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139076,
+        "VmRSS": 139076,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 2,
+      "fault": "slow",
+      "statuses": {
+        "504": 2
+      },
+      "p95_ms": 503.124,
+      "max_ms": 503.124,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139100,
+        "VmRSS": 139100,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 4,
+      "fault": "address-pressure",
+      "statuses": {
+        "503": 4
+      },
+      "p95_ms": 8.653,
+      "max_ms": 8.653,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139148,
+        "VmRSS": 139148,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 4,
+      "fault": "unknown-defect",
+      "statuses": {
+        "500": 4
+      },
+      "p95_ms": 8.119,
+      "max_ms": 8.119,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139200,
+        "VmRSS": 139200,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    },
+    {
+      "concurrency": 4,
+      "fault": "slow",
+      "statuses": {
+        "504": 4
+      },
+      "p95_ms": 506.98,
+      "max_ms": 506.98,
+      "memory_after": {
+        "VmPeak": 522240,
+        "VmSize": 340464,
+        "VmHWM": 139276,
+        "VmRSS": 139276,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 61.02
+      },
+      "recovered_health": 200
+    }
+  ]
+}

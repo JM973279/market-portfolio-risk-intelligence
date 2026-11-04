@@ -1,0 +1,95 @@
+{
+  "checked_at_utc": "2026-11-04T06:03:05.124665+00:00",
+  "http_methods": [
+    "GET"
+  ],
+  "services": [
+    {
+      "id": "srv-dbkp73mgekts73eq0m20",
+      "name": "mpri-portfolio-api",
+      "branch": "feature/mvp-release-readiness",
+      "autoDeploy": "no",
+      "rootDir": "",
+      "updatedAt": "2026-11-03T08:00:42.714992Z",
+      "suspended": "not_suspended",
+      "settings": {
+        "plan": "free",
+        "region": "singapore",
+        "numInstances": 1,
+        "healthCheckPath": "/health",
+        "runtime": "python"
+      },
+      "command_sha256": {
+        "buildCommand": "264cc1e1d6a40dd44ec78f273f8ae370cb7da21a7aef03c9909e900e95b7a47b",
+        "startCommand": "9815197ec665dc08c7d7c8db15fca7bd43f584016838fe5ecb68c3062c343fc7"
+      },
+      "environment_variable_names": [
+        "OMP_NUM_THREADS",
+        "OPENBLAS_NUM_THREADS",
+        "PORTFOLIO_API_CORS_ORIGINS",
+        "PORTFOLIO_API_DOCS_ENABLED",
+        "PYTHON_VERSION"
+      ],
+      "deploys": [
+        {
+          "id": "dep-dbkp8krbc2fs73a0bjkg",
+          "status": "live",
+          "commit": "97e78366a026e9221740526087ef8082a891fa28",
+          "artifact_availability_field_present": false,
+          "detail_get_succeeded": true,
+          "detail_artifact_availability_field_present": false
+        },
+        {
+          "id": "dep-dbkp746gekts73eq0n2g",
+          "status": "deactivated",
+          "commit": "97e78366a026e9221740526087ef8082a891fa28",
+          "artifact_availability_field_present": false,
+          "detail_get_succeeded": true,
+          "detail_artifact_availability_field_present": false
+        }
+      ],
+      "phase5_settings_unchanged": true
+    },
+    {
+      "id": "srv-dbkp8fvf3r2c73fi28fg",
+      "name": "mpri-mvp-web",
+      "branch": "feature/mvp-release-readiness",
+      "autoDeploy": "no",
+      "rootDir": "frontend",
+      "updatedAt": "2026-11-03T08:01:21.929747Z",
+      "suspended": "not_suspended",
+      "settings": {
+        "plan": "free",
+        "region": "singapore",
+        "numInstances": 1,
+        "healthCheckPath": "/",
+        "runtime": "node"
+      },
+      "command_sha256": {
+        "buildCommand": "9bfb1061990883c7d344a85f66e06d1ea0d0b596effe66fe9f0019534fd96b8e",
+        "startCommand": "37e148fa30e18dd69698ce7f576f2bf0ddb7111460bb737d90d5638e6eb8b820"
+      },
+      "environment_variable_names": [
+        "NODE_VERSION",
+        "PORTFOLIO_API_INTERNAL_URL"
+      ],
+      "deploys": [
+        {
+          "id": "dep-dbkp8gff3r2c73fi29l0",
+          "status": "live",
+          "commit": "97e78366a026e9221740526087ef8082a891fa28",
+          "artifact_availability_field_present": false,
+          "detail_get_succeeded": true,
+          "detail_artifact_availability_field_present": false
+        }
+      ],
+      "phase5_settings_unchanged": true
+    }
+  ],
+  "artifact_restore_verified": false,
+  "rollback_executed": false,
+  "rollback_source_accessible_local": true,
+  "remote_rollback_branch_sha": "97e78366a026e9221740526087ef8082a891fa28",
+  "rollback_action_permission_verified": false,
+  "artifact_retention_evidence": "deploy list/detail GET expose no artifact availability fields; Dashboard confirmation still required"
+}

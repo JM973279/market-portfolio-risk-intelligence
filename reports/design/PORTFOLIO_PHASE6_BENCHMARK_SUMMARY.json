@@ -1,0 +1,77 @@
+[
+  {
+    "configuration": "as512_default",
+    "requests": 288,
+    "failures": 0,
+    "peak_rss_mib": 135.8203125,
+    "peak_virtual_mib": 360.85546875,
+    "threads": 2,
+    "concurrency": {
+      "1": {
+        "p95_min_ms": 6.944,
+        "p95_max_ms": 14.692,
+        "max_ms": 14.692
+      },
+      "2": {
+        "p95_min_ms": 16.28,
+        "p95_max_ms": 29.895,
+        "max_ms": 29.895
+      },
+      "4": {
+        "p95_min_ms": 32.073,
+        "p95_max_ms": 64.529,
+        "max_ms": 64.529
+      }
+    }
+  },
+  {
+    "configuration": "as512_tokens4",
+    "requests": 288,
+    "failures": 0,
+    "peak_rss_mib": 135.72265625,
+    "peak_virtual_mib": 360.859375,
+    "threads": 2,
+    "concurrency": {
+      "1": {
+        "p95_min_ms": 7.736,
+        "p95_max_ms": 16.851,
+        "max_ms": 16.851
+      },
+      "2": {
+        "p95_min_ms": 16.849,
+        "p95_max_ms": 35.808,
+        "max_ms": 35.808
+      },
+      "4": {
+        "p95_min_ms": 33.175,
+        "p95_max_ms": 62.375,
+        "max_ms": 62.375
+      }
+    }
+  },
+  {
+    "configuration": "unlimited_default",
+    "requests": 288,
+    "failures": 0,
+    "peak_rss_mib": 135.81640625,
+    "peak_virtual_mib": 360.859375,
+    "threads": 2,
+    "concurrency": {
+      "1": {
+        "p95_min_ms": 6.965,
+        "p95_max_ms": 14.888,
+        "max_ms": 14.888
+      },
+      "2": {
+        "p95_min_ms": 15.96,
+        "p95_max_ms": 34.165,
+        "max_ms": 34.165
+      },
+      "4": {
+        "p95_min_ms": 31.3,
+        "p95_max_ms": 59.896,
+        "max_ms": 59.896
+      }
+    }
+  }
+]

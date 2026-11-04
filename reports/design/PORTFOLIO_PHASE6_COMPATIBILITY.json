@@ -1,0 +1,193 @@
+{
+  "old_commit": "97e78366a026e9221740526087ef8082a891fa28",
+  "new_source_commit": "85f5f20dc51ad2b6b748e3991a36ea3192ae246a",
+  "new_runtime_equivalent_to_phase4": true,
+  "api_proxy": "real_next_rewrites_to_loopback_api_8000",
+  "production_application_requests": 0,
+  "results": [
+    {
+      "web": "old",
+      "api": "old",
+      "scope": "loopback_production_builds",
+      "expected_incompatible": false,
+      "contracts": [
+        "/api/portfolio/universe",
+        "/api/portfolio/scenarios",
+        "before",
+        "after",
+        "compare"
+      ],
+      "viewports": [
+        {
+          "width": 390,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        },
+        {
+          "width": 1280,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "web": "old",
+      "api": "new",
+      "scope": "loopback_production_builds",
+      "expected_incompatible": false,
+      "contracts": [
+        "/api/portfolio/universe",
+        "/api/portfolio/scenarios",
+        "before",
+        "after",
+        "compare"
+      ],
+      "viewports": [
+        {
+          "width": 390,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        },
+        {
+          "width": 1280,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "web": "new",
+      "api": "new",
+      "scope": "loopback_production_builds",
+      "expected_incompatible": false,
+      "contracts": [
+        "/api/portfolio/universe",
+        "/api/portfolio/scenarios",
+        "before",
+        "after",
+        "compare"
+      ],
+      "viewports": [
+        {
+          "width": 390,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        },
+        {
+          "width": 1280,
+          "market": true,
+          "portfolio": "passed",
+          "stress": "passed",
+          "whatif": "passed",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        }
+      ],
+      "verdict": "PASS"
+    },
+    {
+      "web": "new",
+      "api": "old",
+      "scope": "loopback_production_builds",
+      "expected_incompatible": true,
+      "contracts": [
+        "/api/portfolio/universe",
+        "/api/portfolio/scenarios",
+        "before",
+        "after",
+        "compare"
+      ],
+      "viewports": [
+        {
+          "width": 390,
+          "market": true,
+          "portfolio": "blocked_catalog_404",
+          "stress": "blocked_catalog_404",
+          "whatif": "blocked_catalog_404",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        },
+        {
+          "width": 1280,
+          "market": true,
+          "portfolio": "blocked_catalog_404",
+          "stress": "blocked_catalog_404",
+          "whatif": "blocked_catalog_404",
+          "error_statuses": [
+            422,
+            500,
+            503,
+            504
+          ],
+          "network_recovery": true,
+          "page_errors": []
+        }
+      ],
+      "verdict": "INCOMPATIBLE_EXPECTED"
+    }
+  ]
+}
