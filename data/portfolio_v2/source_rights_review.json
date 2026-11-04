@@ -1,0 +1,72 @@
+{
+  "reviewed_on": "2026-11-04",
+  "scope": "Public M/PRI API, derived analytics, stored runtime artifacts and source history",
+  "new_public_price_sources_approved": [],
+  "new_public_factor_sources_approved": [],
+  "sources": [
+    {
+      "source_id": "yahoo_yfinance",
+      "roles": ["prices", "corporate_actions", "market_factor", "volatility_factor"],
+      "references": ["https://github.com/ranaroussi/yfinance", "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html"],
+      "finding": "The library distinguishes its software license from Yahoo data rights and describes personal use. Direct Yahoo terms retrieval returned HTTP 999; no public-service permission was established.",
+      "status": "unconfirmed_public_rights",
+      "collection_decision": "No new automated price download; local existing V1 replay only"
+    },
+    {
+      "source_id": "alpha_vantage",
+      "roles": ["prices", "corporate_actions"],
+      "references": ["https://www.alphavantage.co/terms_of_service/", "https://www.alphavantage.co/documentation/"],
+      "finding": "Default terms cover private individual noncommercial use. Broader use requires a written agreement; adjusted daily endpoint is marked premium. No agreement or purchase was made.",
+      "status": "requires_separate_agreement",
+      "collection_decision": "No key signup, paid endpoint or download"
+    },
+    {
+      "source_id": "twelve_data",
+      "roles": ["prices", "corporate_actions"],
+      "references": ["https://twelvedata.com/terms", "https://support.twelvedata.com/en/articles/5332349-commercial-and-personal-usage"],
+      "finding": "External display, derived outputs and redistribution have plan, attribution and exchange-specific conditions. Individual/internal use does not establish M/PRI public-service entitlement.",
+      "status": "requires_separate_agreement",
+      "collection_decision": "No signup, subscription or download"
+    },
+    {
+      "source_id": "massive",
+      "roles": ["prices", "corporate_actions"],
+      "references": ["https://www.massive.com/legal/market-data-terms-of-service", "https://massive.com/knowledge-base/article/how-can-i-redistribute-massives-market-data"],
+      "finding": "Individual market-data terms restrict public and derived redistribution. Commercial rights need a suitable agreement; no entitlement was obtained.",
+      "status": "requires_separate_agreement",
+      "collection_decision": "No signup, subscription or download"
+    },
+    {
+      "source_id": "stooq",
+      "roles": ["prices"],
+      "references": ["https://stooq.com/db/h/"],
+      "finding": "Historical download page required browser verification. Public-service rights, adjustment method and corporate-action coverage were not verified; free access is not treated as a license.",
+      "status": "unverified_terms_and_quality",
+      "collection_decision": "No verification bypass or price download"
+    },
+    {
+      "source_id": "fred",
+      "roles": ["rate_factor"],
+      "references": ["https://fred.stlouisfed.org/legal/terms/", "https://fred.stlouisfed.org/series/DGS10"],
+      "finding": "FRED service conditions and series-owner rights must both be respected. Selected attributed commercial displays are described, but the intended public API and runtime artifact distribution are not blanket-approved.",
+      "status": "public_api_scope_unconfirmed",
+      "collection_decision": "No new series collection or V1 factor replacement"
+    },
+    {
+      "source_id": "federal_reserve_direct",
+      "roles": ["rate_factor"],
+      "references": ["https://www.federalreserve.gov/disclaimer.htm", "https://www.federalreserve.gov/releases/h15/"],
+      "finding": "Board-owned information is generally public domain with source citation, except identified third-party materials. Direct H.15 is a promising rate-source alternative, but endpoint, units, dates, revisions and parity still require technical validation.",
+      "status": "rate_source_candidate_not_implemented",
+      "collection_decision": "Does not resolve equity-price or VIX rights; no silent factor substitution"
+    },
+    {
+      "source_id": "cboe_vix",
+      "roles": ["volatility_factor", "scenarios"],
+      "references": ["https://www.cboe.com/terms/", "https://www.cboe.com/data/global-indices-feed"],
+      "finding": "Website terms permit limited personal noncommercial copying; index data licensing is separately offered. A historical CSV or third-party open-data label is insufficient proof for M/PRI public derived use.",
+      "status": "vix_public_derived_rights_unconfirmed",
+      "collection_decision": "No new VIX download, proxy or replacement"
+    }
+  ]
+}

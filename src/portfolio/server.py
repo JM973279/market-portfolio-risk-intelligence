@@ -6,11 +6,12 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.portfolio.analytics import load_snapshot_meta
 from src.portfolio.api import router
+from src.portfolio.v2_api import router as v2_router
 from src.portfolio.readiness import require_snapshot
 
 # 포트폴리오 API를 단독으로 띄우는 앱입니다.
 #   uvicorn src.portfolio.server:app --port 8000
-# 메인 앱이 생기면 이 파일 대신 app.include_router(router)만 쓰면 됩니다.
+# 메인 앱이 생기면 이 파일의 V1 및 V2 router를 각각 연결합니다.
 DEFAULT_ORIGINS = "" if os.getenv("RENDER") == "true" else "http://localhost:3000,http://127.0.0.1:3000"
 CORS_ORIGINS = [
     o.strip()
@@ -39,6 +40,7 @@ app.add_middleware(
     allow_headers=["Content-Type"],
 )
 app.include_router(router)
+app.include_router(v2_router)
 
 
 @app.get("/health")

@@ -34,7 +34,8 @@ def get_catalog():
         assets.append({**candidate, 'support_status': 'unsupported', 'selectable': False,
                        'capabilities': dict.fromkeys(CAPABILITIES, False),
                        'snapshot_id': None, 'support_scope': 'discovery_only',
-                       'reason_codes': ['NO_APPROVED_RELEASE']})
+                       'source_license': {'status':'unconfirmed_public_use', 'new_public_use_approved':False},
+                       'reason_codes': list(dict.fromkeys([*candidate.get('reason_codes', []), 'NO_APPROVED_RELEASE']))})
     return {'schema_version': 2, 'snapshot_id': metadata['snapshot_id'],
             'as_of': meta['as_of'], 'market': 'US', 'base_currency': 'USD',
             'methodology_version': 'portfolio-v1-frozen', 'assets': assets,

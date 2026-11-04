@@ -25,9 +25,9 @@ def test_v1_entire_response_golden():
 
 def test_catalog_does_not_grant_new_rights():
     catalog = get_catalog()
-    assert len(catalog['assets']) == 28
+    assert len([a for a in catalog['assets'] if a['support_scope'] == 'frozen_v1_only']) == 28
     assert not catalog['new_public_support_enabled']
-    assert all(a['support_scope'] == 'frozen_v1_only' and not a['source_license']['new_public_use_approved'] for a in catalog['assets'])
+    assert all(a['support_scope'] == 'frozen_v1_only' and not a['source_license']['new_public_use_approved'] for a in catalog['assets'] if a['support_scope'] == 'frozen_v1_only')
     assert next(a for a in catalog['assets'] if a['ticker'] == 'NVDA')['name_ko'] == '엔비디아'
 
 

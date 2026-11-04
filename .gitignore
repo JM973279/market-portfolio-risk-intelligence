@@ -14,3 +14,5 @@ data/operations/
 
 # Candidate source material is never a deployable public artifact.
 data/portfolio_expansion/raw/
+# Unlicensed prices and derived research outputs never enter public artifacts.
+data/portfolio_expansion/research/

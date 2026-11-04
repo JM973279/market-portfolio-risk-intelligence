@@ -1,0 +1,18 @@
+{
+  "scope": "research_only",
+  "new_assets": 0,
+  "public_use_approved": false,
+  "origin": "existing_frozen_v1_28",
+  "snapshot_id": "research-v1-replay-20261104",
+  "manifest_sha256": "b50ece77d6d9aac3b327fa5a9be21cce0ef1613339615101dd992a17e735b18f",
+  "artifact_sha256": {
+    "returns.npy": "190c062b7c02e749cb1807f84d9f181ef72b9943101e773cf4f5b5c47ad94ad3",
+    "factor_moves.npy": "d6587de7cd32410a8ced8921a62c9ac12fe478ea30534b7500b98a5898beefec",
+    "betas.npy": "9f94b561fb849b0484a53b62f8fc4e0bed39bbf56574495e33e744005a002f99",
+    "layout.json": "31cd993a35fc6ff280493d0abf7f59f0d3b8860053a610b0ef51e60b2415d24c",
+    "universe.json": "37cea3f687daf61c78ade2a400a4be2ba78b5b4be6f0d1be86e536613b4a1f50",
+    "scenarios.json": "19d8d3ad4292f6704de77a06a22fccf0b48093d933124863621aeacdaa715bff",
+    "provenance.json": "99037064a67635a7e4d4bdf94cebbb58a260c288f5338b78f28d34746ed78f23",
+    "validation.json": "6cbf52d92c2b1cd4302b1429917a4c4d9207e3e56489e48bed482a1dcf81e8cf"
+  }
+}
