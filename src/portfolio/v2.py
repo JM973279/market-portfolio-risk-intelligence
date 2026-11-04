@@ -284,7 +284,7 @@ def analyze_bundle(bundle, request):
 
 def compare_bundle(bundle, request):
     current = analyze_bundle(bundle, request.current)
-    proposed = analyze_bundle(bundle, request.proposed)
+    proposed = current if request.current == request.proposed else analyze_bundle(bundle, request.proposed)
     return {'snapshot_id':request.current.snapshot_id, 'market':'US', 'base_currency':'USD',
             'scope':bundle.provenance['scope'], 'current':current, 'proposed':proposed,
             'comparison':compare_analyses(current['analysis'], proposed['analysis'])}

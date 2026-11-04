@@ -1,0 +1,5182 @@
+{
+  "measured_on": "2026-11-04",
+  "scope": "existing_actual_28_only_bounded_v1_v2_private_http",
+  "render_certification": false,
+  "trials": [
+    {
+      "configuration": {
+        "name": "as512_default",
+        "as_mib": 512,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 1,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.047,
+          "p95_ms": 9.768,
+          "max_ms": 9.958,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138556,
+            "VmRSS": 138556,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.654,
+          "p95_ms": 17.008,
+          "max_ms": 17.702,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138684,
+            "VmRSS": 138684,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.868,
+          "p95_ms": 10.168,
+          "max_ms": 10.255,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138740,
+            "VmRSS": 138740,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.02,
+          "p95_ms": 10.705,
+          "max_ms": 12.012,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138880,
+            "VmRSS": 138880,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.198,
+          "p95_ms": 7.547,
+          "max_ms": 7.73,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138884,
+            "VmRSS": 138884,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.576,
+          "p95_ms": 13.362,
+          "max_ms": 14.289,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138896,
+            "VmRSS": 138896,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.14,
+          "p95_ms": 8.309,
+          "max_ms": 11.75,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138908,
+            "VmRSS": 138908,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.933,
+          "p95_ms": 8.663,
+          "max_ms": 9.06,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138920,
+            "VmRSS": 138920,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.344,
+          "p95_ms": 22.301,
+          "max_ms": 23.128,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138940,
+            "VmRSS": 138940,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.765,
+          "p95_ms": 40.41,
+          "max_ms": 44.014,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 139004,
+            "VmRSS": 139004,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 20.231,
+          "p95_ms": 22.428,
+          "max_ms": 26.694,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139028,
+            "VmRSS": 139028,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 24.704,
+          "p95_ms": 38.149,
+          "max_ms": 49.764,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139184,
+            "VmRSS": 139184,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 20.636,
+          "p95_ms": 36.114,
+          "max_ms": 38.324,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139184,
+            "VmRSS": 139184,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.757,
+          "p95_ms": 42.546,
+          "max_ms": 45.536,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139184,
+            "VmRSS": 139184,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 17.942,
+          "p95_ms": 21.374,
+          "max_ms": 24.821,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139184,
+            "VmRSS": 139184,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.605,
+          "p95_ms": 22.014,
+          "max_ms": 22.255,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139188,
+            "VmRSS": 139188,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.371,
+          "p95_ms": 43.219,
+          "max_ms": 43.462,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139204,
+            "VmRSS": 139204,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 67.93,
+          "p95_ms": 72.949,
+          "max_ms": 73.323,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139288,
+            "VmRSS": 139288,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 40.54,
+          "p95_ms": 43.72,
+          "max_ms": 44.364,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139296,
+            "VmRSS": 139296,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 43.544,
+          "p95_ms": 49.529,
+          "max_ms": 50.329,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.183,
+          "p95_ms": 37.331,
+          "max_ms": 37.644,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 56.935,
+          "p95_ms": 60.878,
+          "max_ms": 66.175,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139436,
+            "VmRSS": 139436,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 34.596,
+          "p95_ms": 39.776,
+          "max_ms": 40.812,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139436,
+            "VmRSS": 139436,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.771,
+          "p95_ms": 37.003,
+          "max_ms": 37.074,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340584,
+            "VmHWM": 139444,
+            "VmRSS": 139444,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09533285900033661
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.0122968209998362
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 340584,
+        "VmPeak": 369520,
+        "VmRSS": 139456,
+        "VmHWM": 139456,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "as512_default",
+        "as_mib": 512,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 2,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.085,
+          "p95_ms": 8.557,
+          "max_ms": 8.705,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138596,
+            "VmRSS": 138596,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.935,
+          "p95_ms": 16.653,
+          "max_ms": 17.024,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138720,
+            "VmRSS": 138720,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.165,
+          "p95_ms": 10.101,
+          "max_ms": 10.24,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138776,
+            "VmRSS": 138776,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.779,
+          "p95_ms": 11.873,
+          "max_ms": 11.984,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138908,
+            "VmRSS": 138908,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.422,
+          "p95_ms": 6.934,
+          "max_ms": 6.997,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138916,
+            "VmRSS": 138916,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.965,
+          "p95_ms": 12.719,
+          "max_ms": 12.923,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138936,
+            "VmRSS": 138936,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.638,
+          "p95_ms": 8.53,
+          "max_ms": 8.818,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138948,
+            "VmRSS": 138948,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.092,
+          "p95_ms": 8.549,
+          "max_ms": 8.845,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138960,
+            "VmRSS": 138960,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.606,
+          "p95_ms": 19.223,
+          "max_ms": 20.985,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138988,
+            "VmRSS": 138988,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.141,
+          "p95_ms": 31.652,
+          "max_ms": 32.07,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 139040,
+            "VmRSS": 139040,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.358,
+          "p95_ms": 29.967,
+          "max_ms": 30.197,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139084,
+            "VmRSS": 139084,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 19.131,
+          "p95_ms": 20.97,
+          "max_ms": 20.978,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139236,
+            "VmRSS": 139236,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.978,
+          "p95_ms": 17.799,
+          "max_ms": 18.103,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139236,
+            "VmRSS": 139236,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 26.193,
+          "p95_ms": 29.204,
+          "max_ms": 29.239,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139236,
+            "VmRSS": 139236,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.286,
+          "p95_ms": 18.4,
+          "max_ms": 19.215,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139236,
+            "VmRSS": 139236,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.795,
+          "p95_ms": 19.375,
+          "max_ms": 19.514,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139236,
+            "VmRSS": 139236,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 34.538,
+          "p95_ms": 40.246,
+          "max_ms": 40.98,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139244,
+            "VmRSS": 139244,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 59.584,
+          "p95_ms": 60.668,
+          "max_ms": 61.744,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139316,
+            "VmRSS": 139316,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.094,
+          "p95_ms": 37.432,
+          "max_ms": 37.672,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139340,
+            "VmRSS": 139340,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.699,
+          "p95_ms": 38.286,
+          "max_ms": 38.807,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139496,
+            "VmRSS": 139496,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.351,
+          "p95_ms": 33.132,
+          "max_ms": 33.376,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139504,
+            "VmRSS": 139504,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 51.593,
+          "p95_ms": 54.626,
+          "max_ms": 58.42,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139504,
+            "VmRSS": 139504,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 31.794,
+          "p95_ms": 36.462,
+          "max_ms": 36.548,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139504,
+            "VmRSS": 139504,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.625,
+          "p95_ms": 36.623,
+          "max_ms": 37.223,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139508,
+            "VmRSS": 139508,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09666225199907785
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.008926504000555724
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 349492,
+        "VmPeak": 369520,
+        "VmRSS": 139508,
+        "VmHWM": 139508,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "as512_default",
+        "as_mib": 512,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 3,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.353,
+          "p95_ms": 9.172,
+          "max_ms": 9.552,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138548,
+            "VmRSS": 138548,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.688,
+          "p95_ms": 17.601,
+          "max_ms": 18.104,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138676,
+            "VmRSS": 138676,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.075,
+          "p95_ms": 9.454,
+          "max_ms": 11.728,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138728,
+            "VmRSS": 138728,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.265,
+          "p95_ms": 10.037,
+          "max_ms": 10.982,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138864,
+            "VmRSS": 138864,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.577,
+          "p95_ms": 7.375,
+          "max_ms": 7.784,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138872,
+            "VmRSS": 138872,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.894,
+          "p95_ms": 12.698,
+          "max_ms": 13.587,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138888,
+            "VmRSS": 138888,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.117,
+          "p95_ms": 13.195,
+          "max_ms": 14.528,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138896,
+            "VmRSS": 138896,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.213,
+          "p95_ms": 10.904,
+          "max_ms": 11.587,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138908,
+            "VmRSS": 138908,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.032,
+          "p95_ms": 17.292,
+          "max_ms": 18.151,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339424,
+            "VmHWM": 138920,
+            "VmRSS": 138920,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.25,
+          "p95_ms": 51.75,
+          "max_ms": 52.071,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 138988,
+            "VmRSS": 138988,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.204,
+          "p95_ms": 19.25,
+          "max_ms": 20.424,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139012,
+            "VmRSS": 139012,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.548,
+          "p95_ms": 20.924,
+          "max_ms": 31.557,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.314,
+          "p95_ms": 17.33,
+          "max_ms": 17.391,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 25.505,
+          "p95_ms": 30.639,
+          "max_ms": 31.122,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.339,
+          "p95_ms": 20.486,
+          "max_ms": 21.379,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.524,
+          "p95_ms": 18.754,
+          "max_ms": 19.865,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.071,
+          "p95_ms": 33.395,
+          "max_ms": 34.018,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139196,
+            "VmRSS": 139196,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 59.239,
+          "p95_ms": 61.9,
+          "max_ms": 62.066,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139256,
+            "VmRSS": 139256,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 35.943,
+          "p95_ms": 38.551,
+          "max_ms": 39.127,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139280,
+            "VmRSS": 139280,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.507,
+          "p95_ms": 39.276,
+          "max_ms": 39.522,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139420,
+            "VmRSS": 139420,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.165,
+          "p95_ms": 33.508,
+          "max_ms": 33.605,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139424,
+            "VmRSS": 139424,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 52.888,
+          "p95_ms": 60.136,
+          "max_ms": 60.294,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139424,
+            "VmRSS": 139424,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.744,
+          "p95_ms": 36.352,
+          "max_ms": 39.158,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139424,
+            "VmRSS": 139424,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.72,
+          "p95_ms": 34.603,
+          "max_ms": 35.32,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339556,
+            "VmHWM": 139424,
+            "VmRSS": 139424,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09559026100032497
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.008467405001283623
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 348464,
+        "VmPeak": 369516,
+        "VmRSS": 139424,
+        "VmHWM": 139424,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "as512_tokens4",
+        "as_mib": 512,
+        "thread_tokens": 4,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 1,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.094,
+          "p95_ms": 8.725,
+          "max_ms": 9.272,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138332,
+            "VmRSS": 138332,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.827,
+          "p95_ms": 15.258,
+          "max_ms": 15.298,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138456,
+            "VmRSS": 138456,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.252,
+          "p95_ms": 10.901,
+          "max_ms": 11.061,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138520,
+            "VmRSS": 138520,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.649,
+          "p95_ms": 10.745,
+          "max_ms": 10.847,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138672,
+            "VmRSS": 138672,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.447,
+          "p95_ms": 7.116,
+          "max_ms": 7.237,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138688,
+            "VmRSS": 138688,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 12.164,
+          "p95_ms": 12.739,
+          "max_ms": 12.953,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138708,
+            "VmRSS": 138708,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.513,
+          "p95_ms": 8.112,
+          "max_ms": 8.732,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138728,
+            "VmRSS": 138728,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.251,
+          "p95_ms": 8.698,
+          "max_ms": 8.838,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138744,
+            "VmRSS": 138744,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.404,
+          "p95_ms": 18.222,
+          "max_ms": 19.384,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138776,
+            "VmRSS": 138776,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.982,
+          "p95_ms": 32.465,
+          "max_ms": 33.303,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138840,
+            "VmRSS": 138840,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.14,
+          "p95_ms": 29.446,
+          "max_ms": 29.779,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138892,
+            "VmRSS": 138892,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 19.661,
+          "p95_ms": 23.126,
+          "max_ms": 23.666,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139032,
+            "VmRSS": 139032,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.21,
+          "p95_ms": 17.403,
+          "max_ms": 17.497,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139032,
+            "VmRSS": 139032,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 24.84,
+          "p95_ms": 28.753,
+          "max_ms": 28.809,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139032,
+            "VmRSS": 139032,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.941,
+          "p95_ms": 16.953,
+          "max_ms": 17.417,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139032,
+            "VmRSS": 139032,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.519,
+          "p95_ms": 19.425,
+          "max_ms": 20.104,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139036,
+            "VmRSS": 139036,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.49,
+          "p95_ms": 34.204,
+          "max_ms": 35.083,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139044,
+            "VmRSS": 139044,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 59.903,
+          "p95_ms": 63.768,
+          "max_ms": 64.183,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139100,
+            "VmRSS": 139100,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.647,
+          "p95_ms": 39.381,
+          "max_ms": 40.818,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139148,
+            "VmRSS": 139148,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 37.569,
+          "p95_ms": 39.123,
+          "max_ms": 40.029,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139308,
+            "VmRSS": 139308,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.614,
+          "p95_ms": 33.023,
+          "max_ms": 37.27,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139308,
+            "VmRSS": 139308,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 51.859,
+          "p95_ms": 59.363,
+          "max_ms": 62.541,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139308,
+            "VmRSS": 139308,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.553,
+          "p95_ms": 32.785,
+          "max_ms": 33.024,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139308,
+            "VmRSS": 139308,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.529,
+          "p95_ms": 35.576,
+          "max_ms": 36.512,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139316,
+            "VmRSS": 139316,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 4,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09878786199988099
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.009234505998392706
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 348628,
+        "VmPeak": 369516,
+        "VmRSS": 139320,
+        "VmHWM": 139320,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "as512_tokens4",
+        "as_mib": 512,
+        "thread_tokens": 4,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 2,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.053,
+          "p95_ms": 8.563,
+          "max_ms": 8.62,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138240,
+            "VmRSS": 138240,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.698,
+          "p95_ms": 16.736,
+          "max_ms": 16.762,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138368,
+            "VmRSS": 138368,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.141,
+          "p95_ms": 10.048,
+          "max_ms": 10.3,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138428,
+            "VmRSS": 138428,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.518,
+          "p95_ms": 10.691,
+          "max_ms": 10.906,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138588,
+            "VmRSS": 138588,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.616,
+          "p95_ms": 8.044,
+          "max_ms": 8.504,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138604,
+            "VmRSS": 138604,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.819,
+          "p95_ms": 13.015,
+          "max_ms": 13.531,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138620,
+            "VmRSS": 138620,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.592,
+          "p95_ms": 11.386,
+          "max_ms": 11.693,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138644,
+            "VmRSS": 138644,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.218,
+          "p95_ms": 12.151,
+          "max_ms": 12.163,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138660,
+            "VmRSS": 138660,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.901,
+          "p95_ms": 17.367,
+          "max_ms": 18.386,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138696,
+            "VmRSS": 138696,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.679,
+          "p95_ms": 33.561,
+          "max_ms": 33.716,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138764,
+            "VmRSS": 138764,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.392,
+          "p95_ms": 30.541,
+          "max_ms": 30.861,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138796,
+            "VmRSS": 138796,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.762,
+          "p95_ms": 22.871,
+          "max_ms": 23.317,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138948,
+            "VmRSS": 138948,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.286,
+          "p95_ms": 16.326,
+          "max_ms": 16.606,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138948,
+            "VmRSS": 138948,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 25.874,
+          "p95_ms": 28.483,
+          "max_ms": 29.517,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138952,
+            "VmRSS": 138952,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.521,
+          "p95_ms": 17.552,
+          "max_ms": 17.89,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138952,
+            "VmRSS": 138952,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.133,
+          "p95_ms": 20.056,
+          "max_ms": 20.414,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138952,
+            "VmRSS": 138952,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 31.944,
+          "p95_ms": 33.561,
+          "max_ms": 34.32,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 138956,
+            "VmRSS": 138956,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 59.117,
+          "p95_ms": 62.128,
+          "max_ms": 62.531,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139012,
+            "VmRSS": 139012,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.357,
+          "p95_ms": 40.197,
+          "max_ms": 40.296,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139044,
+            "VmRSS": 139044,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 37.34,
+          "p95_ms": 41.109,
+          "max_ms": 41.46,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139204,
+            "VmRSS": 139204,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 28.114,
+          "p95_ms": 31.832,
+          "max_ms": 31.957,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139204,
+            "VmRSS": 139204,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 51.617,
+          "p95_ms": 56.652,
+          "max_ms": 56.793,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139212,
+            "VmRSS": 139212,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.657,
+          "p95_ms": 38.063,
+          "max_ms": 39.673,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139216,
+            "VmRSS": 139216,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 34.968,
+          "p95_ms": 45.161,
+          "max_ms": 45.474,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339588,
+            "VmHWM": 139216,
+            "VmRSS": 139216,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 4,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.0984487599998829
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.009361006001199712
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 339588,
+        "VmPeak": 369516,
+        "VmRSS": 139216,
+        "VmHWM": 139216,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "as512_tokens4",
+        "as_mib": 512,
+        "thread_tokens": 4,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 3,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.859,
+          "p95_ms": 9.987,
+          "max_ms": 10.28,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138488,
+            "VmRSS": 138488,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.786,
+          "p95_ms": 28.04,
+          "max_ms": 28.797,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138616,
+            "VmRSS": 138616,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 10.697,
+          "p95_ms": 13.947,
+          "max_ms": 15.042,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138672,
+            "VmRSS": 138672,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 10.002,
+          "p95_ms": 13.796,
+          "max_ms": 15.259,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138824,
+            "VmRSS": 138824,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.454,
+          "p95_ms": 8.633,
+          "max_ms": 9.436,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138840,
+            "VmRSS": 138840,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.679,
+          "p95_ms": 12.146,
+          "max_ms": 12.167,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138864,
+            "VmRSS": 138864,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.208,
+          "p95_ms": 7.666,
+          "max_ms": 8.22,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138888,
+            "VmRSS": 138888,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.169,
+          "p95_ms": 11.841,
+          "max_ms": 12.239,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138904,
+            "VmRSS": 138904,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.584,
+          "p95_ms": 17.052,
+          "max_ms": 17.551,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 138928,
+            "VmRSS": 138928,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.575,
+          "p95_ms": 33.524,
+          "max_ms": 34.446,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139008,
+            "VmRSS": 139008,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 17.524,
+          "p95_ms": 30.566,
+          "max_ms": 30.584,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139056,
+            "VmRSS": 139056,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.259,
+          "p95_ms": 19.997,
+          "max_ms": 20.457,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139188,
+            "VmRSS": 139188,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.056,
+          "p95_ms": 17.802,
+          "max_ms": 18.881,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139188,
+            "VmRSS": 139188,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 25.121,
+          "p95_ms": 28.743,
+          "max_ms": 28.939,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139188,
+            "VmRSS": 139188,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.683,
+          "p95_ms": 19.29,
+          "max_ms": 19.339,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139188,
+            "VmRSS": 139188,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.309,
+          "p95_ms": 19.429,
+          "max_ms": 20.192,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139196,
+            "VmRSS": 139196,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.544,
+          "p95_ms": 37.673,
+          "max_ms": 37.883,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139212,
+            "VmRSS": 139212,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 59.294,
+          "p95_ms": 62.316,
+          "max_ms": 62.784,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139276,
+            "VmRSS": 139276,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 35.929,
+          "p95_ms": 38.336,
+          "max_ms": 38.753,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339596,
+            "VmHWM": 139312,
+            "VmRSS": 139312,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.146,
+          "p95_ms": 38.059,
+          "max_ms": 38.665,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340620,
+            "VmHWM": 139440,
+            "VmRSS": 139440,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.147,
+          "p95_ms": 32.886,
+          "max_ms": 33.81,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340620,
+            "VmHWM": 139444,
+            "VmRSS": 139444,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 50.605,
+          "p95_ms": 54.936,
+          "max_ms": 54.982,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340620,
+            "VmHWM": 139444,
+            "VmRSS": 139444,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.853,
+          "p95_ms": 34.111,
+          "max_ms": 34.864,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340620,
+            "VmHWM": 139448,
+            "VmRSS": 139448,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.241,
+          "p95_ms": 34.778,
+          "max_ms": 34.811,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 340620,
+            "VmHWM": 139460,
+            "VmRSS": 139460,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": 536870912,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 4,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.10697776500092004
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.011083205999966594
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 340620,
+        "VmPeak": 369520,
+        "VmRSS": 139464,
+        "VmHWM": 139464,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "unlimited_default",
+        "as_mib": 0,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 1,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.862,
+          "p95_ms": 8.325,
+          "max_ms": 8.746,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138520,
+            "VmRSS": 138520,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.286,
+          "p95_ms": 15.104,
+          "max_ms": 15.185,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138652,
+            "VmRSS": 138652,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.778,
+          "p95_ms": 9.447,
+          "max_ms": 9.569,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138708,
+            "VmRSS": 138708,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.512,
+          "p95_ms": 11.338,
+          "max_ms": 12.638,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138844,
+            "VmRSS": 138844,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.388,
+          "p95_ms": 7.113,
+          "max_ms": 8.703,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138852,
+            "VmRSS": 138852,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.932,
+          "p95_ms": 12.52,
+          "max_ms": 12.54,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138868,
+            "VmRSS": 138868,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.642,
+          "p95_ms": 8.853,
+          "max_ms": 9.606,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138880,
+            "VmRSS": 138880,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.925,
+          "p95_ms": 8.36,
+          "max_ms": 8.529,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138892,
+            "VmRSS": 138892,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.998,
+          "p95_ms": 17.707,
+          "max_ms": 17.883,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138908,
+            "VmRSS": 138908,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.91,
+          "p95_ms": 31.741,
+          "max_ms": 31.815,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138972,
+            "VmRSS": 138972,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 17.762,
+          "p95_ms": 31.235,
+          "max_ms": 31.249,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139016,
+            "VmRSS": 139016,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.091,
+          "p95_ms": 19.112,
+          "max_ms": 19.181,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139164,
+            "VmRSS": 139164,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 13.831,
+          "p95_ms": 17.669,
+          "max_ms": 18.228,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139164,
+            "VmRSS": 139164,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 24.991,
+          "p95_ms": 27.84,
+          "max_ms": 29.106,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139164,
+            "VmRSS": 139164,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.564,
+          "p95_ms": 15.782,
+          "max_ms": 16.377,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139164,
+            "VmRSS": 139164,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.355,
+          "p95_ms": 19.344,
+          "max_ms": 19.769,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139168,
+            "VmRSS": 139168,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.248,
+          "p95_ms": 37.519,
+          "max_ms": 38.227,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139184,
+            "VmRSS": 139184,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 58.309,
+          "p95_ms": 59.943,
+          "max_ms": 60.29,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139228,
+            "VmRSS": 139228,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 34.661,
+          "p95_ms": 35.45,
+          "max_ms": 35.525,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139288,
+            "VmRSS": 139288,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 35.92,
+          "p95_ms": 37.335,
+          "max_ms": 38.111,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 27.571,
+          "p95_ms": 29.944,
+          "max_ms": 31.264,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 49.799,
+          "p95_ms": 55.194,
+          "max_ms": 56.727,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 30.1,
+          "p95_ms": 31.84,
+          "max_ms": 32.797,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.407,
+          "p95_ms": 37.313,
+          "max_ms": 37.963,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": -1,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09447186299985333
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.009378406999530853
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 339560,
+        "VmPeak": 369520,
+        "VmRSS": 139432,
+        "VmHWM": 139432,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "unlimited_default",
+        "as_mib": 0,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 2,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 8.005,
+          "p95_ms": 8.834,
+          "max_ms": 8.894,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138516,
+            "VmRSS": 138516,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.552,
+          "p95_ms": 17.339,
+          "max_ms": 17.458,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138656,
+            "VmRSS": 138656,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.126,
+          "p95_ms": 9.877,
+          "max_ms": 10.157,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138712,
+            "VmRSS": 138712,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.127,
+          "p95_ms": 9.559,
+          "max_ms": 9.939,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138848,
+            "VmRSS": 138848,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.336,
+          "p95_ms": 6.788,
+          "max_ms": 6.838,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138852,
+            "VmRSS": 138852,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.896,
+          "p95_ms": 13.119,
+          "max_ms": 13.178,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138868,
+            "VmRSS": 138868,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.191,
+          "p95_ms": 7.661,
+          "max_ms": 7.669,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138880,
+            "VmRSS": 138880,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.986,
+          "p95_ms": 8.445,
+          "max_ms": 9.139,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138892,
+            "VmRSS": 138892,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.668,
+          "p95_ms": 16.63,
+          "max_ms": 16.908,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138916,
+            "VmRSS": 138916,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.481,
+          "p95_ms": 31.827,
+          "max_ms": 31.934,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339428,
+            "VmHWM": 138980,
+            "VmRSS": 138980,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 17.961,
+          "p95_ms": 19.471,
+          "max_ms": 19.941,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 138996,
+            "VmRSS": 138996,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.502,
+          "p95_ms": 21.604,
+          "max_ms": 32.508,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139144,
+            "VmRSS": 139144,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.737,
+          "p95_ms": 16.822,
+          "max_ms": 22.44,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139144,
+            "VmRSS": 139144,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 25.947,
+          "p95_ms": 29.107,
+          "max_ms": 30.224,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139148,
+            "VmRSS": 139148,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.304,
+          "p95_ms": 19.545,
+          "max_ms": 20.392,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139148,
+            "VmRSS": 139148,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.433,
+          "p95_ms": 17.99,
+          "max_ms": 18.449,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139148,
+            "VmRSS": 139148,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 31.976,
+          "p95_ms": 32.953,
+          "max_ms": 33.408,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139168,
+            "VmRSS": 139168,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 58.635,
+          "p95_ms": 62.503,
+          "max_ms": 62.57,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139252,
+            "VmRSS": 139252,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 35.357,
+          "p95_ms": 36.807,
+          "max_ms": 37.153,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139304,
+            "VmRSS": 139304,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.615,
+          "p95_ms": 37.819,
+          "max_ms": 39.192,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139424,
+            "VmRSS": 139424,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 28.124,
+          "p95_ms": 30.947,
+          "max_ms": 32.386,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139432,
+            "VmRSS": 139432,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 50.027,
+          "p95_ms": 55.024,
+          "max_ms": 55.202,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139436,
+            "VmRSS": 139436,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.153,
+          "p95_ms": 31.528,
+          "max_ms": 31.667,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139436,
+            "VmRSS": 139436,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.673,
+          "p95_ms": 34.902,
+          "max_ms": 37.306,
+          "memory_after": {
+            "VmPeak": 369520,
+            "VmSize": 339560,
+            "VmHWM": 139436,
+            "VmRSS": 139436,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 60.484
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": -1,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09550205800042022
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.009277106000808999
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 339560,
+        "VmPeak": 369520,
+        "VmRSS": 139436,
+        "VmHWM": 139436,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    },
+    {
+      "configuration": {
+        "name": "unlimited_default",
+        "as_mib": 0,
+        "thread_tokens": 0,
+        "probe_factory": "scripts.portfolio_phase4_probe:create_app"
+      },
+      "trial": 3,
+      "workloads": [
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.98,
+          "p95_ms": 8.513,
+          "max_ms": 8.667,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138544,
+            "VmRSS": 138544,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.796,
+          "p95_ms": 17.798,
+          "max_ms": 18.357,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138676,
+            "VmRSS": 138676,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.223,
+          "p95_ms": 10.065,
+          "max_ms": 11.407,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138732,
+            "VmRSS": 138732,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 9.349,
+          "p95_ms": 9.893,
+          "max_ms": 9.991,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138860,
+            "VmRSS": 138860,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 6.515,
+          "p95_ms": 7.425,
+          "max_ms": 7.484,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138868,
+            "VmRSS": 138868,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 11.725,
+          "p95_ms": 12.612,
+          "max_ms": 12.643,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138884,
+            "VmRSS": 138884,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.283,
+          "p95_ms": 7.57,
+          "max_ms": 7.665,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138892,
+            "VmRSS": 138892,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 1,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 7.973,
+          "p95_ms": 9.096,
+          "max_ms": 9.472,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138908,
+            "VmRSS": 138908,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.063,
+          "p95_ms": 17.597,
+          "max_ms": 17.785,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138928,
+            "VmRSS": 138928,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.5,
+          "p95_ms": 31.678,
+          "max_ms": 31.984,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339428,
+            "VmHWM": 138992,
+            "VmRSS": 138992,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 17.86,
+          "p95_ms": 29.449,
+          "max_ms": 29.762,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139020,
+            "VmRSS": 139020,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 18.4,
+          "p95_ms": 19.501,
+          "max_ms": 20.536,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 14.257,
+          "p95_ms": 16.129,
+          "max_ms": 16.324,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139172,
+            "VmRSS": 139172,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 25.482,
+          "p95_ms": 30.72,
+          "max_ms": 30.772,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139176,
+            "VmRSS": 139176,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 15.629,
+          "p95_ms": 19.035,
+          "max_ms": 19.534,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139176,
+            "VmRSS": 139176,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 2,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 16.349,
+          "p95_ms": 18.909,
+          "max_ms": 19.245,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139176,
+            "VmRSS": 139176,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 32.288,
+          "p95_ms": 32.836,
+          "max_ms": 32.861,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139192,
+            "VmRSS": 139192,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 58.062,
+          "p95_ms": 61.335,
+          "max_ms": 61.424,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139260,
+            "VmRSS": 139260,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.192,
+          "p95_ms": 38.574,
+          "max_ms": 39.42,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139288,
+            "VmRSS": 139288,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v1",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 36.951,
+          "p95_ms": 38.274,
+          "max_ms": 38.664,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139448,
+            "VmRSS": 139448,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 28.461,
+          "p95_ms": 33.947,
+          "max_ms": 33.98,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139448,
+            "VmRSS": 139448,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 50.643,
+          "p95_ms": 54.185,
+          "max_ms": 54.83,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139448,
+            "VmRSS": 139448,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "analyze_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 29.553,
+          "p95_ms": 31.13,
+          "max_ms": 32.354,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139452,
+            "VmRSS": 139452,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        },
+        {
+          "concurrency": 4,
+          "version": "v2",
+          "operation": "compare_10",
+          "requests": 24,
+          "statuses": {
+            "200": 24
+          },
+          "p50_ms": 33.161,
+          "p95_ms": 36.975,
+          "max_ms": 37.21,
+          "memory_after": {
+            "VmPeak": 369516,
+            "VmSize": 339560,
+            "VmHWM": 139452,
+            "VmRSS": 139452,
+            "Threads": 2,
+            "large_anon_noaccess_regions": 1,
+            "large_anon_noaccess_mib": 61.02
+          },
+          "errors": []
+        }
+      ],
+      "diagnostics": {
+        "as_limit_bytes": -1,
+        "stack_limit_bytes": 8388608,
+        "nproc_limit": 31345,
+        "python_stack_size": 0,
+        "anyio_thread_tokens": 40,
+        "allocator_arena_max": null,
+        "blas_threads": "1",
+        "portfolio_max_workers": 1,
+        "portfolio_max_inflight": 4,
+        "portfolio_timeout_seconds": 25.0
+      },
+      "cold": {
+        "v1": {
+          "status": 200,
+          "seconds": 0.09537405599985505
+        },
+        "v2": {
+          "status": 200,
+          "seconds": 0.009011805001136963
+        }
+      },
+      "health_after": 200,
+      "public_v2_status": 409,
+      "peak": {
+        "VmSize": 339560,
+        "VmPeak": 369516,
+        "VmRSS": 139460,
+        "VmHWM": 139460,
+        "Threads": 2,
+        "large_anon_noaccess_regions": 1,
+        "large_anon_noaccess_mib": 63.871
+      },
+      "server_error_log": "",
+      "thread_creation_failure": false,
+      "process_exit_after_termination": -15
+    }
+  ]
+}

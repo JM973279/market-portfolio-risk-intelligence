@@ -1,0 +1,235 @@
+{
+  "BEFORE": {
+    "as512_default": {
+      "statuses": {
+        "200": 1459,
+        "500": 269
+      },
+      "max_rss_mib": 139.578125,
+      "max_virtual_mib": 509.96484375,
+      "max_threads": 5,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            8.425,
+            26.561
+          ],
+          "max_ms": 30.805
+        },
+        "2": {
+          "p95_range_ms": [
+            22.36,
+            69.829
+          ],
+          "max_ms": 71.062
+        },
+        "4": {
+          "p95_range_ms": [
+            62.656,
+            198.766
+          ],
+          "max_ms": 223.669
+        }
+      }
+    },
+    "as512_arena2": {
+      "statuses": {
+        "200": 1728
+      },
+      "max_rss_mib": 138.80859375,
+      "max_virtual_mib": 390.421875,
+      "max_threads": 5,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            7.182,
+            22.744
+          ],
+          "max_ms": 25.016
+        },
+        "2": {
+          "p95_range_ms": [
+            22.079,
+            62.3
+          ],
+          "max_ms": 66.448
+        },
+        "4": {
+          "p95_range_ms": [
+            56.702,
+            147.763
+          ],
+          "max_ms": 154.726
+        }
+      }
+    },
+    "unlimited_default": {
+      "statuses": {
+        "200": 1728
+      },
+      "max_rss_mib": 138.90625,
+      "max_virtual_mib": 643.6328125,
+      "max_threads": 5,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            7.206,
+            28.63
+          ],
+          "max_ms": 28.81
+        },
+        "2": {
+          "p95_range_ms": [
+            18.284,
+            120.931
+          ],
+          "max_ms": 156.845
+        },
+        "4": {
+          "p95_range_ms": [
+            58.335,
+            153.551
+          ],
+          "max_ms": 166.681
+        }
+      }
+    },
+    "as512_tokens4": {
+      "statuses": {
+        "200": 1456,
+        "500": 272
+      },
+      "max_rss_mib": 139.59765625,
+      "max_virtual_mib": 509.9453125,
+      "max_threads": 5,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            6.848,
+            23.328
+          ],
+          "max_ms": 27.214
+        },
+        "2": {
+          "p95_range_ms": [
+            19.664,
+            64.755
+          ],
+          "max_ms": 66.021
+        },
+        "4": {
+          "p95_range_ms": [
+            55.732,
+            207.648
+          ],
+          "max_ms": 216.727
+        }
+      }
+    }
+  },
+  "AFTER": {
+    "as512_default": {
+      "statuses": {
+        "200": 1728
+      },
+      "max_rss_mib": 136.23828125,
+      "max_virtual_mib": 360.859375,
+      "max_threads": 2,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            6.934,
+            17.601
+          ],
+          "max_ms": 18.104
+        },
+        "2": {
+          "p95_range_ms": [
+            17.292,
+            51.75
+          ],
+          "max_ms": 52.071
+        },
+        "4": {
+          "p95_range_ms": [
+            33.132,
+            72.949
+          ],
+          "max_ms": 73.323
+        }
+      }
+    },
+    "as512_tokens4": {
+      "statuses": {
+        "200": 1728
+      },
+      "max_rss_mib": 136.1953125,
+      "max_virtual_mib": 360.859375,
+      "max_threads": 2,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            7.116,
+            28.04
+          ],
+          "max_ms": 28.797
+        },
+        "2": {
+          "p95_range_ms": [
+            16.326,
+            33.561
+          ],
+          "max_ms": 34.446
+        },
+        "4": {
+          "p95_range_ms": [
+            31.832,
+            63.768
+          ],
+          "max_ms": 64.183
+        }
+      }
+    },
+    "unlimited_default": {
+      "statuses": {
+        "200": 1728
+      },
+      "max_rss_mib": 136.19140625,
+      "max_virtual_mib": 360.859375,
+      "max_threads": 2,
+      "latency": {
+        "1": {
+          "p95_range_ms": [
+            6.788,
+            17.798
+          ],
+          "max_ms": 18.357
+        },
+        "2": {
+          "p95_range_ms": [
+            15.782,
+            31.827
+          ],
+          "max_ms": 32.508
+        },
+        "4": {
+          "p95_range_ms": [
+            29.944,
+            62.503
+          ],
+          "max_ms": 62.57
+        }
+      }
+    }
+  },
+  "openapi": {
+    "exact_equality": true,
+    "base_sha256": "5be81f806db00e56d04192da1cc8cb1d5eac1dcceb62a0a31391da2a5f68e4aa",
+    "after_sha256": "5be81f806db00e56d04192da1cc8cb1d5eac1dcceb62a0a31391da2a5f68e4aa"
+  },
+  "protected_paths_unchanged": [
+    "data/**",
+    "tests/fixtures/**",
+    "render.yaml"
+  ]
+}

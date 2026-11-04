@@ -101,7 +101,7 @@ def run_trial(configuration, trial_number, requests_per_case):
     with socket.socket() as bound:
         bound.bind(('127.0.0.1',0));port=bound.getsockname()[1]
     with tempfile.TemporaryFile() as log:
-        server=subprocess.Popen([sys.executable,'-m','uvicorn','scripts.portfolio_phase3_probe:create_app','--factory',
+        server=subprocess.Popen([sys.executable,'-m','uvicorn',configuration.get('probe_factory','scripts.portfolio_phase3_probe:create_app'),'--factory',
                                  '--host','127.0.0.1','--port',str(port),'--workers','1','--log-level','warning'],
                                 cwd=ROOT,env=env,stdout=log,stderr=log)
         samples=[];stop=threading.Event()

@@ -1,5 +1,6 @@
 """Public V2 routes use only a pinned, rights-approved registry release."""
 from fastapi import APIRouter, HTTPException
+from src.portfolio.execution import bounded_endpoint
 
 from src.portfolio.v2 import (V2Request, V2CompareRequest, V2Unavailable,
                               analyze_bundle, compare_bundle, load_public_bundle)
@@ -16,7 +17,6 @@ def _bundle(snapshot_id):
         raise HTTPException(status_code=503, detail={'code':'V2_RELEASE_UNAVAILABLE'}) from error
 
 
-@router.post('/analyze')
 def analyze_v2(request: V2Request):
     bundle = _bundle(request.snapshot_id)
     try:
@@ -25,10 +25,13 @@ def analyze_v2(request: V2Request):
         raise HTTPException(status_code=422, detail={'code':str(error)}) from error
 
 
-@router.post('/compare')
 def compare_v2(request: V2CompareRequest):
     bundle = _bundle(request.current.snapshot_id)
     try:
         return compare_bundle(bundle, request)
     except V2Unavailable as error:
         raise HTTPException(status_code=422, detail={'code':str(error)}) from error
+
+
+router.add_api_route('/analyze', bounded_endpoint(analyze_v2), methods=['POST'])
+router.add_api_route('/compare', bounded_endpoint(compare_v2), methods=['POST'])

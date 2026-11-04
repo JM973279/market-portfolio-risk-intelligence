@@ -1,6 +1,7 @@
 import json
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter
+from src.portfolio.execution import bounded_endpoint
 
 from src.portfolio.readiness import require_snapshot
 
@@ -26,10 +27,9 @@ from src.portfolio.universe import describe_sector_methodology, load_universe
 from src.portfolio.whatif import compare_analyses
 
 # 메인 앱에서 app.include_router(router) 한 줄로 연결합니다.
-router = APIRouter(prefix="/api/portfolio", tags=["portfolio"], dependencies=[Depends(require_snapshot)])
+router = APIRouter(prefix="/api/portfolio", tags=["portfolio"])
 
 
-@router.get("/universe")
 def get_universe():
     """지원 자산 목록"""
     assets = load_universe().reset_index()
@@ -39,13 +39,11 @@ def get_universe():
     }
 
 
-@router.get("/scenarios")
 def get_scenarios():
     """Stress 시나리오 정의·충격 크기·근거 구간"""
     return json.loads(SCENARIOS_PATH.read_text())
 
 
-@router.post("/analyze", response_model=AnalyzeResponse)
 def analyze(request: AnalyzeRequest):
     """포트폴리오 Hidden Risk 분석. What-if는 변경 전후로 두 번 호출합니다."""
     weights = {h.ticker: h.weight / 100 for h in request.holdings}
@@ -77,11 +75,10 @@ def analyze(request: AnalyzeRequest):
     }
 
 
-@router.post("/compare", response_model=CompareResponse)
 def compare(request: CompareRequest):
     """What-if: 변경 전후를 같은 엔진으로 분석하고 주요 지표 차이를 돌려줍니다."""
     current = analyze(request.current)
-    proposed = analyze(request.proposed)
+    proposed = current if request.current == request.proposed else analyze(request.proposed)
     return {
         "current": current,
         "proposed": proposed,
@@ -89,8 +86,20 @@ def compare(request: CompareRequest):
     }
 
 
-@router.get('/v2/catalog')
 def catalog():
     """Versioned discovery/capability metadata; V1 analysis remains unchanged."""
     from src.portfolio.catalog import get_catalog
     return get_catalog()
+
+
+# Keep synchronous cores callable by demo/offline users; HTTP always enters the
+# single bounded executor once, including the unchanged snapshot SHA check.
+for path, core, methods, response_model in [
+    ('/universe', get_universe, ['GET'], None),
+    ('/scenarios', get_scenarios, ['GET'], None),
+    ('/analyze', analyze, ['POST'], AnalyzeResponse),
+    ('/compare', compare, ['POST'], CompareResponse),
+    ('/v2/catalog', catalog, ['GET'], None),
+]:
+    router.add_api_route(path, bounded_endpoint(core, check=require_snapshot),
+                         methods=methods, response_model=response_model)

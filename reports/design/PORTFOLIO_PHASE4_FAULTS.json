@@ -1,0 +1,29 @@
+{
+  "measured_on": "2026-11-04",
+  "scope": "private_loopback_fault_fixtures",
+  "fixture_timeout_seconds": 0.5,
+  "production_timeout_seconds": 25,
+  "as_limit_mib": 512,
+  "invalid_input": 422,
+  "unsupported_v2": 409,
+  "real_mmap_enomem_status": 503,
+  "health_after_pressure": 200,
+  "overload_statuses": {
+    "504": 4,
+    "503": 4
+  },
+  "health_while_timed_out_job_still_running": 503,
+  "health_after_real_completion": 200,
+  "normal_analysis_after_recovery": 200,
+  "unknown_defect_status": 500,
+  "memory_after": {
+    "VmPeak": 522240,
+    "VmSize": 339436,
+    "VmHWM": 138168,
+    "VmRSS": 138168,
+    "Threads": 2,
+    "large_anon_noaccess_regions": 1,
+    "large_anon_noaccess_mib": 61.02
+  },
+  "server_log": "2026-11-04 14:03:37,463 - ERROR - portfolio computation resource failure\nTraceback (most recent call last):\n  File \"<repo>/src/portfolio/execution.py\", line 80, in run\n    return await asyncio.wait_for(asyncio.shield(wrapped), timeout=self.timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/asyncio/tasks.py\", line 488, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 86, in run\n    result = ctx.run(self.task)\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 73, in run\n    return fn(*args, **kwargs)\n  File \"<repo>/src/portfolio/execution.py\", line 61, in work\n    return function()\n  File \"<repo>/src/portfolio/execution.py\", line 151, in transaction\n    return core(*args, **kwargs)\n  File \"<repo>/scripts/portfolio_phase4_probe.py\", line 95, in address_pressure\n    unexpected = mmap.mmap(-1,8*1024**2,flags=mmap.MAP_PRIVATE|mmap.MAP_ANONYMOUS,prot=0)\nOSError: [Errno 12] Cannot allocate memory\n2026-11-04 14:03:37,970 - WARNING - portfolio request deadline exceeded\n2026-11-04 14:03:37,972 - WARNING - portfolio request deadline exceeded\n2026-11-04 14:03:37,972 - WARNING - portfolio request deadline exceeded\n2026-11-04 14:03:37,973 - WARNING - portfolio request deadline exceeded\n2026-11-04 14:03:38,471 - ERROR - _ExpiredJob exception in shielded future\nfuture: <Future finished exception=_ExpiredJob()>\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 86, in run\n    result = ctx.run(self.task)\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 73, in run\n    return fn(*args, **kwargs)\n  File \"<repo>/src/portfolio/execution.py\", line 60, in work\n    raise _ExpiredJob()\nsrc.portfolio.execution._ExpiredJob\n2026-11-04 14:03:38,473 - ERROR - _ExpiredJob exception in shielded future\nfuture: <Future finished exception=_ExpiredJob()>\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 86, in run\n    result = ctx.run(self.task)\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 73, in run\n    return fn(*args, **kwargs)\n  File \"<repo>/src/portfolio/execution.py\", line 60, in work\n    raise _ExpiredJob()\nsrc.portfolio.execution._ExpiredJob\n2026-11-04 14:03:38,475 - ERROR - _ExpiredJob exception in shielded future\nfuture: <Future finished exception=_ExpiredJob()>\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 86, in run\n    result = ctx.run(self.task)\n  File \"/usr/lib/python3.14/concurrent/futures/thread.py\", line 73, in run\n    return fn(*args, **kwargs)\n  File \"<repo>/src/portfolio/execution.py\", line 60, in work\n    raise _ExpiredJob()\nsrc.portfolio.execution._ExpiredJob\n"
+}
