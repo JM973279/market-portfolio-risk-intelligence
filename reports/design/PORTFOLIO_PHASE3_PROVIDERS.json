@@ -1,0 +1,236 @@
+{
+  "checked_on": "2026-11-04",
+  "timezone": "Asia/Seoul",
+  "purchases": 0,
+  "signups": 0,
+  "messages_sent": 0,
+  "new_runtime_approvals": 0,
+  "providers": [
+    {
+      "provider": "Twelve Data",
+      "features": "US equities/ETFs daily bars; adjust=all explicitly needed; split/dividend endpoints; VIX entitlement unverified",
+      "free": "USD 0; 8 credits/min and 800/day; corporate actions require paid tier",
+      "low_cost": "Personal Grow from USD 29/month, 55 credits/min; no public service rights",
+      "commercial": "Venture from USD 149/month (610 credits/min); displayed selected tier USD 499 (2584/min); Enterprise USD 1099 (10946/min)",
+      "limits": "Endpoint-weighted credits; time_series 1/symbol; dividends 20/symbol; paid no daily cap",
+      "raw_storage": "Conditional internal storage/cache; retention and end-of-contract rights need confirmation",
+      "derived_creation": "Non-reconstructible derived data allowed subject to plan and restrictions",
+      "public_results": "Business plan/exchange conditions/attribution; M/PRI website and JSON API scope require written confirmation",
+      "raw_redistribution": "Separate rights/add-on/agreement; EOD external distribution custom quote",
+      "status": "UNAPPROVED_NO_ENTITLEMENT",
+      "terms": [
+        "https://twelvedata.com/terms",
+        "https://support.twelvedata.com/en/articles/5332349-commercial-and-personal-usage"
+      ],
+      "pricing": [
+        "https://twelvedata.com/pricing.md",
+        "https://twelvedata.com/pricing-business"
+      ],
+      "documentation": [
+        "https://twelvedata.com/docs"
+      ],
+      "cost_notes": "Prices are tier-specific USD monthly list rates, not a complete VIX/retention/redistribution quote",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Alpha Vantage",
+      "features": "Daily Adjusted premium: raw OHLCV, adjusted close, split/dividend events; ETFs; VIX index endpoint documented but separate entitlement",
+      "free": "USD 0; 25 requests/day",
+      "low_cost": "Personal premium USD 49.99/month at 75 requests/min; USD 99.99/150, 149.99/300, 199.99/600, 249.99/1200",
+      "commercial": "Separate written agreement/quote; personal premium is not commercial permission",
+      "limits": "Paid no daily cap; per-minute tier; full history option needed instead of 100-point compact",
+      "raw_storage": "Private personal use under terms; corporate/public-service storage unconfirmed",
+      "derived_creation": "Private analysis covered within personal scope; public derived use needs agreement",
+      "public_results": "Not authorized by default personal terms",
+      "raw_redistribution": "Not established; request explicit permission",
+      "status": "UNAPPROVED_REQUIRES_AGREEMENT",
+      "terms": [
+        "https://www.alphavantage.co/terms_of_service/"
+      ],
+      "pricing": [
+        "https://www.alphavantage.co/premium/",
+        "https://www.alphavantage.co/support/"
+      ],
+      "documentation": [
+        "https://www.alphavantage.co/documentation/"
+      ],
+      "cost_notes": "Premium HTML select options distinguish monthly and yearly; not a commercial quote",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "EODHD",
+      "features": "Daily adjusted_close covers splits and dividends; stocks/ETFs; corporate actions API; indicative-source quality must be checked independently",
+      "free": "USD 0; 20 calls/day; limited test history/coverage",
+      "low_cost": "Personal EOD USD 19.99/month, 100000 calls/day and 1000 requests/min",
+      "commercial": "Commercial Internal GBP 399/month; corporate-server download optional GBP 200/month; Enterprise GBP 2499/month; Custom from GBP 399/month, scope by quote",
+      "limits": "Free 20/day; paid from 100000/day; 1000 HTTP requests/min; weighted endpoint calls",
+      "raw_storage": "Personal private storage allowed; commercial server download and retention depend on chosen rights",
+      "derived_creation": "Personal private manipulation/analysis allowed; commercial derived use must be specified",
+      "public_results": "Internal plan alone does not authorize external results; obtain commercial agreement",
+      "raw_redistribution": "Personal original/repackaged sharing prohibited; commercial external redistribution must be explicit",
+      "status": "UNAPPROVED_REQUIRES_AGREEMENT",
+      "terms": [
+        "https://eodhd.com/financial-apis/terms-conditions",
+        "https://eodhd.com/financial-apis/commercial-vs-personal-license-use"
+      ],
+      "pricing": [
+        "https://eodhd.com/pricing",
+        "https://eodhd.com/commercial-pricing"
+      ],
+      "documentation": [
+        "https://eodhd.com/financial-apis/api-limits",
+        "https://eodhd.com/financial-apis/api-for-historical-data-and-volumes",
+        "https://eodhd.com/financial-apis/api-splits-dividends"
+      ],
+      "cost_notes": "Commercial page returned GBP; do not convert to USD or mistake an internal license for public display",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Massive",
+      "features": "US equities/ETFs bars and actions; bars are split-only adjusted, not dividend-adjusted; free two-year history is insufficient for 757 sessions",
+      "free": "USD 0; 5 requests/min, two years aggregate history",
+      "low_cost": "Personal Starter USD 29/month, five-year history, unlimited API calls; Advanced USD 199/month",
+      "commercial": "Stocks Business USD 2499/month; Enterprise quote; index/VIX rights separate",
+      "limits": "Free 5/min; paid stock plans list unlimited API calls subject to terms",
+      "raw_storage": "Personal plan explicitly permits personal download/storage; organizational scope requires agreement",
+      "derived_creation": "Personal research only under individual terms; public derived scope requires agreement",
+      "public_results": "Individual data cannot be used for a service to other users; business product subject to contract",
+      "raw_redistribution": "Separate agreement, third-party and termination/deletion conditions must be confirmed",
+      "status": "UNAPPROVED_REQUIRES_AGREEMENT",
+      "terms": [
+        "https://massive.com/legal/market-data-terms-of-service"
+      ],
+      "pricing": [
+        "https://massive.com/stocks",
+        "https://massive.com/business"
+      ],
+      "documentation": [
+        "https://massive.com/knowledge-base/article/is-massives-stock-data-adjusted-for-splits-or-dividends",
+        "https://massive.com/knowledge-base/article/how-much-historical-stock-data-does-massive-have",
+        "https://massive.com/indices"
+      ],
+      "cost_notes": "Market-data terms page showed updated date 2026-11-03; stocks price does not establish VIX rights",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Yahoo/yfinance",
+      "features": "Adjusted prices/actions/ETFs and VIX access via unofficial wrapper",
+      "free": "Software/free access; no service guarantee",
+      "low_cost": "No verified public-service tier",
+      "commercial": "No verified M/PRI entitlement",
+      "limits": "No contractual public API quota verified; do not infer unlimited access",
+      "raw_storage": "Data rights separate from library license; private permission must be checked",
+      "derived_creation": "Library describes personal use; software license does not approve derived publication",
+      "public_results": "No explicit public-service approval established",
+      "raw_redistribution": "Unapproved",
+      "status": "UNAPPROVED_RIGHTS_UNCONFIRMED",
+      "terms": [
+        "https://github.com/ranaroussi/yfinance",
+        "https://legal.yahoo.com/us/en/yahoo/terms/otos/index.html"
+      ],
+      "pricing": [],
+      "documentation": [
+        "https://github.com/ranaroussi/yfinance"
+      ],
+      "cost_notes": "No new downloads or access-control bypass; prior Yahoo legal fetch failed",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Stooq",
+      "features": "Historical stocks/ETF source candidate; adjustment and action parity not verified",
+      "free": "Free historical download page visible only behind browser verification in prior review",
+      "low_cost": "No verified contractual tier",
+      "commercial": "Quote/permission unconfirmed",
+      "limits": "No official quota verified",
+      "raw_storage": "Unconfirmed",
+      "derived_creation": "Unconfirmed",
+      "public_results": "Unconfirmed",
+      "raw_redistribution": "Unconfirmed",
+      "status": "UNAPPROVED_TERMS_UNCONFIRMED",
+      "terms": [],
+      "pricing": [],
+      "documentation": [
+        "https://stooq.com/db/h/"
+      ],
+      "cost_notes": "Free download availability is not a public-use license",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Federal Reserve direct H.15",
+      "features": "US Treasury yield observations, including ten-year constant-maturity candidate; not equity or VIX data",
+      "free": "USD 0 for public Board materials",
+      "low_cost": "Not applicable",
+      "commercial": "Board-owned public-domain materials may be copied/distributed unless otherwise marked, with citation requested",
+      "limits": "No exact API quota verified; conservative batch use and endpoint validation needed",
+      "raw_storage": "Explicitly permissible for Board-owned public-domain information, subject to exceptions",
+      "derived_creation": "Permissible for qualifying Board-owned public-domain inputs",
+      "public_results": "Permissible for qualifying Board-owned public-domain inputs with citation; technical source not activated",
+      "raw_redistribution": "Qualifying Board-owned information may be copied/distributed; exclude protected third-party materials and branding",
+      "status": "LEGAL_RATE_SOURCE_CANDIDATE_TECHNICALLY_UNAPPROVED",
+      "terms": [
+        "https://www.federalreserve.gov/disclaimer.htm"
+      ],
+      "pricing": [],
+      "documentation": [
+        "https://www.federalreserve.gov/releases/h15/"
+      ],
+      "cost_notes": "Zero-cost rate alternative does not solve equity/VIX rights or silently replace Frozen V1",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "FRED",
+      "features": "DGS10 and macro/factor series; series-owner licensing varies",
+      "free": "USD 0 access subject to service and series terms",
+      "low_cost": "Not applicable",
+      "commercial": "Selected attributed commercial uses described; public API/distributed artifacts require scope review",
+      "limits": "No fixed quota verified for intended no-signup workflow; no new account or key",
+      "raw_storage": "Personal/noncommercial permitted within terms; commercial scope and original-owner restrictions differ",
+      "derived_creation": "Depends on service scope and series copyright",
+      "public_results": "No blanket M/PRI public-API approval established",
+      "raw_redistribution": "Proprietary third-party series require owner permission",
+      "status": "UNAPPROVED_PUBLIC_API_SCOPE",
+      "terms": [
+        "https://fred.stlouisfed.org/legal/terms/"
+      ],
+      "pricing": [],
+      "documentation": [
+        "https://fred.stlouisfed.org/series/DGS10"
+      ],
+      "cost_notes": "Prefer separate direct Fed rate-source investigation rather than assuming all FRED data is unrestricted",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    },
+    {
+      "provider": "Cboe VIX",
+      "features": "Actual VIX index daily history; do not substitute VIX futures or a volatility ETF",
+      "free": "Historical page/CSV accessible does not establish public licensing",
+      "low_cost": "No verified M/PRI derived-output price",
+      "commercial": "Index data/derived use licensing: quote required for this exact case",
+      "limits": "No approved automated quota or service entitlement established",
+      "raw_storage": "Website terms provide limited personal noncommercial copying; durable service archive needs permission",
+      "derived_creation": "Public derived use requires applicable index-data agreement review",
+      "public_results": "Not approved for M/PRI",
+      "raw_redistribution": "Not approved for M/PRI",
+      "status": "UNAPPROVED_REQUIRES_VIX_LICENSE",
+      "terms": [
+        "https://www.cboe.com/terms/"
+      ],
+      "pricing": [
+        "https://www.cboe.com/data/global-indices-feed"
+      ],
+      "documentation": [
+        "https://www.cboe.com/tradable-products/vix/vix-historical-data"
+      ],
+      "cost_notes": "Public historical CSV or third-party open-data labels are not a VIX redistribution license",
+      "checked_on": "2026-11-04",
+      "runtime_approved": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"scope": "controlled_uncommitted_virtual_reservation", "baseline": {"VmSize": 18964, "VmRSS": 12276, "Threads": 1}, "reserved": {"VmSize": 520192, "VmRSS": 12276, "Threads": 1}, "remaining_virtual_headroom_mib": 4, "thread_result_while_reserved": "can't start new thread", "thread_result_after_release": "started", "stack_rlimit_bytes": 8388608, "nproc_rlimit": 31345}
