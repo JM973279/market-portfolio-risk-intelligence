@@ -1,0 +1,114 @@
+{
+  "checked_at_utc": "2026-11-04T05:38:47.488324+00:00",
+  "services": [
+    {
+      "id": "srv-dbkp73mgekts73eq0m20",
+      "name": "mpri-portfolio-api",
+      "type": "web_service",
+      "branch": "feature/mvp-release-readiness",
+      "autoDeploy": "no",
+      "suspended": "not_suspended",
+      "rootDir": "",
+      "updatedAt": "2026-11-03T08:00:42.714992Z",
+      "settings": {
+        "plan": "free",
+        "region": "singapore",
+        "numInstances": 1,
+        "healthCheckPath": "/health",
+        "url": "https://mpri-portfolio-api.onrender.com",
+        "runtime": "python"
+      },
+      "runtime_setting_names": [
+        "buildCommand",
+        "startCommand"
+      ],
+      "environment_variable_names": [
+        "OMP_NUM_THREADS",
+        "OPENBLAS_NUM_THREADS",
+        "PORTFOLIO_API_CORS_ORIGINS",
+        "PORTFOLIO_API_DOCS_ENABLED",
+        "PYTHON_VERSION"
+      ],
+      "deploys": [
+        {
+          "id": "dep-dbkp8krbc2fs73a0bjkg",
+          "status": "live",
+          "createdAt": "2026-11-03T07:59:15.511969Z",
+          "updatedAt": "2026-11-03T08:01:15.900376Z",
+          "finishedAt": "2026-11-03T08:00:42.619208Z",
+          "commit": {
+            "id": "97e78366a026e9221740526087ef8082a891fa28"
+          }
+        },
+        {
+          "id": "dep-dbkp746gekts73eq0n2g",
+          "status": "deactivated",
+          "createdAt": "2026-11-03T07:56:00.89598Z",
+          "updatedAt": "2026-11-03T08:00:42.618451Z",
+          "finishedAt": "2026-11-03T07:57:44.447845Z",
+          "commit": {
+            "id": "97e78366a026e9221740526087ef8082a891fa28"
+          }
+        }
+      ],
+      "start_command_sha256": "9815197ec665dc08c7d7c8db15fca7bd43f584016838fe5ecb68c3062c343fc7",
+      "build_command_sha256": "264cc1e1d6a40dd44ec78f273f8ae370cb7da21a7aef03c9909e900e95b7a47b",
+      "api_worker_count_from_command": 1,
+      "settings_unchanged_during_readonly_inspection": true,
+      "platform_compute_spec": {
+        "source": "https://render.com/docs/compute-plans",
+        "cpu": 0.1,
+        "ram_label": "512 MB",
+        "actual_cgroup_limit_bytes": null
+      }
+    },
+    {
+      "id": "srv-dbkp8fvf3r2c73fi28fg",
+      "name": "mpri-mvp-web",
+      "type": "web_service",
+      "branch": "feature/mvp-release-readiness",
+      "autoDeploy": "no",
+      "suspended": "not_suspended",
+      "rootDir": "frontend",
+      "updatedAt": "2026-11-03T08:01:21.929747Z",
+      "settings": {
+        "plan": "free",
+        "region": "singapore",
+        "numInstances": 1,
+        "healthCheckPath": "/",
+        "url": "https://mpri-mvp-web.onrender.com",
+        "runtime": "node"
+      },
+      "runtime_setting_names": [
+        "buildCommand",
+        "startCommand"
+      ],
+      "environment_variable_names": [
+        "NODE_VERSION",
+        "PORTFOLIO_API_INTERNAL_URL"
+      ],
+      "deploys": [
+        {
+          "id": "dep-dbkp8gff3r2c73fi29l0",
+          "status": "live",
+          "createdAt": "2026-11-03T07:58:57.638468Z",
+          "updatedAt": "2026-11-03T08:37:34.812638Z",
+          "finishedAt": "2026-11-03T08:01:21.832701Z",
+          "commit": {
+            "id": "97e78366a026e9221740526087ef8082a891fa28"
+          }
+        }
+      ],
+      "start_command_sha256": "37e148fa30e18dd69698ce7f576f2bf0ddb7111460bb737d90d5638e6eb8b820",
+      "build_command_sha256": "9bfb1061990883c7d344a85f66e06d1ea0d0b596effe66fe9f0019534fd96b8e",
+      "api_worker_count_from_command": null,
+      "settings_unchanged_during_readonly_inspection": true,
+      "platform_compute_spec": {
+        "source": "https://render.com/docs/compute-plans",
+        "cpu": 0.1,
+        "ram_label": "512 MB",
+        "actual_cgroup_limit_bytes": null
+      }
+    }
+  ]
+}
