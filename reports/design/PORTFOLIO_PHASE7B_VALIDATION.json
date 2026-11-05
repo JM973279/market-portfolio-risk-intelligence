@@ -1,0 +1,45 @@
+{
+  "baseline_commit": "ee301f6",
+  "branch": "feature/portfolio-universe-phase7",
+  "scope": "local_research_only_no_live_provider_connection",
+  "python": {
+    "passed": 304,
+    "new_offline_tests": 40,
+    "warnings": 1
+  },
+  "frontend": {
+    "eslint": "pass",
+    "tsc": "pass",
+    "charts": "pass",
+    "integration": "pass",
+    "render_config": "pass",
+    "build": "pass"
+  },
+  "browser_e2e": "not_run",
+  "legacy_contract_equal": true,
+  "single_asset_hashes_equal": 28,
+  "contract_sha256": "d4c0edd078c95f9ca8d6973c950570fffdc12086489a0f111280a76d0b1655cd",
+  "live_provider_connections": 0,
+  "new_real_price_assets_validated": 0,
+  "new_public_analysis_assets": 0,
+  "frozen_v1_supported_assets": 28,
+  "protected_file_sha256": {
+    "data/portfolio/prices.csv": "2f45982948c3b0675f7cf1de2a08afa1a98d082af28f02d4f32484b20603ce30",
+    "data/portfolio/factors.csv": "4d8fcb6a5d7dc721444ef4a687d6994ec653624c725280f67ed449163e73905d",
+    "data/portfolio/scenarios.json": "c1d072801f93f7691fb4bb6bedee1a7c97ed571ea3673aa84025997e81d2e75c",
+    "data/portfolio/snapshot_meta.json": "2c689e92496ab2ce9cf500b7fd2ff6207a419bacc38a140c2ad8a67109f7c1b4",
+    "data/portfolio/universe.csv": "2c7ada7fd34d2954162d504696045173bb04f41b76a87d7dd59b6ab4dda5cab9",
+    "data/portfolio_v2/registry.json": "fbf6e15df71977c8c5dd98b1c00cb375eab513f1d5e73204635e1e5a133eb614",
+    "data/portfolio_v2/catalog.json": "d1bc61edd7855fdfebc275ebce929caf21ada0daeea475a1af99e818a52dd642",
+    "data/portfolio_v2/kr_candidates.json": "091aec5c7a39f307effccc901d4ac80c27edb62626cf3c475af6478fc3982708",
+    "data/portfolio_v2/source_rights_review.json": "5696b9c4f82422b844a3b4fdc8d9307022848d148619b48cb406e68680b18207",
+    "render.yaml": "4a01b2204d810b1361a652e9f83d691df5976e2c7e5d5f9eb28ef4bc670c96e5"
+  },
+  "limitations": [
+    "archive_parsers_not_live_collectors",
+    "no_verified_production_calendar_bundled",
+    "corporate_action_reconciliation_not_implemented",
+    "no_new_public_rights_or_methodology_approval",
+    "krx_live_schema_not_verified"
+  ]
+}
