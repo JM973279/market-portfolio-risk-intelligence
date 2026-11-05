@@ -1,6 +1,7 @@
 import json
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Query
+from typing import Literal
 from src.portfolio.execution import bounded_endpoint
 
 from src.portfolio.readiness import require_snapshot
@@ -92,6 +93,14 @@ def catalog():
     return get_catalog()
 
 
+def discovery(q: str = Query('', max_length=100), market: Literal['US', 'KR'] | None = None,
+              kind: Literal['stock', 'etf'] | None = None,
+              status: Literal['full', 'partial', 'unsupported'] | None = None,
+              offset: int = Query(0, ge=0), limit: int = Query(30, ge=1, le=100)):
+    from src.portfolio.catalog import search_discovery
+    return search_discovery(q, market, kind, status, offset, limit)
+
+
 # Keep synchronous cores callable by demo/offline users; HTTP always enters the
 # single bounded executor once, including the unchanged snapshot SHA check.
 for path, core, methods, response_model in [
@@ -100,6 +109,7 @@ for path, core, methods, response_model in [
     ('/analyze', analyze, ['POST'], AnalyzeResponse),
     ('/compare', compare, ['POST'], CompareResponse),
     ('/v2/catalog', catalog, ['GET'], None),
+    ('/v2/discovery', discovery, ['GET'], None),
 ]:
     router.add_api_route(path, bounded_endpoint(core, check=require_snapshot),
                          methods=methods, response_model=response_model)

@@ -1,0 +1,21 @@
+{
+  "baseline_commit": "913cbc4",
+  "legacy_contract_equal": true,
+  "single_asset_hashes_equal": 28,
+  "contract_sha256": "d4c0edd078c95f9ca8d6973c950570fffdc12086489a0f111280a76d0b1655cd",
+  "python_tests": {
+    "passed": 264,
+    "added": 17
+  },
+  "frontend": {
+    "lint": "pass",
+    "tsc": "pass",
+    "build": "pass",
+    "charts": "pass",
+    "integration": "pass",
+    "render_config": "pass"
+  },
+  "browser_e2e": "not_run_playwright_module_unavailable",
+  "new_approved_assets": 0,
+  "new_approved_sources": 0
+}
