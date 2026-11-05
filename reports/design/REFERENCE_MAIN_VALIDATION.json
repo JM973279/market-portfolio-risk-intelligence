@@ -1,0 +1,86 @@
+{
+  "branch": "feature/mpri-nextgen-ui",
+  "head": "453bb94",
+  "changed_existing_source_files_this_task": [
+    "frontend/src/components/signal-atlas.module.css",
+    "frontend/src/components/risk-overview.tsx",
+    "frontend/src/components/home-navigation.tsx",
+    "frontend/src/components/signal-atlas.tsx"
+  ],
+  "new_ui_files": [
+    "frontend/src/components/market-flag.tsx"
+  ],
+  "python": {
+    "passed": 304,
+    "warnings": 1,
+    "warning": "Existing Starlette/httpx deprecation"
+  },
+  "frontend": {
+    "typescript": "passed",
+    "eslint": "passed",
+    "production_build": "passed",
+    "tests": [
+      "test:charts",
+      "test:explorer",
+      "test:integration",
+      "test:render",
+      "check-signal-atlas.mjs"
+    ]
+  },
+  "chromium": {
+    "checks": [
+      "1440px initial layout and accessible names",
+      "1440px latest scores/dates/status exact; no sidebar/hero/rail; four series and six signals",
+      "1440px exact-date heatmap, visible detail values and original breadth percentile",
+      "1440px absent date stays N/A without carry-forward; missing cells identified",
+      "1440px four-series mode and centered zoom",
+      "1440px real pointer interval selection and finite paths",
+      "1440px saved lens state, keyboard date navigation and evidence",
+      "1440px layout after interactions",
+      "1440px English layout",
+      "1440px all nine page links, language switch and Escape menu",
+      "390px initial layout and accessible names",
+      "390px latest scores/dates/status exact; no sidebar/hero/rail; four series and six signals",
+      "390px exact-date heatmap, visible detail values and original breadth percentile",
+      "390px absent date stays N/A without carry-forward; missing cells identified",
+      "390px four-series mode and centered zoom",
+      "390px real pointer interval selection and finite paths",
+      "390px saved lens state, keyboard date navigation and evidence",
+      "390px layout after interactions",
+      "390px English layout",
+      "390px all nine page links, language switch and Escape menu",
+      "other-page shell remains unchanged"
+    ],
+    "count": 21,
+    "javascript_exceptions": [],
+    "screenshots": "/tmp/mpri-final-design/screenshots",
+    "browser": "Chromium via CDP",
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "limitations": [
+      "not a full screen-reader or WCAG certification"
+    ]
+  },
+  "console_error_count": 0,
+  "api_contract_identical": true,
+  "frozen_v1_single_asset_results_preserved": 28,
+  "visual_review": {
+    "1440": "Inspected final screenshot and adjusted spacing, map height, panels and controls against reference",
+    "390": "Inspected final full screenshot; stacked market panels, chart and selected-date detail"
+  },
+  "preserved": [
+    "Frozen V1",
+    "Phase 7A/7B",
+    "Stress Validation",
+    "API contracts",
+    "model calculations",
+    "data permissions",
+    "other-page structures",
+    "pre-existing uncommitted work"
+  ],
+  "commit": false,
+  "push": false,
+  "deployment": false
+}

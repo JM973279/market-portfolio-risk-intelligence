@@ -1,0 +1,23 @@
+// Exact-date/null boundaries for the new visual, independently of rendering.
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+import ts from 'typescript';
+const code = ts.transpileModule(fs.readFileSync('src/lib/risk-explorer.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS}}).outputText;
+const moduleValue={exports:{}};
+vm.runInNewContext(code,{module:moduleValue,exports:moduleValue.exports});
+const {finiteValue,observationAt,signalPath,metricDomain}=moduleValue.exports;
+const points=[{date:'2024-01-02',price:1,risk:.1,msi:-2,threshold:1},{date:'2024-01-03',price:2,risk:null,msi:null,threshold:null},{date:'2024-01-04',price:3,risk:.8,msi:2,threshold:1.2}];
+assert.equal(observationAt(points,'2024-01-03').risk,null);
+assert.equal(observationAt(points,'2024-01-05'),null);
+assert.equal(finiteValue(NaN),null);assert.equal(finiteValue(Infinity),null);assert.equal(finiteValue(0),0);
+const path=signalPath(points,'risk',d=>Number(d.slice(-2)),v=>v);
+assert.equal((path.match(/M/g)||[]).length,2);assert.equal((path.match(/L/g)||[]).length,0);
+assert.equal(signalPath(points,'msi',d=>Number(d.slice(-2)),v=>v).includes('NaN'),false);
+assert.equal(JSON.stringify(metricDomain(points,'risk')),'[0,1]');
+const [low,high]=metricDomain(points,'msi');assert.ok(low < -2 && high > 2);
+assert.equal(JSON.stringify(metricDomain([],'msi')),'[-1,1]');
+const global=JSON.parse(fs.readFileSync('public/data/global-markets.json','utf8'));
+assert.equal(observationAt(global.us,global.asOf),null);
+assert.equal(observationAt(global.korea,global.asOf).risk,null);
+console.log('PASS: exact dates, missing values, disconnected trajectories, independent MSI domains, unchanged risk scale');

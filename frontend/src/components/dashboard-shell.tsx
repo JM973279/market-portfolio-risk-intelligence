@@ -1,6 +1,8 @@
 "use client";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import HomeNavigation from "./home-navigation";
+import atlasStyles from "./signal-atlas.module.css";
 import { usePathname } from "next/navigation";
 import type { DashboardData } from "@/lib/dashboard-types";
 import { dashboardCopy, type CopyKey } from "@/lib/dashboard-copy";
@@ -28,6 +30,8 @@ export default function DashboardShell({ data, children }: { data: DashboardData
  const [language, setLanguage] = useState<Language>("ko");
  const [open, setOpen] = useState(false);
  const pathname = usePathname();
+ const sidebar = useRef<HTMLElement>(null);
+ const menuButton = useRef<HTMLButtonElement>(null);
  const t = (key: CopyKey) => dashboardCopy[key][language === "en" ? 0 : 1];
  useEffect(() => { document.documentElement.lang = language; }, [language, pathname]);
  useEffect(() => {
@@ -36,17 +40,35 @@ export default function DashboardShell({ data, children }: { data: DashboardData
   }, 0);
   return () => clearTimeout(timer);
  }, []);
+ useEffect(() => {
+  if (!open) return;
+  const previous = document.body.style.overflow;
+  document.body.style.overflow = "hidden";
+  const getItems = () => Array.from(sidebar.current?.querySelectorAll<HTMLElement>('a, button, select') ?? []).filter(el => el.offsetParent !== null);
+  getItems()[0]?.focus();
+  const handle = (event: KeyboardEvent) => {
+   if (event.key === "Escape") { setOpen(false); menuButton.current?.focus(); }
+   if (event.key === "Tab") {
+    const items = getItems(), first = items[0], last = items.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+   }
+  };
+  document.addEventListener("keydown", handle);
+  return () => { document.body.style.overflow = previous; document.removeEventListener("keydown", handle); };
+ }, [open]);
  const changeLanguage = (value: Language) => {
   setLanguage(value);
   try { sessionStorage.setItem("mpri-language", value); } catch { /* The toggle still works when storage is blocked. */ }
  };
- return <DashboardContext.Provider value={{...data,language,t}}><div className="app-shell">
-  <aside className={`sidebar ${open ? "is-open" : ""}`}>
-   <Link href="/" className="wordmark" aria-label="M/PRI home">M / PRI</Link>
+ if (pathname === "/") return <DashboardContext.Provider value={{...data,language,t}}><div className={atlasStyles.homeShell}><a className="skip-link" href="#main-content">{language === "ko" ? "본문으로 이동" : "Skip to content"}</a><HomeNavigation language={language} onLanguage={changeLanguage}/><div className={atlasStyles.homeBody}>{children}</div><footer className={atlasStyles.footer}><span>M/PRI · {language === "ko" ? "시장·포트폴리오 위험 분석" : "Market & Portfolio Risk Intelligence"}</span><span>{language === "ko" ? "연구용 자료 · 수동 갱신 · 실시간 자료 아님" : "Research data · manual refresh · no live feed"}</span></footer></div></DashboardContext.Provider>;
+ return <DashboardContext.Provider value={{...data,language,t}}><a className="skip-link" href="#main-content">{language === "ko" ? "본문으로 이동" : "Skip to content"}</a><div className="app-shell">
+  <aside ref={sidebar} className={`sidebar ${open ? "is-open" : ""}`}>
+   <div className="sidebar-brand"><Link href="/" className="wordmark" aria-label="M/PRI home">M<span>/</span>PRI<span className="brand-point"/></Link><button className="sidebar-close" aria-label={language === "ko" ? "탐색 닫기" : "Close navigation"} onClick={() => {setOpen(false);menuButton.current?.focus();}}>×</button></div>
    <p className="brand-description">Market &amp; Portfolio<br/>Risk Intelligence</p>
-   <nav id="primary-navigation" aria-label={language === "ko" ? "주요 탐색" : "Main navigation"}>{navigation.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={pathname === item.href ? "active" : ""} aria-current={pathname === item.href ? "page" : undefined}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={item.icon}/></svg>{t(item.key)}</Link>)}</nav>
+   <span className="nav-caption">INTELLIGENCE WORKSPACE</span><nav id="primary-navigation" aria-label={language === "ko" ? "주요 탐색" : "Main navigation"}>{navigation.map(item => <Link key={item.href} href={item.href} onClick={() => setOpen(false)} className={pathname === item.href ? "active" : ""} aria-current={pathname === item.href ? "page" : undefined}><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={item.icon}/></svg>{t(item.key)}</Link>)}</nav>
    <div className="sidebar-bottom"><div className="sidebar-snapshot"><small>{t("snapshot")}</small><b>{data.global?.asOf ?? data.monitor?.latest?.Date ?? "N/A"}</b><span className="live-label"><i/>{t("notLive")}</span></div><div className="language-toggle" role="group" aria-label="Language / 언어">{(["ko","en"] as const).map(lang => <button key={lang} lang={lang} aria-pressed={language===lang} onClick={() => changeLanguage(lang)}>{lang==="ko" ? "KR" : "EN"}</button>)}</div><small className="sidebar-research">{t("research")}</small></div>
   </aside>
-  <div className="app-body"><div className="mobile-topbar"><Link href="/" className="wordmark">M / PRI</Link><button aria-label={t("menu")} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>☰</button></div>{open && <button className="nav-backdrop" aria-label={t("menu")} onClick={() => setOpen(false)}/>}{children}<footer><span>M / PRI <span className="footer-divider">/</span> {t("research")}</span><span>{t("footer")}</span></footer></div>
+  <div className="app-body"><div className="mobile-topbar"><Link href="/" className="wordmark">M / PRI</Link><button ref={menuButton} aria-label={t("menu")} aria-expanded={open} aria-controls="primary-navigation" onClick={() => setOpen(!open)}>☰</button></div>{open && <button className="nav-backdrop" aria-label={t("menu")} onClick={() => setOpen(false)}/>}<div className="workspace-topbar"><span><span className="topbar-product">M/PRI</span><span className="topbar-slash">/</span>{t(navigation.find(n => n.href === pathname)?.key ?? "dashboard")}</span><div><span className="topbar-mode">{language === "ko" ? "연구 · 수동 갱신" : "RESEARCH · MANUAL REFRESH"}</span><span className="topbar-date">{data.global?.asOf ?? "N/A"}</span></div></div>{children}<footer><span>M / PRI <span className="footer-divider">/</span> {t("research")}</span><span>{t("footer")}</span></footer></div>
  </div></DashboardContext.Provider>;
 }

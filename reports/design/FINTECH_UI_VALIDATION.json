@@ -1,0 +1,83 @@
+{
+  "scope": "local_frontend_only",
+  "starting_branch": "feature/portfolio-universe-phase7",
+  "starting_commit": "ee301f6",
+  "final_branch": "feature/mpri-nextgen-ui",
+  "final_commit": "453bb94",
+  "ui_commits_created": 0,
+  "python": {
+    "passed": 304,
+    "warnings": 1
+  },
+  "frontend": {
+    "lint": "pass",
+    "typescript": "pass",
+    "charts": "pass",
+    "explorer": "pass",
+    "integration": "pass",
+    "render_config": "pass",
+    "production_build": "pass"
+  },
+  "legacy_contract_equal": true,
+  "single_asset_hashes_equal": 28,
+  "legacy_contract_sha256": "d4c0edd078c95f9ca8d6973c950570fffdc12086489a0f111280a76d0b1655cd",
+  "browser": {
+    "checks": [
+      "1440px /",
+      "1440px /us",
+      "1440px /korea",
+      "1440px /breadth",
+      "1440px /validation",
+      "1440px /cases",
+      "1440px /sources",
+      "1440px /methodology",
+      "1440px /portfolio",
+      "768px /",
+      "768px /us",
+      "768px /korea",
+      "768px /breadth",
+      "768px /validation",
+      "768px /cases",
+      "768px /sources",
+      "768px /methodology",
+      "768px /portfolio",
+      "390px /",
+      "390px /us",
+      "390px /korea",
+      "390px /breadth",
+      "390px /validation",
+      "390px /cases",
+      "390px /sources",
+      "390px /methodology",
+      "390px /portfolio",
+      "explorer exact current N/A, saved metric/range and keyboard observation",
+      "portfolio search/NFKC, blocked KR, stale result invalidation, real analysis/scenarios/what-if",
+      "keyboard workspace tabs, loading skeleton, error/empty state, retry",
+      "390px English home",
+      "mobile navigation/Escape focus return, English and reduced motion"
+    ],
+    "count": 32,
+    "javascript_exceptions": [],
+    "browser": "installed Chromium via CDP",
+    "url": "http://127.0.0.1:3107",
+    "screenshots": "/tmp/mpri-ui-check",
+    "limits": [
+      "manual contrast/keyboard checks are not a full WCAG certification"
+    ]
+  },
+  "palette_contrast_on_surface": {
+    "primary": 15.97,
+    "secondary": 6.94
+  },
+  "limitations": [
+    "no_connected_SHAP_export",
+    "no_new_derived_risk_indicators",
+    "no_new_public_portfolio_metrics_or_assets",
+    "no_full_WCAG_or_screen_reader_certification",
+    "no_Safari_Firefox_or_physical_mobile_tests"
+  ],
+  "push": false,
+  "deployment": false,
+  "frozen_v1_modified": false,
+  "phase7b_modified": false
+}

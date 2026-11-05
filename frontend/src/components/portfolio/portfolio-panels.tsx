@@ -30,7 +30,7 @@ function useFormat() {
 function mix(from: number[], to: number[], t: number) {
  return `rgb(${from.map((c, i) => Math.round(c + (to[i] - c) * t)).join(",")})`;
 }
-const NEUTRAL = [243, 246, 250], RED = [232, 99, 113], BLUE = [37, 99, 166];
+const NEUTRAL = [22, 36, 53], RED = [146, 65, 65], BLUE = [35, 91, 125];
 const corrColor = (c: number) => mix(NEUTRAL, c >= 0 ? RED : BLUE, Math.min(1, Math.abs(c)));
 
 const FACTORS: Factor[] = ["market", "rate", "volatility"];
@@ -78,7 +78,7 @@ export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
  const exposure = analysis.factor_exposure;
  const { tickers, matrix } = analysis.correlation;
  return <>
-  <div className={styles.sectionTitle}><span className={styles.step}>STEP 3</span><h2>{p("hiddenTitle")}</h2></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>RISK DIAGNOSIS</span><h2>{p("hiddenTitle")}</h2></div>
   <div className="selected-metrics">
    <div><span>{p("volatility")}</span><strong>{pct(analysis.volatility, 1)}</strong></div>
    <div><span>{p("maxAsset")} · {analysis.concentration.max_asset.ticker}</span><strong>{pct(analysis.concentration.max_asset.weight, 1)}</strong></div>
@@ -104,7 +104,7 @@ export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
    </section>
    <section className="panel"><div className="panel-header"><h2>{p("corrTitle")}</h2><span className="tag">{analysis.window.days} {p("tradingDays")}</span></div>
     <div className="heatmap-wrap"><table className="heatmap"><thead><tr><th/>{tickers.map(t => <th key={t} scope="col">{t}</th>)}</tr></thead><tbody>
-     {tickers.map((row, i) => <tr key={row}><th scope="row">{row}</th>{matrix[i].map((c, j) => <td key={tickers[j]} className={styles.heatCell} title={`${row} · ${tickers[j]}: ${c.toFixed(2)}`} style={i === j ? { background: "#f3f6fa", color: "#8195af" } : { background: corrColor(c), color: Math.abs(c) > 0.55 ? "white" : "#183554" }}>{c.toFixed(2)}</td>)}</tr>)}
+     {tickers.map((row, i) => <tr key={row}><th scope="row">{row}</th>{matrix[i].map((c, j) => <td key={tickers[j]} className={styles.heatCell} title={`${row} · ${tickers[j]}: ${c.toFixed(2)}`} style={i === j ? { background: "var(--elevated)", color: "var(--muted)" } : { background: corrColor(c), color: "var(--ink)" }}>{c.toFixed(2)}</td>)}</tr>)}
     </tbody></table></div>
     <p className="panel-note">{p("corrNote")}</p>
    </section>
@@ -133,7 +133,7 @@ export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenar
  const note = english ? apiTextEn.scenarioNote : scenarios?.note;
  if (!analysis.stress?.length) return <section className="panel" role="status"><h2>{p("stressTitle")}</h2><p>{p("stressUnavailable")}</p></section>;
  return <>
-  <div className={styles.sectionTitle}><span className={styles.step}>STEP 4</span><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
+  <div className={styles.sectionTitle}><span className={styles.step}>SCENARIOS</span><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
   <div className={styles.stressGrid}>{analysis.stress.map(s => {
    const ref = scenarios?.scenarios.find(item => item.id === s.scenario)?.reference;
    const scale = Math.max(...s.by_asset.map(a => Math.abs(a.loss_usd)), 1);
@@ -149,7 +149,7 @@ export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenar
     </div>
    </section>;
   })}</div>
-  <section className={`panel ${styles.section}`}><h2>{p("limitations")}</h2><ul className={styles.limitations}>{limitations.map(item => <li key={item}>{item}</li>)}{note && <li>{note}</li>}</ul></section>
+  <details className={`panel ${styles.section}`}><summary>{p("limitations")}</summary><ul className={styles.limitations}>{limitations.map(item => <li key={item}>{item}</li>)}{note && <li>{note}</li>}</ul></details>
  </>;
 }
 

@@ -1,0 +1,75 @@
+{
+  "scope": "homepage_only_signal_atlas_temporal_lens",
+  "branch": "feature/mpri-nextgen-ui",
+  "head": "453bb94",
+  "existing_files_changed_this_turn": [
+    "frontend/src/components/dashboard-shell.tsx",
+    "frontend/src/components/risk-overview.tsx"
+  ],
+  "other_existing_files_unchanged": true,
+  "python": {
+    "passed": 304,
+    "warnings": 1
+  },
+  "frontend": {
+    "lint": "pass",
+    "typescript": "pass",
+    "charts": "pass",
+    "explorer": "pass",
+    "integration": "pass",
+    "render_config": "pass",
+    "atlas_data": "pass",
+    "production_build": "pass"
+  },
+  "browser": {
+    "checks": [
+      "1440px initial layout and accessible names",
+      "1440px latest scores/dates/status exact; no sidebar/hero/rail; two series and six signals",
+      "1440px exact-date risk and original breadth percentile",
+      "1440px absent date stays N/A without carry-forward",
+      "1440px four-series mode and centered zoom",
+      "1440px real pointer interval selection and finite paths",
+      "1440px saved lens state, keyboard date navigation and evidence",
+      "1440px layout after interactions",
+      "1440px English layout",
+      "1440px all nine page links, language switch and Escape menu",
+      "390px initial layout and accessible names",
+      "390px latest scores/dates/status exact; no sidebar/hero/rail; two series and six signals",
+      "390px exact-date risk and original breadth percentile",
+      "390px absent date stays N/A without carry-forward",
+      "390px four-series mode and centered zoom",
+      "390px real pointer interval selection and finite paths",
+      "390px saved lens state, keyboard date navigation and evidence",
+      "390px layout after interactions",
+      "390px English layout",
+      "390px all nine page links, language switch and Escape menu",
+      "other-page shell remains unchanged"
+    ],
+    "count": 21,
+    "javascript_exceptions": [],
+    "screenshots": "/tmp/mpri-signal-atlas",
+    "browser": "Chromium via CDP",
+    "viewports": [
+      "1440x1000",
+      "390x844"
+    ],
+    "limitations": [
+      "not a full screen-reader or WCAG certification"
+    ]
+  },
+  "legacy_api_contract_equal": true,
+  "single_asset_hashes_equal": 28,
+  "contract_sha256": "d4c0edd078c95f9ca8d6973c950570fffdc12086489a0f111280a76d0b1655cd",
+  "new_derived_market_metrics": false,
+  "missing_values_filled": false,
+  "operational_history_stitched_into_oos": false,
+  "frozen_v1_modified": false,
+  "phase7a_modified": false,
+  "phase7b_modified": false,
+  "stress_validation_modified": false,
+  "commit_created": false,
+  "push": false,
+  "deployment": false,
+  "desktop_default_range": "6M",
+  "mobile_default_range": "3M"
+}
