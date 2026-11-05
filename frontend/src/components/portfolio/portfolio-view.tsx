@@ -19,7 +19,7 @@ function ApiProblem({ error }: { error: PortfolioApiError }) {
 
 export default function PortfolioView() {
  const p = usePortfolioCopy();
- const { global, language } = useDashboard();
+ const { global, operational, language } = useDashboard();
  const revision = useRef(0);
  const [universe, setUniverse] = useState<Catalog | null>(null);
  const [scenarios, setScenarios] = useState<Scenarios | null>(null);
@@ -68,7 +68,8 @@ export default function PortfolioView() {
 
  const assets = universe?.assets ?? [];
  const network = error && error.error.kind !== "rejected" ? error.error : null;
- const marketAsOf = global?.asOf ?? null;
+ // Same date the U.S. card shows: the operational source date when present, else the research snapshot.
+ const marketAsOf = operational?.markets.us.expectedDate ?? global?.asOf ?? null;
  const portfolioAsOf = analysis?.as_of ?? scenarios?.as_of ?? null;
  return <main className="dashboard-content view-portfolio">
   <div className="page-hero compact-hero"><div className="hero-copy"><p className="eyebrow">{p("eyebrow")}</p><h1>{p("title")}</h1><p className="hero-subtitle">{p("subtitle")}</p></div>
@@ -82,7 +83,7 @@ export default function PortfolioView() {
   <section className={`panel ${styles.section}`}>
    <div className="panel-header"><div className={styles.panelTitle}><span className={styles.step}>STEP 2</span><h2>{p("inputTitle")}</h2></div><span className="tag">{p("inputNote")}</span></div>
    {universe && <p>{universe.notice[language === "ko" ? "ko" : "en"]}</p>}
-   <HoldingsEditor holdings={holdings} onChange={changeCurrent} assets={assets} value={value}/>
+   <HoldingsEditor label={p("current")} holdings={holdings} onChange={changeCurrent} assets={assets} value={value}/>
    <div className={styles.editorFooter}>
     <label className={styles.valueField}>{p("valueLabel")}<input type="number" inputMode="decimal" min="0" step="1000" value={Number.isFinite(value) ? value : ""} onChange={e => changeValue(e.target.value === "" ? NaN : Number(e.target.value))}/></label>
     <div className={styles.actions}>
@@ -101,7 +102,7 @@ export default function PortfolioView() {
   <div className={styles.whatifGrid}>
    <section className="panel">
     <div className={styles.actions}><button type="button" onClick={() => changeProposed(holdings)}>{p("fromCurrent")}</button><button type="button" onClick={() => changeProposed(exampleAfter)}>{p("exampleShift")}</button></div>
-    <div className={styles.section}><HoldingsEditor holdings={proposed} onChange={changeProposed} assets={assets} value={value}/></div>
+    <div className={styles.section}><HoldingsEditor label={p("proposed")} holdings={proposed} onChange={changeProposed} assets={assets} value={value}/></div>
     <div className={styles.editorFooter}><span/><button type="button" className={styles.primary} disabled={busy !== null || inputProblem(holdings, value) !== null || inputProblem(proposed, value) !== null || !universe || !selectablePortfolio(holdings, assets) || !selectablePortfolio(proposed, assets)} onClick={() => run("compare")}>{busy === "compare" ? p("comparing") : p("compare")}</button></div>
     {error?.task === "compare" && error.error.kind === "rejected" && <ApiProblem error={error.error}/>}
    </section>

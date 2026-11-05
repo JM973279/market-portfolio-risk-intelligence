@@ -44,6 +44,9 @@ See [frontend usage](frontend/README.md) and
 
 ## Portfolio Module
 
+To run the full demo (API + dashboard) and present it step by step, see
+[docs/PORTFOLIO_DEMO.md](docs/PORTFOLIO_DEMO.md).
+
 ```bash
 python -m src.portfolio.data        # fetch prices, VIX, DGS10 into data/raw/ (gitignored)
 python -m src.portfolio.snapshot    # freeze data/portfolio/prices.csv, factors.csv as of the latest complete date
@@ -177,6 +180,115 @@ Using the frozen 2026-10-23 snapshot and 756 daily returns (2023-10-19 through
 
 The shift lowers the equity and volatility shock losses and adds a rate-shock
 loss that was not distinguishable from zero before.
+
+### Stress 검증: historical loss replay
+
+The [Stress 검증](reports/portfolio/stress_validation_report.md) compares estimates with
+realized buy-and-hold losses for all 28 supported assets and the two demo
+portfolios. Betas use only observations strictly before each interval starts.
+Three frozen stress cases are complemented by 145 non-overlapping 10-day
+intervals with full 756-return training windows. The 2020 cases have shorter
+available histories and are flagged separately.
+
+```bash
+python -m analysis.portfolio_stress_validation
+python -m pytest tests/test_portfolio_stress_validation.py
+```
+
+These are conditional replays using realized factor shocks, not forecasts of
+shocks or total losses. Single-factor estimates can materially overstate or
+understate realized losses; see the report for baselines, errors and limitations.
+
+### Stress 검증: joint-factor replay experiment
+
+The [joint-factor experiment](reports/portfolio/joint_stress/experiment.md)
+fits equity/rate and equity/rate/VIX coefficients together, then applies each
+interval's jointly observed shocks. It keeps the same pre-start training cutoff,
+daily beta approximation and 145 evaluation intervals, and includes a matched
+training-sample control for missing rate observations.
+
+```bash
+python -m analysis.portfolio_joint_stress_experiment
+python -m pytest tests/test_portfolio_joint_stress_experiment.py
+```
+
+The joint models improve average errors in this retrospective comparison, but
+some fixed crisis cases deteriorate. Production single-factor scenarios and
+the original Stress 검증 artifacts remain separate; fresh holdout validation is required
+before operational adoption.
+
+### Second Stress 검증 revision: direct 10-day returns
+
+The [direct 10-day experiment](reports/portfolio/direct_10d_stress/stress_validation_report.md)
+fits equity/rate coefficients to non-overlapping 10-trading-day asset returns.
+Every training block ends strictly before its evaluation interval starts.
+It compares models with and without the fitted intercept and preserves the
+first revision as the daily-beta baseline on the same 145 evaluation intervals.
+
+```bash
+python -m analysis.portfolio_horizon_stress_experiment
+python -m pytest tests/test_portfolio_horizon_stress_experiment.py
+```
+
+The direct-return candidates improve the fixed crisis cases but worsen average
+and tail-underestimation errors relative to the first revision. They are not
+selected to replace that candidate. Training-block dates, counts and missing
+endpoint exclusions are retained for inspection.
+
+### Stress 검증: situation-specific error diagnostics
+
+The [situation diagnostics](reports/portfolio/regime_stress/stress_validation_report.md)
+partition the first revision's fixed 145 intervals by realized equity/rate
+shocks. They report error direction, actual-loss-only underestimation, additive
+error contributions, chronological halves and a fixed nine-definition threshold
+sensitivity check. No model is refitted or selected by regime.
+
+```bash
+python -m analysis.portfolio_regime_stress_diagnostics
+python -m pytest tests/test_portfolio_regime_stress_diagnostics.py
+```
+
+The primary equity-down and joint-shock buckets have only three and two
+intervals. Some bias directions change across periods or thresholds, so these
+diagnostics do not establish a stable correction or a prospective regime rule.
+
+### Stress 검증: historical-error bands and empirical coverage
+
+The [error-band validation](reports/portfolio/error_band_stress/stress_validation_report.md)
+adds bounds around the first revision's unchanged point estimates. Calibration
+uses up to 60 errors whose outcome end is strictly before each evaluation start,
+with a minimum of 30. The first 31 intervals remain unavailable; 114 are scored.
+Signed-error bounds and a symmetric absolute-error comparator use identical
+eligible dates. Coverage, width, upper-loss exceedances and interval scores are
+reported overall, by chronological half, and by realized market situation.
+
+```bash
+python -m analysis.portfolio_error_band_validation
+python -m pytest tests/test_portfolio_error_band_validation.py
+```
+
+The 90% target is a design setting, not a guaranteed future probability. Overall
+historical coverage exceeds 90%, while loss-only coverage is lower and the bands
+remain wide. No production forecast or loss limit is implied.
+
+### Stress 검증: paper-forward collection pipeline
+
+The [new-period pipeline](docs/PORTFOLIO_FORWARD_VALIDATION_KO.md) seals the
+rules/runtime, then freezes each interval's betas and historical-error offsets
+before its start. It evaluates only after ten further observed SPY sessions,
+appends immutable receipts/results, and exports cumulative conditional-error
+and coverage metrics. Historical warm-start errors are excluded from forward
+performance counts. Stale inputs and collection failures remain waiting states.
+
+```bash
+python -m src.portfolio.forward_validation run --refresh
+python -m src.portfolio.forward_validation status
+python -m pytest tests/test_portfolio_forward_validation.py
+```
+
+The GitHub Actions workflow includes weekday collection and state restoration;
+it runs only after the workflow is present on the remote default branch and
+Actions is enabled. See the [actual readiness check](reports/portfolio/forward_stress/stress_validation_report.md).
 
 Run the real analysis code against the fixed requests without downloading data:
 

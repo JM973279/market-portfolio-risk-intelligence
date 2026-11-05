@@ -16,3 +16,4 @@ data/operations/
 data/portfolio_expansion/raw/
 # Unlicensed prices and derived research outputs never enter public artifacts.
 data/portfolio_expansion/research/
+data/portfolio_forward_validation/

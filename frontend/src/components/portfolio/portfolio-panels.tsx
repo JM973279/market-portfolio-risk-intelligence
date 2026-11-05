@@ -1,7 +1,7 @@
 "use client";
 import { useDashboard } from "@/components/dashboard-shell";
 import { MAX_HOLDINGS, inputProblem, weightTotal, type Analysis, type Asset, type Comparison, type Factor, type FactorBeta, type FactorSignificance, type Holding, type Scenarios } from "@/lib/portfolio-api";
-import { portfolioCopy, type PortfolioCopyKey } from "@/lib/portfolio-copy";
+import { apiTextEn, portfolioCopy, type PortfolioCopyKey } from "@/lib/portfolio-copy";
 import { AssetSearch } from "./asset-search";
 import styles from "./portfolio.module.css";
 
@@ -45,7 +45,8 @@ function FactorCells({ row, bold }: { row: FactorBeta & FactorSignificance; bold
  })}</>;
 }
 
-export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings: Holding[]; onChange: (next: Holding[]) => void; assets: Asset[]; value: number }) {
+// `label` names the editor (current / changed) so the two editors' fields have distinct accessible names.
+export function HoldingsEditor({ label, holdings, onChange, assets, value }: { label: string; holdings: Holding[]; onChange: (next: Holding[]) => void; assets: Asset[]; value: number }) {
  const p = usePortfolioCopy();
  const { pct } = useFormat();
  const total = weightTotal(holdings);
@@ -54,9 +55,9 @@ export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings
  return <>
   <div className="table-scroll"><table className={styles.editor}><thead><tr><th>{p("asset")}</th><th>{p("weight")}</th><th><span className="sr-only">{p("remove")}</span></th></tr></thead><tbody>
    {holdings.map((h, i) => <tr key={i}>
-    <th scope="row"><AssetSearch label={`${p("asset")} ${i + 1}`} value={h.ticker} assets={assets} onChange={ticker => update(i, { ticker })}/></th>
-    <td><input aria-label={`${p("weight")} ${i + 1}`} type="number" inputMode="decimal" min="0" max="100" step="0.01" value={Number.isFinite(h.weight) ? h.weight : ""} onChange={e => update(i, { weight: e.target.value === "" ? NaN : Number(e.target.value) })}/></td>
-    <td><button type="button" className={styles.removeButton} disabled={holdings.length === 1} onClick={() => onChange(holdings.filter((_, j) => j !== i))}>{p("remove")}</button></td>
+    <th scope="row"><AssetSearch label={`${label} ${p("asset")} ${i + 1}`} value={h.ticker} assets={assets} onChange={ticker => update(i, { ticker })}/></th>
+    <td><input aria-label={`${label} ${p("weight")} ${i + 1}`} type="number" inputMode="decimal" min="0" max="100" step="0.01" value={Number.isFinite(h.weight) ? h.weight : ""} onChange={e => update(i, { weight: e.target.value === "" ? NaN : Number(e.target.value) })}/></td>
+    <td><button type="button" className={styles.removeButton} aria-label={`${label} ${h.ticker || i + 1} ${p("remove")}`} disabled={holdings.length === 1} onClick={() => onChange(holdings.filter((_, j) => j !== i))}>{p("remove")}</button></td>
    </tr>)}
   </tbody></table></div>
   <div className={styles.editorFooter}>
@@ -70,6 +71,8 @@ export function HoldingsEditor({ holdings, onChange, assets, value }: { holdings
 export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
  const p = usePortfolioCopy();
  const { pct, pp, beta } = useFormat();
+ const english = useDashboard().language === "en";
+ const sectorNote = english ? [apiTextEn.sectorLabel, ...apiTextEn.sectorLimitations] : [analysis.sector_methodology.label, ...analysis.sector_methodology.limitations];
  const risk = new Map(analysis.risk_contribution.map(r => [r.ticker, r.share]));
  const scale = Math.max(...analysis.allocation.map(a => Math.max(a.weight, risk.get(a.ticker) ?? 0)), 1);
  const exposure = analysis.factor_exposure;
@@ -97,7 +100,7 @@ export function HiddenRiskMap({ analysis }: { analysis: Analysis }) {
    </section>
    <section className="panel"><div className="panel-header"><h2>{p("sectorTitle")}</h2></div>
     <div className={styles.barRows}>{analysis.sector.map(s => <div key={s.sector} className={styles.sectorRow}><span>{s.sector}</span><div className={styles.track}><span className={styles.weightFill} style={{ width: `${s.weight}%` }}/></div><b>{pct(s.weight)}</b></div>)}</div>
-    <p className="panel-note">{analysis.sector_methodology.label}. {analysis.sector_methodology.limitations.join(" ")}</p>
+    <p className="panel-note">{sectorNote[0]}. {sectorNote.slice(1).join(" ")}</p>
    </section>
    <section className="panel"><div className="panel-header"><h2>{p("corrTitle")}</h2><span className="tag">{analysis.window.days} {p("tradingDays")}</span></div>
     <div className="heatmap-wrap"><table className="heatmap"><thead><tr><th/>{tickers.map(t => <th key={t} scope="col">{t}</th>)}</tr></thead><tbody>
@@ -125,6 +128,9 @@ function shockText(id: string, shock: number, f: ReturnType<typeof useFormat>) {
 export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenarios: Scenarios | null }) {
  const p = usePortfolioCopy();
  const f = useFormat();
+ const english = useDashboard().language === "en";
+ const limitations = english ? apiTextEn.methodLimitations(analysis.methodology.shock_horizon_days) : analysis.methodology.limitations;
+ const note = english ? apiTextEn.scenarioNote : scenarios?.note;
  if (!analysis.stress?.length) return <section className="panel" role="status"><h2>{p("stressTitle")}</h2><p>{p("stressUnavailable")}</p></section>;
  return <>
   <div className={styles.sectionTitle}><span className={styles.step}>STEP 4</span><h2>{p("stressTitle")}</h2><p>{p("stressIntro")}</p></div>
@@ -143,7 +149,7 @@ export function StressTest({ analysis, scenarios }: { analysis: Analysis; scenar
     </div>
    </section>;
   })}</div>
-  <section className={`panel ${styles.section}`}><h2>{p("limitations")}</h2><ul className={styles.limitations}>{analysis.methodology.limitations.map(item => <li key={item}>{item}</li>)}{scenarios && <li>{scenarios.note}</li>}</ul></section>
+  <section className={`panel ${styles.section}`}><h2>{p("limitations")}</h2><ul className={styles.limitations}>{limitations.map(item => <li key={item}>{item}</li>)}{note && <li>{note}</li>}</ul></section>
  </>;
 }
 
