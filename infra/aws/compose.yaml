@@ -1,0 +1,22 @@
+# Local replica of the Lightsail container service. The web container shares the API
+# container's network namespace, so they reach each other over localhost as on Lightsail.
+# Run from the repository root: docker compose -f infra/aws/compose.yaml up --build
+name: mpri-aws-local
+services:
+  api:
+    build:
+      context: ../..
+      dockerfile: infra/aws/api.Dockerfile
+    image: mpri-api:local
+    ports:
+      # Published on this service because web joins its network namespace.
+      - "3000:3000"
+  web:
+    build:
+      context: ../../frontend
+      dockerfile: ../infra/aws/web.Dockerfile
+    image: mpri-web:local
+    network_mode: "service:api"
+    depends_on:
+      api:
+        condition: service_healthy
