@@ -1,0 +1,7 @@
+# Allowlist: the API image needs only its requirements, snapshot manifest, snapshot data and code.
+*
+!requirements.portfolio.txt
+!config/portfolio-snapshot.sha256.json
+!data/portfolio/
+!src/
+**/__pycache__
