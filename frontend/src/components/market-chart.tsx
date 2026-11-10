@@ -4,7 +4,7 @@ import { useDashboard } from "./dashboard-shell";
 import { chartRanges, linePath, rangeStart, timestamp, type ChartRange } from "@/lib/chart-data";
 import type { MarketPoint } from "@/lib/dashboard-types";
 
-export default function MarketChart({country, points, end}: {country:"us"|"korea"; points:MarketPoint[]; end:string}) {
+export default function MarketChart({country, points, end, operational = false}: {country:"us"|"korea"; points:MarketPoint[]; end:string; operational?:boolean}) {
  const {t,language}=useDashboard();
  const [range,setRange]=useState<ChartRange>("6M");
  const [inspected,setInspected]=useState<string|null>(null);
@@ -27,9 +27,10 @@ export default function MarketChart({country, points, end}: {country:"us"|"korea
  const missingFrom=latestRisk ? Math.max(left,x(latestRisk)) : left;
  const format=(value:number|null|undefined,digits=2)=>typeof value==="number" ? value.toLocaleString(language==="ko"?"ko-KR":"en-US",{minimumFractionDigits:digits,maximumFractionDigits:digits}):"N/A";
  const label=country==="us" ? "SPY" : "KOSPI200";
- return <section className="panel market-chart"><div className="panel-header"><h2>{t(country==="us"?"usChart":"koreaChart")}</h2><div className="range-toggle" role="group" aria-label={t("dateRange")}>{chartRanges.map(item=><button key={item} aria-pressed={item===range} onClick={()=>{setRange(item);setInspected(null);}}>{item}</button>)}</div></div>
+ const title=operational ? (language==="ko" ? "미국 운영 가격 · 모델 추론" : "US observed prices · model inference") : t(country==="us"?"usChart":"koreaChart");
+ return <section className="panel market-chart"><div className="panel-header"><h2>{title}</h2><div className="range-toggle" role="group" aria-label={t("dateRange")}>{chartRanges.map(item=><button key={item} aria-pressed={item===range} onClick={()=>{setRange(item);setInspected(null);}}>{item}</button>)}</div></div>
   <div className="chart-legend"><span><i className="legend-line navy"/>{label} ({country==="us" ? "USD" : language==="ko"?"포인트":"pts"})</span><span><i className="legend-line red"/>{t("riskRight")}</span><span><i className="legend-dash"/>{t("warningLine")}</span></div>
-  {shown.length ? <><svg viewBox="0 0 640 200" role="img" aria-label={`${t(country==="us"?"usChart":"koreaChart")}. ${t("priceLeft")}. ${t("riskRight")}. ${t("gaps")}`} onMouseMove={event=>{
+  {shown.length ? <><svg viewBox="0 0 640 200" role="img" aria-label={`${title}. ${t("priceLeft")}. ${t("riskRight")}. ${t("gaps")}`} onMouseMove={event=>{
    const rect=event.currentTarget.getBoundingClientRect();
    const px=(event.clientX-rect.left)/rect.width*640;
    const time=start+(px-left)/(right-left)*(timestamp(end)-start);
@@ -41,6 +42,6 @@ export default function MarketChart({country, points, end}: {country:"us"|"korea
    <g clipPath={`url(#clip-${id})`}><rect x={missingFrom} y={top} width={Math.max(0,right-missingFrom)} height={bottom-top} fill="#edf1f6" opacity=".65"/><line x1={left} x2={right} y1={ry(.5)} y2={ry(.5)} stroke="#df6972" strokeWidth="1" strokeDasharray="5 4"/><path d={indexPath} fill="none" stroke="#173f70" strokeWidth="2" strokeLinejoin="round"/><path d={riskPath} fill="none" stroke="#eb6874" strokeWidth="1.4" strokeLinejoin="round"/>{inspected && active && <line x1={x(active.date)} x2={x(active.date)} y1={top} y2={bottom} stroke="#8195af" strokeDasharray="3 3"/>}</g>
    {[0,.25,.5,.75,1].map(n=>{const date=new Date(start+n*(timestamp(end)-start));return <text key={n} x={left+n*(right-left)} y="191" textAnchor={n===0?"start":n===1?"end":"middle"}>{date.toISOString().slice(0,10)}</text>;})}
   </svg><div className="chart-readout"><time>{active?.date}</time><span>{label} <b>{format(active?.price)}</b></span><span className="risk-readout">V1 <b>{active?.risk==null?"N/A":`${format(active.risk*100,1)}%`}</b></span><span>MSI <b>{format(active?.msi,3)}</b></span></div><label className="chart-slider-label"><span>{t("inspectDate")}</span><input aria-label={`${label} ${t("inspectDate")}`} type="range" min="0" max={shown.length-1} value={Math.max(0,shown.findIndex(p=>p.date===active?.date))} onChange={event=>setInspected(shown[Number(event.target.value)].date)}/></label></> : <div className="chart-empty">{t("noSeries")}</div>}
-  <div className="chart-caption"><span><i className="legend-square"/>{t("noRisk")}</span><span>{t("historicalOos")} → {latestRisk ?? "N/A"}</span></div><p className="panel-note">{t("gaps")}</p>
+  <div className="chart-caption"><span><i className="legend-square"/>{t("noRisk")}</span><span>{operational ? (language==="ko"?"최신 검증 추론":"Latest verified inference") : t("historicalOos")} → {latestRisk ?? "N/A"}</span></div><p className="panel-note">{operational ? (language==="ko" ? "SPY는 배당·분할 수정종가(USD)입니다. 동일 수집본의 운영 추론만 겹쳐 표시하며, 필수 원천이 없는 날짜에는 점수를 이월하지 않습니다. 과거 OOS 차트는 별도로 보존됩니다." : "SPY is dividend/split-adjusted close in USD. Only inference from the same source vintage is overlaid; dates without required inputs retain gaps. Historical OOS charts remain separate.") : t("gaps")}</p>
  </section>;
 }

@@ -10,6 +10,10 @@ export type OperationalMarketData = {
  reason: string | null; modelSha256: string; trainingEvidence: string;
  series: { name: string; provider: string; observationDate: string | null; retrievedAt: string | null; status: string; reason: string | null }[];
  inferenceAt?: string; availabilityOrigin?: string;
+ generatedAt?: string; inferenceSucceeded?: boolean; baselineParity?: boolean;
+ dataPolicy?: string; policyNote?: string; priceBasis?: string;
+ priceHistory?: { date: string; price: number }[];
+ revisionAudit?: Record<string, { compared: number; changed: number; maxAbsoluteChange: number }>;
  availability?: { date: string; available: string[]; missing: string[]; values?: Record<string, number | null> }[];
 };
 export type OperationalData = { schema_version: 1; generatedAt: string; markets: { us: OperationalMarketData; korea: OperationalMarketData } };

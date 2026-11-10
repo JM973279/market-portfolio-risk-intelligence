@@ -60,7 +60,7 @@ class OperationalGateTests(unittest.TestCase):
         self.assertIsNone(shared['markets']['us']['lastValid']['price'])
         self.assertEqual(shared['markets']['us']['history'][0]['risk'], 0.1)
         self.assertEqual(private['markets']['us']['history'][0]['price'], 755.72)
-        self.assertFalse(data['sourceValuesIncluded'])
+        self.assertEqual(bool(data['sourceValuesIncluded']), bool(data['markets']['us'].get('priceHistory')))
         for market in data['markets'].values():
             self.assertTrue(all('values' not in row for row in market.get('availability', [])))
             if market['status'] == 'CURRENT':
@@ -71,7 +71,10 @@ class OperationalGateTests(unittest.TestCase):
             self.assertTrue(all(point['recordType'] in ['OPERATIONAL', 'RETROSPECTIVE_INFERENCE'] for point in market['history']))
             self.assertEqual(len({p['date'] for p in market['history']}), len(market['history']))
             for point in market['history']:
-                self.assertIsNone(point['price'])
+                if not data['sourceValuesIncluded'] or market is not data['markets']['us']:
+                    self.assertIsNone(point['price'])
+                else:
+                    self.assertTrue(np.isfinite(point['price']) and point['price'] > 0)
                 self.assertGreater(point['date'], market['trainingCutoff'])
                 self.assertTrue(0 <= point['risk'] <= 1)
                 self.assertTrue(np.isfinite([point['msi'], point['threshold']]).all())
