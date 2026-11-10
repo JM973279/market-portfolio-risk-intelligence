@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
 # Push the locally built web and API images to one Lightsail container service and deploy them.
-# Prerequisites: `aws login --profile "$AWS_PROFILE"`, the lightsailctl plugin, and images built with
+# Prerequisites: AWS credentials in the environment (AWS_PROFILE after `aws login`, or exported
+# AWS_ACCESS_KEY_ID/...), the lightsailctl plugin, and images built with
 #   docker compose -f infra/aws/compose.yaml build
 # Creating the service starts monthly billing, so the first run needs CREATE_SERVICE=yes.
 set -euo pipefail
 
-PROFILE="${AWS_PROFILE:-market-stress-scheduler}"
 REGION="${AWS_REGION:-ap-northeast-2}"
 SERVICE="${LIGHTSAIL_SERVICE:-mpri}"
 POWER="${LIGHTSAIL_POWER:-micro}"
 
-lightsail() { aws lightsail --profile "$PROFILE" --region "$REGION" "$@"; }
+# No --profile here: an explicit profile would make the CLI ignore exported credentials.
+lightsail() { aws lightsail --region "$REGION" "$@"; }
 service_field() { lightsail get-container-services --service-name "$SERVICE" --query "containerServices[0].$1" --output text; }
 
 wait_for_state() {

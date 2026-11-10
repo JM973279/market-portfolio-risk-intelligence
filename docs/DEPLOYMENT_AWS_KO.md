@@ -44,11 +44,19 @@ docker compose -f infra/aws/compose.yaml down
 
 ```bash
 docker compose -f infra/aws/compose.yaml build
+export AWS_PROFILE=market-stress-scheduler
 CREATE_SERVICE=yes infra/aws/deploy_lightsail.sh   # 처음 한 번만 CREATE_SERVICE=yes
 infra/aws/deploy_lightsail.sh                      # 이후 갱신
 ```
 
-스크립트는 두 이미지를 올리고 새 배포를 만든 뒤, 새 버전이 활성화될 때까지 기다렸다가 공개 주소를 출력합니다. `AWS_PROFILE`, `AWS_REGION`, `LIGHTSAIL_SERVICE`(기본 `mpri`), `LIGHTSAIL_POWER`(기본 `micro`)로 바꿀 수 있습니다.
+스크립트는 두 이미지를 올리고 새 배포를 만든 뒤, 새 버전이 활성화될 때까지 기다렸다가 공개 주소를 출력합니다. 인증은 AWS CLI 기본 규칙(`AWS_PROFILE` 또는 내보낸 `AWS_*` 자격 증명)을 따르고, `AWS_REGION`(기본 `ap-northeast-2`), `LIGHTSAIL_SERVICE`(기본 `mpri`), `LIGHTSAIL_POWER`(기본 `micro`)로 바꿀 수 있습니다.
+
+Windows PowerShell에서 `aws login`을 했다면 WSL에서는 그 로그인을 직접 쓰지 못합니다. 실행하는 셸에서만 임시 자격 증명을 가져옵니다(파일에 저장하지 않음).
+
+```bash
+eval "$("/mnt/c/Program Files/Amazon/AWSCLIV2/aws.exe" configure export-credentials \
+  --profile market-stress-scheduler --format env-no-export | tr -d '\r' | sed 's/^/export /')"
+```
 
 ## 실패와 되돌리기
 
@@ -59,4 +67,4 @@ infra/aws/deploy_lightsail.sh                      # 이후 갱신
 ## 아직 확인하지 않은 것
 
 - 실제 AWS 실행: 2026-11-10 기준 로그인 세션이 만료돼 스크립트를 AWS에서 돌려 보지 않았습니다.
-- 서울 리전(`ap-northeast-2`)의 컨테이너 서비스 생성 가능 여부와 첫 응답 시간.
+- 첫 응답 시간. 서울 리전(`ap-northeast-2`)에서 컨테이너 서비스 용량(Nano·Micro·Small)이 조회되는 것까지는 2026-11-10에 확인했습니다.
