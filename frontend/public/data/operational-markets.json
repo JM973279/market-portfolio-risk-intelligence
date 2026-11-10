@@ -1,48 +1,48 @@
 {
   "schema_version": 1,
-  "runId": "20261103T051707Z-f473940b",
-  "generatedAt": "2026-11-03T05:17:07.495282+00:00",
-  "mode": "receipt-replay",
+  "runId": "20261110T122959Z-8e0b0cfe",
+  "generatedAt": "2026-11-10T12:29:59.077890+00:00",
+  "mode": "provider-refresh",
   "markets": {
     "korea": {
       "status": "CURRENT",
-      "expectedDate": "2026-11-02",
+      "expectedDate": "2026-11-09",
       "series": [
         {
           "name": "KOSPI200",
           "provider": "KRX",
-          "retrievedAt": "2026-11-03T05:11:57.166004+00:00",
-          "observationDate": "2026-11-02",
+          "retrievedAt": "2026-11-10T12:30:05.514181+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "e5cef5eae0f797046650f64f2f06cc7c7d47fe858e84650e7fb7c2124a84bf97"
+          "sha256": "5f7f7d03598a740d6a53e22350e14d2cf2762bc8a2c6a825e98a887d0146a7ee"
         },
         {
           "name": "VKOSPI",
           "provider": "KRX",
-          "retrievedAt": "2026-11-03T05:12:00.007389+00:00",
-          "observationDate": "2026-11-02",
+          "retrievedAt": "2026-11-10T12:30:10.956268+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "c6ca4320da2543951daafa167f85ebdc202a141008e760e06c5e2f3b19e6bcfe"
+          "sha256": "83541196aa15e4356dc8bbbf09d5e5a2afb953d4716bd6fbba1fd554ccaabdfa"
         },
         {
           "name": "Korea_Treasury_3Y",
           "provider": "BOK ECOS",
-          "retrievedAt": "2026-11-03T05:12:00.830283+00:00",
-          "observationDate": "2026-11-02",
+          "retrievedAt": "2026-11-10T12:30:11.881838+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "e05d26fed9a8010a9a928375516ef08f36c7b56a5e09697aec908e64123604b4"
+          "sha256": "c9d3c6a72eea39250297047f9b611273352e5f253bc2f1268032af4e7ffcb9dc"
         },
         {
           "name": "Korea_Corporate_AAminus_3Y",
           "provider": "BOK ECOS",
-          "retrievedAt": "2026-11-03T05:12:01.921319+00:00",
-          "observationDate": "2026-11-02",
+          "retrievedAt": "2026-11-10T12:30:12.792211+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "30fa0158879e663326d372668142a1c0a256d2177f0ed4bed784310b2aa79e19"
+          "sha256": "da9b67cf3cffb93f8d10f39b0613801456b77cfaecfb1928ba9a646e46f1861a"
         }
       ],
       "history": [
@@ -277,21 +277,61 @@
           "threshold": 1.1151247914671345,
           "price": null,
           "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-03",
+          "risk": 0.39525002241134644,
+          "msi": 0.8476606594131907,
+          "threshold": 1.1149342962809328,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-04",
+          "risk": 0.3863885998725891,
+          "msi": 0.8442272439480659,
+          "threshold": 1.1147438010947324,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-05",
+          "risk": 0.3796622157096863,
+          "msi": 0.9485536765999506,
+          "threshold": 1.114553305908532,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-06",
+          "risk": 0.5262924432754517,
+          "msi": 1.16434762277284,
+          "threshold": 1.1143628107223311,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-09",
+          "risk": 0.4716390371322632,
+          "msi": 1.0659580402042406,
+          "threshold": 1.1157238879169171,
+          "price": null,
+          "recordType": "OPERATIONAL"
         }
       ],
       "current": {
-        "date": "2026-11-02",
-        "risk": 0.40170958638191223,
-        "msi": 0.7534051710453241,
-        "threshold": 1.1151247914671345,
+        "date": "2026-11-09",
+        "risk": 0.4716390371322632,
+        "msi": 1.0659580402042406,
+        "threshold": 1.1157238879169171,
         "price": null,
         "recordType": "OPERATIONAL"
       },
       "lastValid": {
-        "date": "2026-11-02",
-        "risk": 0.40170958638191223,
-        "msi": 0.7534051710453241,
-        "threshold": 1.1151247914671345,
+        "date": "2026-11-09",
+        "risk": 0.4716390371322632,
+        "msi": 1.0659580402042406,
+        "threshold": 1.1157238879169171,
         "price": null,
         "recordType": "OPERATIONAL"
       },
@@ -319,58 +359,8 @@
         "Credit_252D_ZScore"
       ],
       "inferenceSucceeded": true,
-      "publicationDeadline": "2026-11-02T12:30:00+00:00",
+      "publicationDeadline": "2026-11-09T12:30:00+00:00",
       "availability": [
-        {
-          "date": "2026-08-04",
-          "available": [
-            "KOSPI200",
-            "VKOSPI",
-            "Korea_Treasury_3Y",
-            "Korea_Corporate_AAminus_3Y"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-05",
-          "available": [
-            "KOSPI200",
-            "VKOSPI",
-            "Korea_Treasury_3Y",
-            "Korea_Corporate_AAminus_3Y"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-06",
-          "available": [
-            "KOSPI200",
-            "VKOSPI",
-            "Korea_Treasury_3Y",
-            "Korea_Corporate_AAminus_3Y"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-07",
-          "available": [
-            "KOSPI200",
-            "VKOSPI",
-            "Korea_Treasury_3Y",
-            "Korea_Corporate_AAminus_3Y"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-10",
-          "available": [
-            "KOSPI200",
-            "VKOSPI",
-            "Korea_Treasury_3Y",
-            "Korea_Corporate_AAminus_3Y"
-          ],
-          "missing": []
-        },
         {
           "date": "2026-08-11",
           "available": [
@@ -920,51 +910,101 @@
             "Korea_Corporate_AAminus_3Y"
           ],
           "missing": []
+        },
+        {
+          "date": "2026-11-03",
+          "available": [
+            "KOSPI200",
+            "VKOSPI",
+            "Korea_Treasury_3Y",
+            "Korea_Corporate_AAminus_3Y"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-04",
+          "available": [
+            "KOSPI200",
+            "VKOSPI",
+            "Korea_Treasury_3Y",
+            "Korea_Corporate_AAminus_3Y"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-05",
+          "available": [
+            "KOSPI200",
+            "VKOSPI",
+            "Korea_Treasury_3Y",
+            "Korea_Corporate_AAminus_3Y"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-06",
+          "available": [
+            "KOSPI200",
+            "VKOSPI",
+            "Korea_Treasury_3Y",
+            "Korea_Corporate_AAminus_3Y"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-09",
+          "available": [
+            "KOSPI200",
+            "VKOSPI",
+            "Korea_Treasury_3Y",
+            "Korea_Corporate_AAminus_3Y"
+          ],
+          "missing": []
         }
       ],
       "availabilityOrigin": "provider-refresh",
       "historicalParity": true,
-      "inferenceAt": "2026-11-03T05:17:10.020758+00:00"
+      "inferenceAt": "2026-11-10T12:30:13.492455+00:00"
     },
     "us": {
-      "status": "BLOCKED",
-      "expectedDate": "2026-10-30",
+      "status": "DELAYED",
+      "expectedDate": "2026-11-09",
       "series": [
         {
           "name": "SPY",
           "provider": "Yahoo Finance",
-          "retrievedAt": "2026-11-03T05:12:04.084957+00:00",
-          "observationDate": "2026-10-30",
+          "retrievedAt": "2026-11-10T12:30:15.229027+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "160dbf5a0df478c07b397b6b9b08cecdfbf163fa59b972747fb9de1060cf402f"
+          "sha256": "df215db1e9a02978b54dfbafb197f8ca7a028dfa3a7fe349ae61c9f36b254064"
         },
         {
           "name": "VIX",
           "provider": "Yahoo Finance",
-          "retrievedAt": "2026-11-03T05:12:05.199165+00:00",
-          "observationDate": "2026-10-30",
+          "retrievedAt": "2026-11-10T12:30:16.035746+00:00",
+          "observationDate": "2026-11-09",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "fc3d0def676a971bd30bd6bd0bd2f9f3186c52f1a5603d7cf6337ff912df62aa"
+          "sha256": "c0f52ca0fc4ec4b9e3fb19d0d42043d880dbdda7b63efb29407ff7aee0aae980"
         },
         {
           "name": "DBAA",
           "provider": "FRED",
-          "retrievedAt": "2026-11-03T05:12:05.351040+00:00",
-          "observationDate": "2026-10-30",
+          "retrievedAt": "2026-11-10T12:30:16.236386+00:00",
+          "observationDate": "2026-11-06",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "af7497b5dbd2a106cd6bb180c5301725278a7fcbe619aba386c4cd0fcc1c2a4c"
+          "sha256": "abee9795e793df7c78c620fe778daa87be4c0673e58e83bb19eca64b0eb2f74d"
         },
         {
           "name": "DGS10",
           "provider": "FRED",
-          "retrievedAt": "2026-11-03T05:12:05.418257+00:00",
-          "observationDate": "2026-10-30",
+          "retrievedAt": "2026-11-10T12:30:16.416823+00:00",
+          "observationDate": "2026-11-06",
           "status": "OBSERVED",
           "reason": null,
-          "sha256": "6dc0ec72f40b17c0fdc2e09177fd73e05a7163515b04a6df1a1ecec1c2655a82"
+          "sha256": "7f86ceef57d3ffc385e33f337d4fc1daa67d514a76116fa23f6a010690bb49b5"
         }
       ],
       "history": [
@@ -1063,18 +1103,202 @@
           "threshold": 1.292547842937887,
           "price": null,
           "recordType": "RETROSPECTIVE_INFERENCE"
+        },
+        {
+          "date": "2026-10-06",
+          "risk": 0.10819675773382187,
+          "msi": -0.9713890447935236,
+          "threshold": 1.292491275618801,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-07",
+          "risk": 0.11543131619691849,
+          "msi": -0.988098761779686,
+          "threshold": 1.2924590673487797,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-08",
+          "risk": 0.10144848376512527,
+          "msi": -0.8857448800275112,
+          "threshold": 1.292426859078758,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-09",
+          "risk": 0.11936238408088684,
+          "msi": -1.1592120063251865,
+          "threshold": 1.292394650808737,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-13",
+          "risk": 0.1021764874458313,
+          "msi": -1.0176337120950498,
+          "threshold": 1.2923302342686942,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-14",
+          "risk": 0.20631195604801178,
+          "msi": -0.8466215469260977,
+          "threshold": 1.2922980259986727,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-15",
+          "risk": 0.16906265914440155,
+          "msi": -0.9530322759228972,
+          "threshold": 1.2922658177286512,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-16",
+          "risk": 0.5260498523712158,
+          "msi": -0.2952771212339566,
+          "threshold": 1.29223360945863,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-19",
+          "risk": 0.2834768295288086,
+          "msi": -0.4742345917358846,
+          "threshold": 1.2922014011886085,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-20",
+          "risk": 0.23035675287246704,
+          "msi": -0.5206864847748801,
+          "threshold": 1.292132800140089,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-21",
+          "risk": 0.23023882508277893,
+          "msi": -0.6304684147834868,
+          "threshold": 1.2920641990915689,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-22",
+          "risk": 0.360186368227005,
+          "msi": -0.2756824093418624,
+          "threshold": 1.2919955980430484,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-23",
+          "risk": 0.4396752417087555,
+          "msi": -0.1534046799237824,
+          "threshold": 1.2919269969945288,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-26",
+          "risk": 0.2747419774532318,
+          "msi": -0.3348980559923682,
+          "threshold": 1.2918583959460088,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-27",
+          "risk": 0.2556341290473938,
+          "msi": -0.5496842535368461,
+          "threshold": 1.291789794897489,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-28",
+          "risk": 0.2509496212005615,
+          "msi": -0.7211959915649349,
+          "threshold": 1.291721193848969,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-29",
+          "risk": 0.3045337498188019,
+          "msi": -0.4878432524899214,
+          "threshold": 1.2916525928004488,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-10-30",
+          "risk": 0.41263121366500854,
+          "msi": 0.0576330059456331,
+          "threshold": 1.2915839917519292,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-02",
+          "risk": 0.6574369668960571,
+          "msi": 0.3525397848776215,
+          "threshold": 1.291515390703409,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-03",
+          "risk": 0.560290515422821,
+          "msi": 0.3838161395734691,
+          "threshold": 1.291482474087922,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-04",
+          "risk": 0.20895008742809296,
+          "msi": -0.212711382138126,
+          "threshold": 1.291449557472435,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-05",
+          "risk": 0.9462416172027588,
+          "msi": 1.5205566530371757,
+          "threshold": 1.2914166408569476,
+          "price": null,
+          "recordType": "OPERATIONAL"
+        },
+        {
+          "date": "2026-11-06",
+          "risk": 0.9454043507575989,
+          "msi": 1.1402544874012082,
+          "threshold": 1.2919269969945288,
+          "price": null,
+          "recordType": "OPERATIONAL"
         }
       ],
       "current": null,
       "lastValid": {
-        "date": "2026-10-02",
-        "risk": 0.10021074116230011,
-        "msi": -0.8630971671941055,
-        "threshold": 1.292547842937887,
+        "date": "2026-11-06",
+        "risk": 0.9454043507575989,
+        "msi": 1.1402544874012082,
+        "threshold": 1.2919269969945288,
         "price": null,
-        "recordType": "RETROSPECTIVE_INFERENCE"
+        "recordType": "OPERATIONAL"
       },
-      "reason": "재수집한 과거 자료가 기존 연구 feature와 불일치: SPY_1D_Return. 신규 점수 발행 보류.",
+      "reason": "최신 필수 원천 관측 미확인. 과거 재현 추론을 현재 점수로 이월하지 않습니다.",
       "modelSha256": "90c51c245ebe62b58f804098a7a7045b60fb64ef83da72d4c9a049cf8d5eeb0d",
       "trainingCutoff": "2026-09-16",
       "trainingEvidence": "6317행 prefix scaler 근사 일치; cutoff 추정, 정확한 학습 receipt 미보존",
@@ -1098,62 +1322,29 @@
         "Credit_252D_ZScore"
       ],
       "inferenceSucceeded": true,
-      "publicationDeadline": "2026-10-31T08:00:00+00:00",
+      "publicationDeadline": "2026-11-10T09:00:00+00:00",
+      "providerRevision": {
+        "cacheEnd": "2026-10-05",
+        "channels": {
+          "SPY": {
+            "overlapDates": 258,
+            "scale": 1.0,
+            "maxRelativeDifference": 1.8676930013247548e-07
+          },
+          "VIX": {
+            "overlapDates": 260,
+            "scale": 1.0,
+            "maxRelativeDifference": 1.9350291724922078e-16
+          },
+          "BAA_Treasury_Spread": {
+            "overlapDates": 255,
+            "scale": 1.0,
+            "maxRelativeDifference": 2.453531546132943e-16
+          }
+        },
+        "appendedDates": 25
+      },
       "availability": [
-        {
-          "date": "2026-08-10",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-11",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-12",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-13",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-14",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
-        {
-          "date": "2026-08-17",
-          "available": [
-            "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
-          ],
-          "missing": []
-        },
         {
           "date": "2026-08-18",
           "available": [
@@ -1465,10 +1656,11 @@
           "date": "2026-10-05",
           "available": [
             "SPY",
-            "VIX",
-            "BAA_Treasury_Spread"
+            "VIX"
           ],
-          "missing": []
+          "missing": [
+            "BAA_Treasury_Spread"
+          ]
         },
         {
           "date": "2026-10-06",
@@ -1641,11 +1833,66 @@
             "BAA_Treasury_Spread"
           ],
           "missing": []
+        },
+        {
+          "date": "2026-11-02",
+          "available": [
+            "SPY",
+            "VIX",
+            "BAA_Treasury_Spread"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-03",
+          "available": [
+            "SPY",
+            "VIX",
+            "BAA_Treasury_Spread"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-04",
+          "available": [
+            "SPY",
+            "VIX",
+            "BAA_Treasury_Spread"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-05",
+          "available": [
+            "SPY",
+            "VIX",
+            "BAA_Treasury_Spread"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-06",
+          "available": [
+            "SPY",
+            "VIX",
+            "BAA_Treasury_Spread"
+          ],
+          "missing": []
+        },
+        {
+          "date": "2026-11-09",
+          "available": [
+            "SPY",
+            "VIX"
+          ],
+          "missing": [
+            "BAA_Treasury_Spread"
+          ]
         }
       ],
       "availabilityOrigin": "provider-refresh",
-      "inferenceAt": "2026-11-03T05:17:11.166439+00:00",
-      "historicalParity": true
+      "historicalParity": true,
+      "inferenceAt": "2026-11-10T12:30:16.952207+00:00"
     }
   },
   "sourceValuesIncluded": false

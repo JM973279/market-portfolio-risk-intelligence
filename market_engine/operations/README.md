@@ -42,8 +42,15 @@ Python script를 별도 프로세스로 실행한다. Portfolio의 `src`와 원�
 - 시장 휴장일은 exchange_calendars XKRX/XNYS로 판단하며 공개 여유 시간은 한국 6시간,
   미국 12시간이다. 이는 실제 제공처의 관측일이나 공개 시각을 대체하지 않는다.
 - 과거 reference의 모든 유효 feature/MSI/threshold가 rtol/atol=1e-9로 재현되어야 한다.
-  신규 제공처 응답에 과거 revision이 있으면 자동 수용하지 않는다. 현재 미국처럼 차이가
-  생기면 신규 추론은 보류하고, 별도로 검증한 과거 캐시 재현 추론만 날짜와 함께 제공한다.
+  신규 제공처 응답에 과거 revision이 있으면 자동 수용하지 않는다.
+- **미국은 캐시 고정 + 신규 날짜만 이어 붙인다** (`anchor_us_history`). Yahoo가 SPY 조정가격을
+  다시 계산해 과거 `SPY_1D_Return`이 최대 1.6e-6 달라지고, 연구 cleaner가 이월한 10/05 신용값이
+  나중에 실제 관측되면서 전체 재수집으로는 1e-9 대조가 항상 실패했다. 이제 V1 캐시
+  (`data/raw/raw_market_data.csv`) 행은 그대로 두고 캐시 마지막 날 이후 제공처 관측만 붙인다.
+  SPY는 마지막 공통일 비율로 캐시 조정 기준에 맞춰(배당 재조정 대응, 일간 수익률 불변) 붙인다.
+  겹치는 최근 약 250거래일의 차이가 SPY 상대 1e-5, VIX·신용 1e-9를 넘거나 SPY 기준 변화가 3%를
+  넘으면 실제 revision으로 보고 그대로 보류한다. 검토 수치는 export의 `providerRevision`에 남는다.
+  2026-11-10 실행: SPY 최대 상대차 1.9e-7, VIX·신용 ~0, 신규 25일, 추론 11/06까지(신용 11/06까지).
 - `OPERATIONAL`은 기존 캐시 이후에 수집한 관측일에 한정한다. 기존 캐시 날짜의
   재계산은 `RETROSPECTIVE_INFERENCE`이며 OOS로 주장하지 않는다.
 - 실패 시장의 `current`는 null. `lastValid`는 과거 재현 결과로만 표시한다.
