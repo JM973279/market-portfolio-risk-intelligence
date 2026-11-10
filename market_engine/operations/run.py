@@ -74,6 +74,60 @@ def compare(frame, reference, columns):
             raise ValueError(f'Historical reproduction mismatch: {column}')
 
 
+US_CHANNELS = ['SPY', 'VIX', 'BAA_Treasury_Spread']
+# Provider revisions of overlapping history that may be absorbed by anchoring.
+# Observed 2026-11: Yahoo SPY adjusted closes differ by <= 0.00018 USD
+# (2.4e-7 relative) between downloads; VIX and the credit spread are identical.
+US_OVERLAP_RTOL = {'SPY': 1e-5, 'VIX': 1e-9, 'BAA_Treasury_Spread': 1e-9}
+US_SCALE_LIMIT = 0.03  # a larger SPY basis change is not a dividend re-adjustment
+US_OVERLAP_DAYS = 250
+
+
+def anchor_us_history(cache, provider):
+    """Keep the frozen US cache and append only provider observations after it.
+
+    Re-downloading the full history makes the strict reference comparison fail
+    on provider revisions (Yahoo re-adjusts SPY history; a credit value the
+    research cleaner carried forward is later observed). Instead the cached
+    rows stay exactly as they were, so historical features still reproduce the
+    reference at 1e-9, and only post-cache dates come from the provider. SPY
+    is rescaled to the cache's adjustment basis by the ratio on the last
+    shared date, which leaves provider daily returns unchanged. Overlap
+    differences beyond US_OVERLAP_RTOL still fail closed.
+    """
+    import numpy as np
+    import pandas as pd
+    end = cache.index.max()
+    review = {'cacheEnd': end.strftime('%Y-%m-%d'), 'channels': {}}
+    appended = {}
+    for column in US_CHANNELS:
+        old = cache[column].dropna()
+        new = provider[column].dropna()
+        shared = old.index.intersection(new.index)
+        shared = shared[shared >= end - pd.Timedelta(days=int(US_OVERLAP_DAYS * 1.5))]
+        if len(shared) < 20:
+            raise ValueError(f'Provider overlap too short to verify revisions: {column}')
+        scale = 1.0
+        if column == 'SPY':
+            last = shared.max()
+            scale = float(old.loc[last] / new.loc[last])
+            if not np.isfinite(scale) or abs(scale - 1) > US_SCALE_LIMIT:
+                raise ValueError(f'Provider adjustment basis changed beyond limit: {column}')
+        relative = ((new.loc[shared] * scale - old.loc[shared]).abs() / old.loc[shared].abs().clip(lower=1e-12)).max()
+        review['channels'][column] = {'overlapDates': int(len(shared)), 'scale': scale,
+                                      'maxRelativeDifference': float(relative)}
+        if not relative <= US_OVERLAP_RTOL[column]:
+            raise ValueError(f'Provider revision beyond anchoring tolerance: {column}')
+        appended[column] = new.loc[new.index > end] * scale
+    joined = pd.concat(appended, axis=1, sort=True).sort_index()
+    joined = joined.loc[joined['SPY'].notna()]
+    review['appendedDates'] = int(len(joined))
+    raw = pd.concat([cache[US_CHANNELS], joined[US_CHANNELS]]).sort_index()
+    if raw.index.duplicated().any():
+        raise ValueError('Duplicate date after anchoring')
+    return raw, review
+
+
 def eligible_dates(features, raw, columns, cutoff):
     """Only post-training dates with exact-date real source observations qualify."""
     import numpy as np
@@ -295,7 +349,8 @@ def main():
                 if market == 'us':
                     joined = pd.concat(list(frames.values()), axis=1, sort=True).sort_index()
                     joined['BAA_Treasury_Spread'] = joined.DBAA - joined.DGS10
-                    frames = {c: joined[[c]] for c in ['SPY','VIX','BAA_Treasury_Spread']}
+                    anchored, result['providerRevision'] = anchor_us_history(seed, joined)
+                    frames = {c: anchored[[c]] for c in US_CHANNELS}
             raw = pd.concat(list(frames.values()), axis=1, sort=True).sort_index()
             equity_name = 'SPY' if market == 'us' else 'KOSPI200'
             if use_provider and not failed:
