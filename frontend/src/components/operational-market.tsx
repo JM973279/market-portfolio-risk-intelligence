@@ -1,25 +1,32 @@
 "use client";
 import { useState } from "react";
 import { useDashboard } from "./dashboard-shell";
-import { currentOperationalPoint, operationalMessage } from "@/lib/operational-status";
+import { latestOperationalPoint, operationalChartPoints, operationalMessage } from "@/lib/operational-status";
+import MarketChart from "./market-chart";
 
 export default function OperationalMarket({ country }: { country: "us" | "korea" }) {
  const { operational, language } = useDashboard();
  const market = operational?.markets[country];
  const ko = language === "ko";
- const current = currentOperationalPoint(market);
+ const current = latestOperationalPoint(market);
+ const refreshed = market?.dataPolicy === "us-full-source-vintage-v1";
+ const pricePoints = operationalChartPoints(market);
+ const latestPrice = pricePoints.at(-1);
  const [selected, setSelected] = useState("");
  const row = market?.history.find(point => point.date === (selected || market.lastValid?.date));
  const availability = market?.availability?.find(point => point.date === (selected || market.lastValid?.date));
  const metric = (value: number | null | undefined, risk = false) => typeof value === "number" ? risk ? `${(value * 100).toFixed(1)}%` : value.toFixed(3) : "N/A";
- const status = current ? (ko ? "필수 관측 확인" : "Required observations verified") : market?.status === "BLOCKED" ? (ko ? "검증 보류" : "Validation blocked") : (ko ? "최신 자료 대기" : "Awaiting current data");
+ const status = current ? (ko ? "검증된 관측일 확인" : "Verified observation date") : market?.status === "BLOCKED" ? (ko ? "검증 보류" : "Validation blocked") : (ko ? "최신 자료 대기" : "Awaiting current data");
  return <section className="panel operational-market" aria-label={ko ? "운영 데이터 품질 및 신규 추론" : "Operational data quality and inference"}>
   <div className="panel-header"><h2>{ko ? "운영 데이터 · Frozen V1 추론" : "Operational data · Frozen V1 inference"}</h2><span className="tag">{status}</span></div>
   <p>{ko ? "과거 OOS 검증과 별도로 실행한 고정 모델 추론입니다. 시장 스트레스의 보정된 확률이나 포트폴리오 손실 확률을 뜻하지 않습니다." : "Frozen model inference is separate from historical OOS validation. It is not a calibrated stress or portfolio-loss probability."}</p>
-  <div className="country-meta"><span>{ko ? "현재 수집 기준 관측일" : "Due observation date"}: <b>{market?.expectedDate ?? "N/A"}</b></span><span>{ko ? "내보내기 생성 시각 (UTC)" : "Export generated (UTC)"}: <b>{operational?.generatedAt ?? "N/A"}</b></span></div>
-  <div className="selected-metrics"><div><span>{ko ? "현재 Risk Score" : "Current Risk Score"}</span><strong>{metric(current?.risk, true)}</strong></div><div><span>{ko ? "현재 MSI" : "Current MSI"}</span><strong>{metric(current?.msi)}</strong></div><div><span>{ko ? "현재 공식 임계값" : "Current official threshold"}</span><strong>{metric(current?.threshold)}</strong></div><div><span>{ko ? "실제 점수 관측일" : "Score observation date"}</span><strong className="selected-date">{current?.date ?? "N/A"}</strong></div></div>
+  <div className="country-meta"><span>{ko ? "현재 수집 기준 관측일" : "Due observation date"}: <b>{market?.expectedDate ?? "N/A"}</b></span><span>{ko ? "내보내기 생성 시각 (UTC)" : "Export generated (UTC)"}: <b>{market?.generatedAt ?? operational?.generatedAt ?? "N/A"}</b></span></div>
+  {latestPrice && <p className="panel-note">{ko ? "SPY 최신 수정종가" : "Latest SPY adjusted close"}: <b>{latestPrice.price!.toFixed(2)} USD</b> · <time>{latestPrice.date}</time></p>}
+  <div className="selected-metrics"><div><span>{ko ? (refreshed ? "최신 검증된 Risk Score" : "현재 Risk Score") : (refreshed ? "Latest verified Risk Score" : "Current Risk Score")}</span><strong>{metric(current?.risk, true)}</strong></div><div><span>{ko ? (refreshed ? "최신 검증된 MSI" : "현재 MSI") : (refreshed ? "Latest verified MSI" : "Current MSI")}</span><strong>{metric(current?.msi)}</strong></div><div><span>{ko ? (refreshed ? "해당 관측일 공식 임계값" : "현재 공식 임계값") : (refreshed ? "Observation-date threshold" : "Current official threshold")}</span><strong>{metric(current?.threshold)}</strong></div><div><span>{ko ? "실제 점수 관측일" : "Score observation date"}</span><strong className="selected-date">{current?.date ?? "N/A"}</strong></div></div>
   <p className="panel-note">{ko ? "추론 실행 시각 (UTC)" : "Inference time (UTC)"}: {market?.inferenceAt ?? "N/A"}</p>
   <p role="status">{operationalMessage(market, language)}</p>
+  {refreshed && <p className="panel-note">{ko ? "과거 연구 입력의 재현 검증은 통과했습니다. 운영 점수는 제공처의 수정된 전체 이력을 별도 버전으로 계산하며, 기존 OOS 성능과 직접 비교하지 않습니다." : "Frozen research-input reproduction passed. Operational scores use a separate full-history provider vintage and are not directly comparable with the original OOS performance."}</p>}
+  {latestPrice && <MarketChart country={country} points={pricePoints} end={latestPrice.date} operational/>}
   <div className="table-scroll"><table><caption>{ko ? "원천별 실제 관측일과 수집 시각" : "Source observation and retrieval times"}</caption><thead><tr><th>{ko ? "자료 / 출처" : "Series / provider"}</th><th>{ko ? "실제 관측일" : "Observation date"}</th><th>{ko ? "수집 시각 (UTC)" : "Retrieved (UTC)"}</th><th>{ko ? "품질 상태" : "Quality"}</th></tr></thead><tbody>{market?.series.map(source => <tr key={source.name}><th scope="row">{source.name}<small className="operational-provider">{source.provider}</small></th><td>{source.observationDate ?? "N/A"}</td><td>{source.retrievedAt ?? (ko ? "기존 캐시 · 시각 미확인" : "Legacy cache · time unknown")}</td><td>{source.reason ? (ko ? source.reason : source.status === "ERROR" ? "Source retrieval failed; see original diagnostics." : "Legacy source or delayed observation; see dates.") : (ko ? "원천 응답 확인 · 날짜별 가용성 참조" : "Response verified · see date availability")}</td></tr>)}</tbody></table></div>
   {market?.lastValid && <details open><summary>{ko ? "관측일별 추론 기록" : "Inference observation history"} · {market.lastValid.date} · {ko ? "OOS 검증과 별도" : "separate from OOS validation"}</summary>
    <label className="field-label">{ko ? "관측일 선택 (운영/재현 추론 전용)" : "Choose date (operational/reproduced inference only)"}<select value={selected || market.lastValid.date} onChange={event => setSelected(event.target.value)}>{market.history.map(point => <option key={point.date}>{point.date}</option>)}</select></label>
