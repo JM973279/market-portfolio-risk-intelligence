@@ -1,0 +1,90 @@
+name: Sync upstream main
+
+on:
+  schedule:
+    # Check twice an hour, away from the busiest top-of-hour window (UTC).
+    - cron: '11,41 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-upstream.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream-main
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.repository == 'JM973279/market-portfolio-risk-intelligence' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # No checkout: do not execute upstream repository code with a write token.
+      - name: Merge upstream main while preserving fork changes
+        env:
+          # Optional: a repository-scoped token with Contents and Workflows write
+          # permissions also permits syncing upstream workflow-file changes.
+          GH_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN || github.token }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from urllib.error import HTTPError
+          from urllib.request import Request, urlopen
+
+          REPO = 'JM973279/market-portfolio-risk-intelligence'
+          UPSTREAM = 'tina77302/market-portfolio-risk-intelligence'
+          BRANCH = 'main'
+
+          def api(method, path, payload=None):
+              body = None if payload is None else json.dumps(payload).encode()
+              request = Request('https://api.github.com' + path, data=body, method=method, headers={
+                  'Authorization': 'Bearer ' + os.environ['GH_TOKEN'],
+                  'Accept': 'application/vnd.github+json',
+                  'Content-Type': 'application/json',
+                  'X-GitHub-Api-Version': '2022-11-28',
+              })
+              try:
+                  with urlopen(request, timeout=60) as response:
+                      return json.load(response)
+              except HTTPError as error:
+                  with error:
+                      message = json.loads(error.read()).get('message', error.reason)
+                  if error.code in (409, 422):
+                      raise RuntimeError(
+                          f'Sync stopped without force-pushing: {message}. '
+                          'Resolve any merge conflict in the fork and run this workflow again. '
+                          'For workflow-permission errors, configure UPSTREAM_SYNC_TOKEN '
+                          'with Contents: write and Workflows: write for this fork.'
+                      ) from None
+                  raise RuntimeError(f'GitHub API HTTP {error.code}: {message}') from None
+
+          metadata = api('GET', f'/repos/{REPO}')
+          if not metadata.get('fork') or metadata.get('parent', {}).get('full_name') != UPSTREAM:
+              raise RuntimeError('Unexpected upstream repository; sync stopped.')
+
+          source_sha = api('GET', f'/repos/{UPSTREAM}/git/ref/heads/{BRANCH}')['object']['sha']
+          before_sha = api('GET', f'/repos/{REPO}/git/ref/heads/{BRANCH}')['object']['sha']
+          comparison = api('GET', f'/repos/{REPO}/compare/{source_sha}...{before_sha}')
+          if comparison['behind_by'] == 0:
+              message = f'Already up to date with {UPSTREAM}@{source_sha}. Fork changes preserved.'
+          else:
+              # GitHub merges clean changes and rejects conflicts; never reset or force-push.
+              result = api('POST', f'/repos/{REPO}/merge-upstream', {'branch': BRANCH})
+              after_sha = api('GET', f'/repos/{REPO}/git/ref/heads/{BRANCH}')['object']['sha']
+              verified = api('GET', f'/repos/{REPO}/compare/{source_sha}...{after_sha}')
+              if verified['behind_by'] != 0:
+                  raise RuntimeError('Upstream ancestry verification failed after sync.')
+              message = f'Synced {UPSTREAM}@{source_sha} into {REPO}:{BRANCH}. {result["message"]}'
+
+          print(message)
+          with Path(os.environ['GITHUB_STEP_SUMMARY']).open('a') as summary:
+              summary.write('## Upstream sync\n\n' + message + '\n\n'
+                            'Repository synchronization only. AWS deployment uses its existing configuration.\n'
+                            'GITHUB_TOKEN changes do not trigger other push-based GitHub Actions workflows.\n')
+          PY
