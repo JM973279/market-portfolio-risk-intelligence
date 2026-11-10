@@ -58,6 +58,22 @@ eval "$("/mnt/c/Program Files/Amazon/AWSCLIV2/aws.exe" configure export-credenti
   --profile market-stress-scheduler --format env-no-export | tr -d '\r' | sed 's/^/export /')"
 ```
 
+### WSL의 `docker`가 Docker Desktop(`docker.exe`)인 경우
+
+Linux용 `lightsailctl`은 `/var/run/docker.sock`만 찾기 때문에 이미지를 올리지 못합니다. 이때는 Windows 쪽 도구로 올립니다. 2026-11-10 첫 배포는 이 방법으로 했습니다.
+
+1. Windows용 `lightsailctl.exe`를 받아 임시 폴더에 둡니다. [설치 안내](https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-install-software.html)
+2. 그 폴더를 `PATH` 앞에 넣은 배치 파일에서 Windows `aws.exe lightsail push-container-image --label api|web --image mpri-api:local|mpri-web:local`을 실행합니다. PowerShell의 `aws login` 세션을 그대로 씁니다.
+3. 출력된 이미지 이름(`:mpri.api.N`, `:mpri.web.N`)으로 `create-container-service-deployment`를 실행합니다. 컨테이너·공개 주소 설정은 `deploy_lightsail.sh`가 만드는 JSON과 같습니다.
+
+## 2026-11-10 첫 배포 결과
+
+- 주소: https://mpri.hbgma4wzzydww.ap-northeast-2.cs.amazonlightsail.com/ (서울, Micro 1개 노드)
+- 배포 버전 1: `:mpri.api.1`, `:mpri.web.2`. 서비스 생성 약 4분 30초, 이미지 업로드 API 39초·웹 69초, 배포 활성화 약 3분 10초.
+- `/`, `/portfolio`, `/us`, `/korea`가 200이고, 시연 수치가 로컬과 같았습니다. 잘못된 입력(합계 99%)은 422입니다.
+- 첫 몇 분은 CPU가 Micro 한도(0.25 vCPU)의 100%까지 올라가 `/us`·`/korea` 첫 응답이 약 10초 걸렸고, 502가 한 번 있었습니다. 컨테이너 재시작이나 오류 로그는 없었고, 이후 연속 24회 요청은 모두 200(약 0.6~2.6초)이었습니다. 메모리 최대는 약 39%입니다.
+- 시연 전에 페이지를 한 번씩 열어 두면 첫 응답 지연을 피할 수 있습니다. 계속 느리면 Small(0.5 vCPU, 월 US$15)로 올립니다.
+
 ## 실패와 되돌리기
 
 - 새 배포가 실패하면 Lightsail은 이전 배포를 그대로 유지합니다. 원인은 콘솔의 컨테이너 로그에서 확인합니다.
@@ -66,5 +82,4 @@ eval "$("/mnt/c/Program Files/Amazon/AWSCLIV2/aws.exe" configure export-credenti
 
 ## 아직 확인하지 않은 것
 
-- 실제 AWS 실행: 2026-11-10 기준 로그인 세션이 만료돼 스크립트를 AWS에서 돌려 보지 않았습니다.
-- 첫 응답 시간. 서울 리전(`ap-northeast-2`)에서 컨테이너 서비스 용량(Nano·Micro·Small)이 조회되는 것까지는 2026-11-10에 확인했습니다.
+- `deploy_lightsail.sh`를 Docker 소켓이 있는 Linux에서 끝까지 실행하는 것. 첫 배포는 위 Windows 방법으로 같은 단계를 나눠 실행했습니다.
