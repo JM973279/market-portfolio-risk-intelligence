@@ -1,5 +1,18 @@
-import type { OperationalMarketData, OperationalPoint } from "./dashboard-types";
+import type { DashboardData, OperationalMarketData, OperationalPoint } from "./dashboard-types";
 import type { Language } from "./monitor-copy";
+
+// Header date: the operational export's observation date when one exists (per market on a
+// market page, the newest of both elsewhere); otherwise the static research snapshot date.
+export function headerSnapshot(data: Pick<DashboardData, "global" | "monitor" | "operational">, country?: "us" | "korea"): { operational: boolean; date: string | null } {
+ const markets = data.operational?.markets;
+ const dates = (country ? [markets?.[country]] : [markets?.us, markets?.korea])
+  .map(market => market?.expectedDate)
+  .filter((date): date is string => typeof date === "string" && date.length > 0)
+  .sort();
+ const latest = dates.at(-1);
+ if (latest) return { operational: true, date: latest };
+ return { operational: false, date: data.global?.asOf ?? data.monitor?.latest?.Date ?? null };
+}
 
 // A past record is never a fallback for a missing or blocked current observation.
 export function currentOperationalPoint(market?: OperationalMarketData | null): OperationalPoint | null {
