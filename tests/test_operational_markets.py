@@ -9,7 +9,7 @@ from types import SimpleNamespace
 import numpy as np
 import pandas as pd
 
-from market_engine.operations.run import assert_hash, compare, eligible_dates, public_summary, verify_model
+from market_engine.operations.run import anchor_us_history, assert_hash, compare, eligible_dates, public_summary, verify_model
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -39,6 +39,49 @@ class OperationalGateTests(unittest.TestCase):
             compare(reference.assign(MSI=[1., 2.1]), reference, ['MSI'])
         with self.assertRaisesRegex(ValueError, 'dates unavailable'):
             compare(reference.iloc[:1], reference, ['MSI'])
+
+    def us_frames(self, cache_days=60, new_days=5):
+        days = pd.bdate_range('2026-07-01', periods=cache_days + new_days)
+        spy = pd.Series(np.linspace(600., 700., len(days)), index=days)
+        vix = pd.Series(np.linspace(15., 20., len(days)), index=days)
+        credit = pd.Series(np.linspace(1.4, 1.5, len(days)), index=days)
+        provider = pd.DataFrame({'SPY': spy, 'VIX': vix, 'BAA_Treasury_Spread': credit})
+        cache = provider.iloc[:cache_days].copy()
+        cache.iloc[-1, cache.columns.get_loc('BAA_Treasury_Spread')] = np.nan  # carried forward later
+        return cache, provider
+
+    def test_us_anchor_keeps_cache_and_appends_new_dates(self):
+        cache, provider = self.us_frames()
+        revised = provider.assign(SPY=provider.SPY * (1 + 2e-7))  # adjusted-price precision drift
+        raw, review = anchor_us_history(cache, revised)
+        pd.testing.assert_frame_equal(raw.loc[cache.index], cache)  # history byte-for-byte
+        self.assertTrue(np.isnan(raw.loc[cache.index[-1], 'BAA_Treasury_Spread']))
+        self.assertEqual(review['appendedDates'], 5)
+        new = raw.index[raw.index > cache.index.max()]
+        returns = raw.SPY.pct_change().loc[new]
+        np.testing.assert_allclose(returns, revised.SPY.pct_change().loc[new], rtol=1e-12)
+
+    def test_us_anchor_rescales_dividend_basis(self):
+        cache, provider = self.us_frames()
+        rebased = provider.assign(SPY=provider.SPY * 0.995)  # history re-adjusted after a dividend
+        raw, review = anchor_us_history(cache, rebased)
+        self.assertAlmostEqual(review['channels']['SPY']['scale'], 1 / 0.995)
+        np.testing.assert_allclose(raw.SPY.iloc[-1], provider.SPY.iloc[-1], rtol=1e-12)
+
+    def test_us_anchor_fails_closed_on_real_revisions(self):
+        cache, provider = self.us_frames()
+        spy = provider.SPY.copy()
+        spy.iloc[30] *= 1.01  # one historical close changed, not a uniform re-adjustment
+        with self.assertRaisesRegex(ValueError, 'beyond anchoring tolerance: SPY'):
+            anchor_us_history(cache, provider.assign(SPY=spy))
+        vix = provider.VIX.copy()
+        vix.iloc[10] += 0.01
+        with self.assertRaisesRegex(ValueError, 'beyond anchoring tolerance: VIX'):
+            anchor_us_history(cache, provider.assign(VIX=vix))
+        with self.assertRaisesRegex(ValueError, 'basis changed'):
+            anchor_us_history(cache, provider.assign(SPY=provider.SPY * 0.9))
+        with self.assertRaisesRegex(ValueError, 'overlap too short'):
+            anchor_us_history(cache, provider.iloc[-8:])
 
     def test_hash_change_fails(self):
         with tempfile.TemporaryDirectory() as directory:
