@@ -1,5 +1,7 @@
 # Market & Portfolio Risk Intelligence
 
+> **Research repository:** market stress model validation and portfolio risk experiments. For the deployed dashboard, benchmark attribution, and weight comparisons, see [M/PRI — live demo and implementation](https://github.com/JM973279/market-portfolio-risk-signals-intelligence).
+
 A risk intelligence workflow that validates a market stress early-warning model and connects market risk to portfolio hidden risk, stress testing, and what-if comparison.
 
 **Predict → Diagnose → Stress → Compare**
